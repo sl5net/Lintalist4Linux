@@ -34,7 +34,8 @@ WinWait, Lintalist -, , 3
 if ErrorLevel
 {
     run,Z:\home\    \ahk\lintalist\lintalist.ahk
-    MsgBox, WinWait timed out. '... Lintalist- ...'Window not found => i try again
+    MsgBox, ,ups pls wait a second, WinWait timed out. '... Lintalist- ...'Window not found => i try again, 2
+    reload
     return
 }
 else
