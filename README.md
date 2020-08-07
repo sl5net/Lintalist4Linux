@@ -1,7 +1,7 @@
 # Lintalist4Linux-version-0.00000001-Alpha
 shortcut in linux should run the Lintalist-Menu and give the result in a way (may clipboard)
 
-last days i installed https://lintalist.github.io/ and tried to use it out of linx.
+last days i installed https://lintalist.github.io/ and tried use it in linx.
 
 here the first step how you may could do it:
 
