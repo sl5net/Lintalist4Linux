@@ -33,7 +33,8 @@ SetTitleMatchMode, 2
 WinWait, Lintalist -, , 3
 if ErrorLevel
 {
-    MsgBox, WinWait timed out. '... Lintalist- ...'Window not found
+    run,Z:\home\administrator\ahk\lintalist\lintalist.ahk
+    MsgBox, WinWait timed out. '... Lintalist- ...'Window not found => i try again
     return
 }
 else
