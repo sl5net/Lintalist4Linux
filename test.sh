@@ -1,14 +1,15 @@
 #!/bin/bash
 
 # the name of this file is test.sh 
+#  /home/administrator/.config/espanso/default.yml
 
 # i have found in Linux-Mint the Keyboard menu and there the 'application shortcuts'
 # there i used:
-# /home/ YOU /Desktop/test.sh with F1
+# /home/administrator/Desktop/test.sh with F1
 
 # the same place in different notations:
-# C:\users\ YOU \Desktop\test.sh
-# /home/ YOU /Desktop/test.sh
+# C:\users\administrator\Desktop\test.sh
+# /home/administrator/Desktop/test.sh
 
 
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/
@@ -18,8 +19,8 @@ cd ~/.wine/drive_c/Program\ Files/AutoHotkey/
 # wine WindowSpy.ahk # AutoHotkey
 
 # the same place in different notations:
-# C:\users\ YOU \Desktop\sendF1v2.ahk
-# /home/ YOU /Desktop/sendF1v2.ahk
+# C:\users\administrator\Desktop\sendF1v2.ahk
+# /home/administrator/Desktop/sendF1v2.ahk
 
 # BTW interseting folders:
 # /etc/xdg/autostart # folder is common for all users of the operating system
@@ -31,8 +32,8 @@ cd ~/.wine/drive_c/Program\ Files/AutoHotkey/
 # wine AutoHotkey.exe WindowSpy.ahk -opengl > /dev/null 2> /dev/null &
 # wine AutoHotkey.exe sendF1.ahk -opengl > /dev/null 2> /dev/null &
 # wine AutoHotkey.exe sendF1v2.ahk -opengl > /dev/null 2> /dev/null &
-wine AutoHotkey.exe /home/ YOU /Desktop/sendF1v2.ahk -opengl > /dev/null 2> /dev/null &
-# wine  ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe /home/ YOU /Desktop/sendF1v2.ahk
+wine AutoHotkey.exe /home/administrator/Desktop/sendF1v2.ahk -opengl > /dev/null 2> /dev/null &
+# wine  ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe /home/administrator/Desktop/sendF1v2.ahk
 # wine AutoHotkey.exe sendF1v2.ahk
 
 # sleep 2500; # wait until animation fades out
