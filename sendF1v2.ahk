@@ -54,9 +54,9 @@ else
 	sleep, 100
 	Send,^a^f
 	sleep, 280
-	; Send, Hi world^a
-	Send,davor %ClipboardFirst% danach
+	; Send,world
+	Send,%ClipboardFirst%^a
 }
-; Msgbox,Ok great ExitApp
+; Msgbox,Ok
 ExitApp
 

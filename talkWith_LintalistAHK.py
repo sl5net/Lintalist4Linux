@@ -11,7 +11,7 @@ first_title = window.get_active_title()
 # https://exceptionshub.com/python-sound-alarm-when-code-finishes.html
 # On Debian/Ubuntu/LinuxMint you need to run in your terminal:
 # sudo apt install sox
-duration = 0.25  # second
+duration = 0.25  # seconhi worldhi worldd ###hi worldhi worldhi world
 freq = 5000  # Hz
 os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
 
@@ -37,9 +37,10 @@ if False:  # sometimes with problem. be carefully here
 # keyboard.release_key('<shift>')
 # keyboard.release_key('<ctrl>')
 
-# timehi world
+# 
 
-time.sleep(0.4) 
+# time.sleep(0.4)
+#  
 
 # 22world#yacy is slow hi world
 # äüö 
@@ -64,10 +65,11 @@ for i in range(0, 30):
 timeValueInLoopInSec = 0.2
 timeValueForBREAKLoopInSec = 20
 
-time.sleep(2) 
-keyboard.send_keys('<ctrl>+v')
+# 
+# time.sleep(2) 
+# keyboard.send_keys('<ctrl>+v')
 
-#hihihihi hi world
+#hihih  test 
 
 for x in range(0, 900): # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
@@ -81,18 +83,21 @@ for x in range(0, 900): # default is 25
     # if active_class == first_class:
     if active_title == first_title:
         # keyboard.fake_keypress('<left>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
-        duration = 0.4  # second
-        freq = 3000  # Hz
-        os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
+        if False: 
+            duration = 0.4  # second
+            freq = 3000  # Hz
+            os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
         break
 
     time.sleep(timeValueInLoopInSec) 
     
 cNew = "initialContent"
 try:
-    duration = 1  # second
-    freq = 2000  # Hz
-    os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
+
+    if False: 
+        duration = 1  # second
+        freq = 2000  # Hz
+        os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
 
     # cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
 
@@ -101,20 +106,32 @@ try:
     
 
 # asfhi world hi worldhi worldleider Formatierung hier zerstoehrt. Ich machs irgendwann online.s
-# 
-
+# hi worldhi worldhi world
     # keyboard.release_key('<ctrl>')
 
-    # time.sleep(1)
+    # time.sleep(0.4)
 
-    # out of wine again:
+    # out of wine again: 
+    # DONT use the follwoing becouse of https://github.com/autokey/autokey/issues/405
+    # following line works the first attemps:
     keyboard.send_keys('<ctrl>+v') # work without problem
     
+    # hi world leider Formatierung hier zerstoehrt. Ich machs irgendwann online.
+
+    if False:  # 
+        # use the follwoing becouse of https://github.com/autokey/autokey/issues/405
+        keyboard.press_key("<ctrl>")
+        # keyboard.press_key("v")
+        keyboard.fake_keypress('v')
+        # keyboard.release_key("v") # 
+        keyboard.release_key("<ctrl>")
+    
+    #  
     
     # keyboard.press_key('<ctrl>')
     # keyboard.fake_keypress('v')
     # keyboard.release_key('<ctrl>')
-# 
+#     
     
     # hi world 
     # hi worldhi world leider Formatierung hier zerstöhrt. Ich machs irgendwann online.    
@@ -131,7 +148,7 @@ except:
 
 #initialContenhi worldt hi world
 #initialContenhi worldt
-# initialContenhi worldt hi world
+# initialContenhi worldt hi world   # 
 
 time.sleep(0.4) 
 
