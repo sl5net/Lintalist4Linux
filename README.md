@@ -10,5 +10,7 @@ means at ~/.wine/drive_c/Program\ Files/AutoHotkey/sendF1v2.ahk
 
 create this test.sh (for e.g. on your linuxMint desktop)
 
+solved 9.8.2020: https://gist.github.com/sl5net/f68d302f0f5a40d05e6a2e182b453a51
+
 
 
