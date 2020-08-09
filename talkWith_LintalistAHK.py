@@ -2,8 +2,8 @@ import time
 import subprocess
 import os
 
-# first_title = window.get_active_title()
-first_class = window.get_active_class()
+first_title = window.get_active_title()
+# first_class = window.get_active_class()
 
 # keyboard.send_keys("\n#1 first_class='%s'" % first_class)
 #1 first_class='autokey-gtk.Autokey-gtkinitialContent'
@@ -15,18 +15,29 @@ duration = 0.25  # second
 freq = 5000  # Hz
 os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
 
-keyboard.send_keys('<ctrl>+<left>')
-keyboard.send_keys('<ctrl>+<shift>+<right>')
-keyboard.send_keys('<ctrl>+c')
+# keyboard.release_key('<f1>') # mayby problems ?  
+
+# keyboard.release_key('<ctrl>')
+
+if False:  # sometimes with problem. be carefully here
+    # keyboard.send_keys('<right>')
+    # keyboard.send_keys('<ctrl>+<left>')
+    # keyboard.send_keys('<ctrl>+<shift>+<right>')
+    keyboard.send_keys('<ctrl>+c')
+    # keyboard.release_key('<f1>')
+    # keyboard.release_key('<shift>')
+    # keyboard.release_key('<ctrl>')
+
+# time.sleep(2)  
 
 # keyboard.press_key('<ctrl>')
 # keyboard.press_key('<shift>')
 # keyboard.send_keys('<shift>+<right>')
 # keyboard.fake_keypress('<left>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
-keyboard.release_key('<shift>')
-keyboard.release_key('<ctrl>')
+# keyboard.release_key('<shift>')
+# keyboard.release_key('<ctrl>')
 
-# time
+# timehi world
 
 time.sleep(0.4) 
 
@@ -35,7 +46,7 @@ time.sleep(0.4)
 # cOld = clipboard.get_selection()
 # clipboard.fill_clipboard(cOld)
 # time.sleep(2) 
-# pykeyboard.send_keys('<ctrl>+v')
+# pykeyboard.send_keys('<ctrl>+v') 
 
 try:
     subprocess.Popen(["/bin/bash", "/home/administrator/Desktop/test.sh"])
@@ -44,19 +55,17 @@ except subprocess.CalledProcessError:
 
 for i in range(0, 30): 
     time.sleep(0.1) 
-    active_class = window.get_active_class()
-    if active_class != first_class:
+    # active_class = window.get_active_class()
+    active_title = window.get_active_title()
+    # if active_class != first_class:
+    if active_title != first_title:
         break
         
-        
-
 timeValueInLoopInSec = 0.2
 timeValueForBREAKLoopInSec = 20
 
-
 time.sleep(2) 
 keyboard.send_keys('<ctrl>+v')
-
 
 #hihihihi hi world
 
@@ -65,11 +74,12 @@ for x in range(0, 900): # default is 25
         keyboard.send_keys("BREAK x is '%s'" % str(x)) # <= too check the last x value if interessted in
         break
 
-    # active_title = window.get_active_title()
-    active_class = window.get_active_class()
+    active_title = window.get_active_title()
+    # active_class = window.get_active_class()
 
-    #if active_title == first_title and active_class == first_class:
-    if active_class == first_class:
+    # if active_title == first_title and active_class == first_class:
+    # if active_class == first_class:
+    if active_title == first_title:
         # keyboard.fake_keypress('<left>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
         duration = 0.4  # second
         freq = 3000  # Hz
@@ -80,8 +90,8 @@ for x in range(0, 900): # default is 25
     
 cNew = "initialContent"
 try:
-    duration = 0.4  # second
-    freq = 7000  # Hz
+    duration = 1  # second
+    freq = 2000  # Hz
     os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
 
     # cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
@@ -89,15 +99,24 @@ try:
     # time.sleep(0.4) 
     # keyboard.fake_keypress('<control>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
     
+
+# asfhi world hi worldhi worldleider Formatierung hier zerstoehrt. Ich machs irgendwann online.s
+# 
+
+    # keyboard.release_key('<ctrl>')
+
+    # time.sleep(1)
+
     # out of wine again:
-    keyboard.send_keys('<ctrl>+v')
-    # 
+    keyboard.send_keys('<ctrl>+v') # work without problem
+    
     
     # keyboard.press_key('<ctrl>')
     # keyboard.fake_keypress('v')
-    keyboard.release_key('<ctrl>')
+    # keyboard.release_key('<ctrl>')
+# 
     
-    #hi world
+    # hi world 
     # hi worldhi world leider Formatierung hier zerstöhrt. Ich machs irgendwann online.    
     
     # https://stackoverflow.com/questions/11184300/autokey-clipboard-get-selection-function-fails-on-certain-strings
@@ -105,8 +124,8 @@ try:
     # ö oe
     # cNew.replace("ö", "oe")
 except:
-    duration = 0.3  # second
-    freq = 7500  # Hz
+    duration = 1  # second
+    freq = 1500  # Hz
     os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
     time.sleep(0.1) 
 
@@ -134,3 +153,4 @@ time.sleep(0.4)
 # keyboard.fake_keypress('<f7>') # new snippet
 # keyboard.fake_keypress('<f8>') # remove snippet
 # keyboard.fake_keypress('<f10>') # manage bundels
+
