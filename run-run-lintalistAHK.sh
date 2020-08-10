@@ -32,7 +32,7 @@ cd ~/.wine/drive_c/Program\ Files/AutoHotkey/
 # wine AutoHotkey.exe WindowSpy.ahk -opengl > /dev/null 2> /dev/null &
 # wine AutoHotkey.exe sendF1.ahk -opengl > /dev/null 2> /dev/null &
 # wine AutoHotkey.exe sendF1v2.ahk -opengl > /dev/null 2> /dev/null &
-wine AutoHotkey.exe /home/administrator/Desktop/sendF1v2.ahk -opengl > /dev/null 2> /dev/null &
+wine AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk -opengl > /dev/null 2> /dev/null &
 # wine  ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe /home/administrator/Desktop/sendF1v2.ahk
 # wine AutoHotkey.exe sendF1v2.ahk
 

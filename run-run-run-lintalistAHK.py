@@ -2,6 +2,14 @@ import time
 import subprocess
 import os
 
+#####################
+# this file must be run in:
+# /home/administrator/.config/autokey/data/Sample Scripts/
+# or so
+# this file i store it in local repo like:
+# /home/administrator/Documents/github/Lintalist4Linux/
+#####################
+
 first_title = window.get_active_title()
 # first_class = window.get_active_class()
 
@@ -49,8 +57,10 @@ if False:  # sometimes with problem. be carefully here
 # time.sleep(2) 
 # pykeyboard.send_keys('<ctrl>+v') 
 
+# comandLine-wine-too-ahk.sh
+
 try:
-    subprocess.Popen(["/bin/bash", "/home/administrator/Desktop/test.sh"])
+    subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
 except subprocess.CalledProcessError:
     time.sleep(0.2)
 
