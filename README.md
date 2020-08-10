@@ -44,6 +44,8 @@ solved 9.8.2020: https://gist.github.com/sl5net/f68d302f0f5a40d05e6a2e182b453a51
 
 ### not professional Videos in german/deutsch:
 
+https://youtu.be/EWW3IOWKyu8
+
 https://www.youtube.com/watch?v=ApYBcKEq53A&list=PLWkx_y_OWhl1rYx79ungQIz8D7sqNSv35&index=11&t=0s
 
 ## Thank you too:

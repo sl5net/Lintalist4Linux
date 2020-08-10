@@ -6,7 +6,6 @@ import os
 # doSelectWord 
 # doCopyWord2clipboard = True 
 doUseFocusedWordAndPastResultBehind = True 
-
 #>>>>>>>>>> config
 
 if doUseFocusedWordAndPastResultBehind:
@@ -19,6 +18,10 @@ if doUseFocusedWordAndPastResultBehind:
     keyboard.send_keys('<ctrl>+c')
     keyboard.send_keys('<right><left>')
     # keyboard.send_keys('<ctrl>+v')
+
+    keyboard.release_key('<shift>') # sometimes i got hanging shift key
+    # keyboard.release_key('<ctrl>')
+
 
 # world hi hi world world hi world
 
@@ -93,7 +96,7 @@ for i in range(0, 30):
         break
 
 timeValueInLoopInSec = 0.2
-timeValueForBREAKLoopInSec = 40  # timeOut. Prevention for endless loops
+timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
 
 # BREAK x is '101
 # time.sleep(2) 
