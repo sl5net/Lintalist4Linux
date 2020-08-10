@@ -34,8 +34,9 @@ You find QuickSearchHotkey nearly at the last page inside this long list into th
 
 solved 9.8.2020: https://gist.github.com/sl5net/f68d302f0f5a40d05e6a2e182b453a51
 
-### Video (german/deutsch):
+### not professional Videos in german/deutsch:
 
+https://www.youtube.com/playlist?list=PLWkx_y_OWhl1rYx79ungQIz8D7sqNSv35
 
 ## Thank you too:
 
