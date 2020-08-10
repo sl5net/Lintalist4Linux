@@ -64,26 +64,25 @@ try:
 except subprocess.CalledProcessError:
     time.sleep(0.2)
 
-for i in range(0, 30): 
-    time.sleep(0.1) 
+for i in range(0, 30):
+    time.sleep(0.1)
     # active_class = window.get_active_class()
     active_title = window.get_active_title()
     # if active_class != first_class:
     if active_title != first_title:
         break
-        
-timeValueInLoopInSec = 0.2
-timeValueForBREAKLoopInSec = 20
 
-# 
+timeValueInLoopInSec = 0.2
+timeValueForBREAKLoopInSec = 40  # timeOut. Prevention for endless loops
+
+# BREAK x is '101
 # time.sleep(2) 
 # keyboard.send_keys('<ctrl>+v')
 
-#hihih  test 
-
 for x in range(0, 900): # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
-        keyboard.send_keys("BREAK x is '%s'" % str(x)) # <= too check the last x value if interessted in
+        keyboard.send_keys("BREAK at Loop %s because timeValueForBREAKLoopInSec > '%s'" % (str(x), str(timeValueForBREAKLoopInSec)))
+        # ^- too check the last x value if interested in
         break
 
     active_title = window.get_active_title()
@@ -92,19 +91,19 @@ for x in range(0, 900): # default is 25
     # if active_title == first_title and active_class == first_class:
     # if active_class == first_class:
     if active_title == first_title:
-        # keyboard.fake_keypress('<left>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
-        if False: 
+        #  keyboard.fake_keypress('<left>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
+        if False:
             duration = 0.4  # second
             freq = 3000  # Hz
             os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
         break
 
-    time.sleep(timeValueInLoopInSec) 
-    
+    time.sleep(timeValueInLoopInSec)
+
 cNew = "initialContent"
 try:
 
-    if False: 
+    if False:
         duration = 1  # second
         freq = 2000  # Hz
         os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
@@ -113,7 +112,7 @@ try:
 
     # time.sleep(0.4) 
     # keyboard.fake_keypress('<control>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
-    
+
 
 # asfhi world hi worldhi worldleider Formatierung hier zerstoehrt. Ich machs irgendwann online.s
 # hi worldhi worldhi world
@@ -125,7 +124,7 @@ try:
     # DONT use the follwoing becouse of https://github.com/autokey/autokey/issues/405
     # following line works the first attemps:
     keyboard.send_keys('<ctrl>+v') # work without problem
-    
+
     # hi world leider Formatierung hier zerstoehrt. Ich machs irgendwann online.
 
     if False:  # 
@@ -135,17 +134,17 @@ try:
         keyboard.fake_keypress('v')
         # keyboard.release_key("v") # 
         keyboard.release_key("<ctrl>")
-    
+
     #  
-    
+
     # keyboard.press_key('<ctrl>')
     # keyboard.fake_keypress('v')
     # keyboard.release_key('<ctrl>')
 #     
-    
-    # hi world 
-    # hi worldhi world leider Formatierung hier zerstöhrt. Ich machs irgendwann online.    
-    
+
+    # hi world
+    # hi worldhi world leider Formatierung hier zerstöhrt. Ich machs irgendwann online.
+
     # https://stackoverflow.com/questions/11184300/autokey-clipboard-get-selection-function-fails-on-certain-strings
     # use a clipboard function to paste the modified string back into your App.
     # ö oe
@@ -154,13 +153,13 @@ except:
     duration = 1  # second
     freq = 1500  # Hz
     os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
-    time.sleep(0.1) 
+    time.sleep(0.1)
 
 #initialContenhi worldt hi world
 #initialContenhi worldt
 # initialContenhi worldt hi world   # 
 
-time.sleep(0.4) 
+time.sleep(0.4)
 
 # keyboard.send_keys(cNew)
 
