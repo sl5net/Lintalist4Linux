@@ -2,6 +2,26 @@ import time
 import subprocess
 import os
 
+#<<<<<<<<<< config
+# doSelectWord 
+# doCopyWord2clipboard = True 
+doUseFocusedWordAndPastResultBehind = True 
+
+#>>>>>>>>>> config
+
+if doUseFocusedWordAndPastResultBehind:
+    # unselct maybe selected word 
+    keyboard.send_keys('<left><right>')
+
+    # selct word 
+    keyboard.send_keys('<ctrl>+<left>')
+    keyboard.send_keys('<ctrl>+<shift>+<right>')
+    keyboard.send_keys('<ctrl>+c')
+    keyboard.send_keys('<right><left>')
+    # keyboard.send_keys('<ctrl>+v')
+
+# world hi hi world world hi world
+
 #####################
 # this file must be run in:
 # /home/administrator/.config/autokey/data/Sample Scripts/
@@ -73,7 +93,7 @@ for i in range(0, 30):
         break
 
 timeValueInLoopInSec = 0.2
-timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
+timeValueForBREAKLoopInSec = 40  # timeOut. Prevention for endless loops
 
 # BREAK x is '101
 # time.sleep(2) 
@@ -120,7 +140,10 @@ try:
 
     # time.sleep(0.4)
 
-    # out of wine again: 
+    if doUseFocusedWordAndPastResultBehind:
+        keyboard.send_keys('<right><right> ')
+
+    # out of wine again:  
     # DONT use the follwoing becouse of https://github.com/autokey/autokey/issues/405
     # following line works the first attemps:
     keyboard.send_keys('<ctrl>+v') # work without problem
