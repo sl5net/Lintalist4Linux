@@ -7,9 +7,9 @@ Tested with LinuxMint Version 20
 
 # installation (recommended):
 - LinuxMint (new versions) or maybe other Linux
-- wine
-- winetricks (maybe not needet)
-- AutoKey
+- wine (may use your Software Manager)
+- Winetricks (maybe not needet) (may use your Software Manager)
+- AutoKey (may use your Software Manager)
 - AutoHotKey
 - Lintalist
 
@@ -40,8 +40,8 @@ https://www.youtube.com/playlist?list=PLWkx_y_OWhl1rYx79ungQIz8D7sqNSv35
 
 ## Thank you too:
 
-Linux, and all the people there
-
-autohotkey, and all the people there
-
-https://lintalist.github.io/ , and all the people there
+- Linux, and all the people there 
+- https://wiki.winehq.org/Winetricks
+- autohotkey, and all the people there
+- https://lintalist.github.io/ , and all the people there
+- thanks espanso for inspirations: https://espanso.org/install/linux/
