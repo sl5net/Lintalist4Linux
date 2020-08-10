@@ -73,7 +73,7 @@ for i in range(0, 30):
         break
 
 timeValueInLoopInSec = 0.2
-timeValueForBREAKLoopInSec = 40  # timeOut. Prevention for endless loops
+timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
 
 # BREAK x is '101
 # time.sleep(2) 

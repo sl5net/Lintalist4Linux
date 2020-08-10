@@ -1,7 +1,11 @@
 # Lintalist4Linux
-shortcut in linux should run the Lintalist-Menu and give the result in a way (may clipboard)
+Shortcut in Linux run the Lintalist-Menu and writes the result in a way (may clipboard) back.
 
-last days i installed https://lintalist.github.io/ and tried use it in linx.
+https://lintalist.github.io/ says (10.08.2020):
+"Lintalist allows you to store and (incrementally) search <br>
+and edit texts in bundles and paste a selected text in your active program.<br>
+... Lintalist is open source and developed in AutoHotkey ..."
+<br><br>
 
 Tested with LinuxMint Version 20
 
@@ -27,8 +31,12 @@ edit one line of each file (so they find your scripts)
 - Set a Hotkey in that py-File 
 
 ## Lintalist - Settings:
-QuickSearchHotkey: F1 (needed reflected inside run-lintalistAHK.ahk)
-You find QuickSearchHotkey nearly at the last page inside this long list into the 'Lintalist - Settings' 
+- QuickSearchHotkey: F1 (needed reflected inside run-lintalistAHK.ahk)<br>
+You find QuickSearchHotkey nearly at the last page inside this long list into the 'Lintalist - Settings'
+- PasteMethod s recommended (you find it in the middle of the long settings list):
+    - 1=Paste snippet and keep it as the current clipboard content (so you can manually paste it again)
+    - 2=Don't paste snippet content but copy it to the clipboard so you can manually paste it.
+- BTW i like the SearchMethod 2=Fuzzy (you find it in the middle)
 
 ## History:
 
@@ -45,3 +53,5 @@ https://www.youtube.com/playlist?list=PLWkx_y_OWhl1rYx79ungQIz8D7sqNSv35
 - autohotkey, and all the people there
 - https://lintalist.github.io/ , and all the people there
 - thanks espanso for inspirations: https://espanso.org/install/linux/
+- https://element.io/
+- and much more

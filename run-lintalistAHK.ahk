@@ -72,6 +72,7 @@ else
     {
       isLintalistWinExist := ( WinExist(winTitleLintalist) ) ? True : False
       MsgBox, :( ups WinNotActive, winTitleLintalist isLintalistWinExist=%isLintalistWinExist%
+      ; if isLintalistWinExist == 1 may he is in the preferences or so.
       ExitApp
     }
     if( StrLen(ClipboardFirst) > 100 ){
