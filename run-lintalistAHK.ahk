@@ -34,41 +34,52 @@ Sleep,100
 ; $ wine /home/me/Desktop/sendF1v2.ahk
 ; wine: Bad EXE format for Z:\home\me\Desktop\sendF1v2.ahk.
 
-SendInput, {f1}
-
+SendInput,{f1}
 
 ;  A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match.
 
-; 2: A window's title can contain WinTitle anywhere inside it to be a match.
+; 2: A window's title can contain WinTitle anywhere inside it to be a match. 
 DetectHiddenWindows, Off
 SetTitleMatchMode, 2
-WinWait, Lintalist -, , 3
+; winTitleLintalist := "administrator^ Lintalist - 1.9.13 ahk_class AutoHotkeyGUI ahk_exe AutoHotkey.exe ahk_pid 140"
+winTitleLintalist := "Lintalist - 1.9.13 ahk_class AutoHotkeyGUI"
+WinWait, % winTitleLintalist, , 3
 if ErrorLevel
 {
     run,Z:\home\administrator\ahk\lintalist\lintalist.ahk
     ; MsgBox , Options, Title, Text, Timeout
-    MsgBox, ,ups pls wait a second, WinWait timed out. '... Lintalist- ...'Window not found => i try again, 2
+    ; MsgBox, ,ups pls wait a second, WinWait timed out. '... Lintalist- ...'Window not found => i try again, 3
+    MsgBox, ,ups lintalist not found. Try again?, Try again? '... Lintalist- ...'Window not found
+    ; ExitApp
     reload
     return
 }
 else
 {
-	WinActivate ; use the window found above 
-	; # sleep, 100
+
+  WinActivate ; use the window found above  
+  WinWaitActive, % winTitleLintalist, , 3, 
+	sleep, 40
 	; Send,^a^f
 	; sleep, 280
 	; Send,world
 	; Send,%ClipboardFirst%^a
   if(False){
-    ; SendLevel, 1
+    ; SendLevel, 1   
     Send,^v 
   } else {
+    IfWinNotActive, % winTitleLintalist
+    {
+      isLintalistWinExist := ( WinExist(winTitleLintalist) ) ? True : False
+      MsgBox, :( ups WinNotActive, winTitleLintalist isLintalistWinExist=%isLintalistWinExist%
+      ExitApp
+    }
     if( StrLen(ClipboardFirst) > 100 ){
       ClipboardFirstShort := RTrim( SubStr(ClipboardFirst, 1, 60) )
-      ControlSetText, Edit1, % ClipboardFirstShort, administrator^ Lintalist - 1.9.13 ahk_class AutoHotkeyGUI ahk_exe AutoHotkey.exe ahk_pid 140
+      ControlSetText, Edit1, % ClipboardFirstShort, % winTitleLintalist
       ; MsgBox, % ClipboardFirstShort
     } else {
-      ControlSetText, Edit1, % ClipboardFirst, administrator^ Lintalist - 1.9.13 ahk_class AutoHotkeyGUI ahk_exe AutoHotkey.exe ahk_pid 140
+      ControlSetText, Edit1, % ClipboardFirst, % winTitleLintalist
     }
   }
 
