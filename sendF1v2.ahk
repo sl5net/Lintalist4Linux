@@ -14,9 +14,9 @@ CoordMode, Pixel, Screen
 ; Z:\home\administrator\ahk\lintalist\lintalist.ahk
 ; /home/administrator/ahk/lintalist/lintalist.ahk
 
-ClipboardFirst := Clipboard
+ClipboardFirst := Trim(Clipboard)
 
-SendLevel 99
+SendLevel, 99
 
 Sleep,100
 
@@ -36,6 +36,9 @@ Sleep,100
 
 SendInput, {f1}
 
+
+;  A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match.
+
 ; 2: A window's title can contain WinTitle anywhere inside it to be a match.
 DetectHiddenWindows, Off
 SetTitleMatchMode, 2
@@ -50,13 +53,30 @@ if ErrorLevel
 }
 else
 {
-	WinActivate ; use the window found above
-	sleep, 100
-	Send,^a^f
-	sleep, 280
+	WinActivate ; use the window found above 
+	; # sleep, 100
+	; Send,^a^f
+	; sleep, 280
 	; Send,world
-	Send,%ClipboardFirst%^a
+	; Send,%ClipboardFirst%^a
+  if(False){
+    ; SendLevel, 1
+    Send,^v 
+  } else {
+    if( StrLen(ClipboardFirst) > 100 ){
+      ClipboardFirstShort := RTrim( SubStr(ClipboardFirst, 1, 60) )
+      ControlSetText, Edit1, % ClipboardFirstShort, administrator^ Lintalist - 1.9.13 ahk_class AutoHotkeyGUI ahk_exe AutoHotkey.exe ahk_pid 140
+      ; MsgBox, % ClipboardFirstShort
+    } else {
+      ControlSetText, Edit1, % ClipboardFirst, administrator^ Lintalist - 1.9.13 ahk_class AutoHotkeyGUI ahk_exe AutoHotkey.exe ahk_pid 140
+    }
+  }
+
+  Send,^a
+  ; SendLevel   A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match.
+  ;   A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match.
+
 }
-; Msgbox,Ok
+; Msgbox,Ok  MsgboxMsgboxMsgboxMsgbox  box  box  
 ExitApp
 
