@@ -81,9 +81,13 @@ if False:  # sometimes with problem. be carefully here
 # pykeyboard.send_keys('<ctrl>+v') 
 
 # comandLine-wine-too-ahk.sh
+#   
 
 try:
-    subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
+    # subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
+    # import os
+    myCmd = 'wine ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+    os.system(myCmd)
 except subprocess.CalledProcessError:
     time.sleep(0.2)
 
@@ -137,8 +141,6 @@ try:
     # keyboard.fake_keypress('<control>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
 
 
-# asfhi world hi worldhi worldleider Formatierung hier zerstoehrt. Ich machs irgendwann online.s
-# hi worldhi worldhi world
     # keyboard.release_key('<ctrl>')
 
     # time.sleep(0.4)
