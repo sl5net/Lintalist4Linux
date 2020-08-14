@@ -89,6 +89,14 @@ else
   ;   A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match.
 
 }
-; Msgbox,Ok  MsgboxMsgboxMsgboxMsgbox  box  box  
+; Msgbox,Ok  MsgboxMsgboxMsgboxMsgbox  MsgboxMsgboxMsgboxMsgbox box  box     MsgboxMsgboxMsgboxMsgbox
+
+; protection for empty clipbords if there is no result from lintalist
+sleep,2000
+c := Clipboard
+if(!StrLen(c)){
+  Clipboard := ClipboardFirst
+}
+
 ExitApp
 
