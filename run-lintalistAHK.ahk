@@ -14,6 +14,9 @@ CoordMode, Pixel, Screen
 ; Z:\home\administrator\ahk\lintalist\lintalist.ahk
 ; /home/administrator/ahk/lintalist/lintalist.ahk
 
+
+; BAföG ; testtesttest
+
 ClipboardFirst := Trim(Clipboard)
 
 SendLevel, 99
