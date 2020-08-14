@@ -2,9 +2,6 @@ import time
 import subprocess
 import os
 
-
-# doSelectWord
- doSelectWord
 #<<<<<<<<<< config
 # doSelectWord 
 # doCopyWord2clipboard = True 
@@ -26,7 +23,13 @@ if doUseFocusedWordAndPastResultBehind:
     # keyboard.release_key('<ctrl>')
 
 
-# world hi hi world world hi world
+try:
+    cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+except:
+    cOld = ""
+
+
+# world  worldhi hi world world hi world
 
 #####################
 # this file must be run in:
@@ -109,6 +112,9 @@ timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
 # time.sleep(2) 
 # keyboard.send_keys('<ctrl>+v')
 
+
+# test
+
 for x in range(0, 900): # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
         # keyboard.send_keys("BREAK at Loop %s because timeValueForBREAKLoopInSec > '%s'" % (str(x), str(timeValueForBREAKLoopInSec)))
@@ -128,9 +134,20 @@ for x in range(0, 900): # default is 25
             os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
         break
 
+# asdf 
+
     time.sleep(timeValueInLoopInSec)
 
-cNew = "initialContent"
+cNew = "initialContent" 
+
+# try:
+    # cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+    # if len(cNew) > 0 OR cNew == cOld
+        # die()
+# except:
+    # time.sleep(0.1)  
+
+
 try:
 
     if False:
@@ -146,7 +163,6 @@ try:
 
     # keyboard.release_key('<ctrl>')
 
-    # time.sleep(0.4)
 
     if doUseFocusedWordAndPastResultBehind:
         keyboard.send_keys('<right><right> ')
@@ -156,8 +172,16 @@ try:
     # following line works the first attemps:
     keyboard.send_keys('<ctrl>+v') # work without problem
 
-    # hi world leider Formatierung hier zerstoehrt. Ich machs irgendwann online.
+    # time.sleep(0.4)
+    # selct result    
+    keyboard.send_keys('<ctrl>+<left>')
+    keyboard.send_keys('<ctrl>+<shift>+<right>')
+    # keyboard.send_keys('<ctrl>+v')
+    keyboard.release_key('<shift>') # sometimes i got hanging shift key
 
+
+    # hi world leider Formatierung hier zerstoehrt. Ich machs irgendwann online. online  2012/01   
+ 
     if False:  # 
         # use the follwoing becouse of https://github.com/autokey/autokey/issues/405
         keyboard.press_key("<ctrl>")
@@ -165,8 +189,6 @@ try:
         keyboard.fake_keypress('v')
         # keyboard.release_key("v") # 
         keyboard.release_key("<ctrl>")
-
-    #  
 
     # keyboard.press_key('<ctrl>')
     # keyboard.fake_keypress('v')
