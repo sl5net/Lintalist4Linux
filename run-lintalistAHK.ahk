@@ -91,8 +91,8 @@ else
 }
 ; Msgbox,Ok  MsgboxMsgboxMsgboxMsgbox  MsgboxMsgboxMsgboxMsgbox box  box     MsgboxMsgboxMsgboxMsgbox
 
-; protection for empty clipbords if there is no result from lintalist
-sleep,2000
+; protection for empty clipboard if there is no result from lintalist
+sleep,1000
 c := Clipboard
 if(!StrLen(c)){
   Clipboard := ClipboardFirst

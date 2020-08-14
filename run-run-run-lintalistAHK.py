@@ -2,6 +2,9 @@ import time
 import subprocess
 import os
 
+
+# doSelectWord
+ doSelectWord
 #<<<<<<<<<< config
 # doSelectWord 
 # doCopyWord2clipboard = True 
@@ -81,7 +84,7 @@ if False:  # sometimes with problem. be carefully here
 # pykeyboard.send_keys('<ctrl>+v') 
 
 # comandLine-wine-too-ahk.sh
-#   
+#    
 
 try:
     # subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
@@ -108,7 +111,7 @@ timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
 
 for x in range(0, 900): # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
-        keyboard.send_keys("BREAK at Loop %s because timeValueForBREAKLoopInSec > '%s'" % (str(x), str(timeValueForBREAKLoopInSec)))
+        # keyboard.send_keys("BREAK at Loop %s because timeValueForBREAKLoopInSec > '%s'" % (str(x), str(timeValueForBREAKLoopInSec)))
         # ^- too check the last x value if interested in
         break
 
