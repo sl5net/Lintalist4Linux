@@ -6,7 +6,11 @@ import os
 # doSelectWord 
 # doCopyWord2clipboard = True 
 doUseFocusedWordAndPastResultBehind = True 
+# useEnter = True
+useEnter = False
 #>>>>>>>>>> config
+
+cOld = ""
 
 if doUseFocusedWordAndPastResultBehind:
     # unselct maybe selected word 
@@ -21,16 +25,7 @@ if doUseFocusedWordAndPastResultBehind:
 
     keyboard.release_key('<shift>') # sometimes i got hanging shift key
     # keyboard.release_key('<ctrl>')
-
-
-try:
-    cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-except:
-    cOld = ""
-
-
-# world  worldhi hi world world hi world
-
+    
 #####################
 # this file must be run in:
 # /home/administrator/.config/autokey/data/Sample Scripts/
@@ -74,20 +69,12 @@ if False:  # sometimes with problem. be carefully here
 # keyboard.release_key('<shift>')
 # keyboard.release_key('<ctrl>')
 
-# 
-
 # time.sleep(0.4)
-#  
 
-# 22world#yacy is slow hi world
-# äüö 
 # cOld = clipboard.get_selection()
 # clipboard.fill_clipboard(cOld)
 # time.sleep(2) 
 # pykeyboard.send_keys('<ctrl>+v') 
-
-# comandLine-wine-too-ahk.sh
-#    
 
 try:
     # subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
@@ -96,6 +83,20 @@ try:
     os.system(myCmd)
 except subprocess.CalledProcessError:
     time.sleep(0.2)
+
+
+cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+
+
+try:
+    cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+except:
+    cOld = ""
+
+
+
+# php2012/01 cello-technologie.de     
+
 
 for i in range(0, 30):
     time.sleep(0.1)
@@ -112,8 +113,6 @@ timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
 # time.sleep(2) 
 # keyboard.send_keys('<ctrl>+v')
 
-
-# test
 
 for x in range(0, 900): # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
@@ -134,20 +133,32 @@ for x in range(0, 900): # default is 25
             os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
         break
 
-# asdf 
-
     time.sleep(timeValueInLoopInSec)
 
-cNew = "initialContent" 
+cNew = "" 
 
-# try:
-    # cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-    # if len(cNew) > 0 OR cNew == cOld
-        # die()
-# except:
-    # time.sleep(0.1)  
+try:
+    cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+    if len(str(cNew)) < 1 and cNew != cOld:
+        exit() # quit()
+except:
+    time.sleep( 0.1)  
+
+###  lulsdfcNew
+
+cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
 
 
+# if True:
+#     try:
+#        cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+#    except:
+#        cNew = "" 
+# lllasdfsdfl welt
+  
+# if len(cNew) > 0 AND cNew == cOld:
+if cNew == cOld:
+    quit() # exit() # quit() asdffasdff asdffasdffasdffasdff  javajava
 try:
 
     if False:
@@ -165,65 +176,37 @@ try:
 
 
     if doUseFocusedWordAndPastResultBehind:
-        keyboard.send_keys('<right><right> ')
+        keyboard.send_keys('<right>') # <right>
+        if useEnter:
+            keyboard.send_keys('<enter>') #
+        else: 
+            time.sleep(0.2)
+            keyboard.send_keys(" ")
+            # print(" ")
+        time.sleep(0.2)
 
-    # out of wine again:  
-    # DONT use the follwoing becouse of https://github.com/autokey/autokey/issues/405
-    # following line works the first attemps:
-    keyboard.send_keys('<ctrl>+v') # work without problem
+    keyboard.send_keys('<ctrl>+v') # work without problem        print(" ")
 
-    # time.sleep(0.4)
-    # selct result    
-    keyboard.send_keys('<ctrl>+<left>')
-    keyboard.send_keys('<ctrl>+<shift>+<right>')
-    # keyboard.send_keys('<ctrl>+v')
+    time.sleep(0.1) # <== its needet
+    if useEnter:
+        time.sleep(0.1)
+        keyboard.send_keys('<shift>+<home>')
+    else:
+        # time.sleep(0.1)
+        # keyboard.send_keys('<ctrl>+<left>')
+        keyboard.send_keys('<ctrl>+<shift>+<left>') # right
     keyboard.release_key('<shift>') # sometimes i got hanging shift key
 
 
-    # hi world leider Formatierung hier zerstoehrt. Ich machs irgendwann online. online  2012/01   
- 
-    if False:  # 
-        # use the follwoing becouse of https://github.com/autokey/autokey/issues/405
-        keyboard.press_key("<ctrl>")
-        # keyboard.press_key("v")
-        keyboard.fake_keypress('v')
-        # keyboard.release_key("v") # 
-        keyboard.release_key("<ctrl>")
+    time.sleep(1)
 
-    # keyboard.press_key('<ctrl>')
-    # keyboard.fake_keypress('v')
-    # keyboard.release_key('<ctrl>')
-#     
-
-    # hi world
-    # hi worldhi world leider Formatierung hier zerstöhrt. Ich machs irgendwann online.
-
-    # https://stackoverflow.com/questions/11184300/autokey-clipboard-get-selection-function-fails-on-certain-strings
-    # use a clipboard function to paste the modified string back into your App.
-    # ö oe
-    # cNew.replace("ö", "oe")
 except:
     duration = 1  # second
     freq = 1500  # Hz
     os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
     time.sleep(0.1)
 
-#initialContenhi worldt hi world
-#initialContenhi worldt
-# initialContenhi worldt hi world   # 
-
 time.sleep(0.4)
-
-# keyboard.send_keys(cNew)
-
-# keyboard.fake_keypress('<left>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
-# keyboard.fake_keypress('<left>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
-
-#  
-
-# str = "\n# <AutoKey:active_title=" + active_title + ",active_class=" + active_class + ">"
-#    if active_title == "administrator^ Lintalist - 1.9.13" and active_class == "autohotkey.exe.Wine":
-# <AutoKey:active_title=administrator^ Lintalist - 1.9.13,active_class=autohotkey.exe.Wine>
 
 # the following f-keys commands are working:    
 # keyboard.fake_keypress('<f4>') # edit snippet
@@ -232,4 +215,3 @@ time.sleep(0.4)
 # keyboard.fake_keypress('<f7>') # new snippet
 # keyboard.fake_keypress('<f8>') # remove snippet
 # keyboard.fake_keypress('<f10>') # manage bundels
-
