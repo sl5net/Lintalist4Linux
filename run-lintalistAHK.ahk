@@ -17,7 +17,7 @@ CoordMode, Pixel, Screen
 
 ; BAföG ; testtesttest
 
-ClipboardFirst := Trim(Clipboard)
+ClipboardFirst := RTrim(LTrim(Clipboard, " `t:"))
 
 SendLevel, 99
 
