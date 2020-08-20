@@ -22,7 +22,9 @@ and edit texts in bundles and paste a selected text in your active program.<br>
 ... Lintalist is open source and developed in AutoHotkey ..."
 <br><br>
 
-Tested with LinuxMint Version 20now
+Tested with LinuxMint Version 20 
+ :now
+
 
 # installation (recommended):
 - LinuxMint (new versions) or maybe other Linux
@@ -91,3 +93,11 @@ https://www.youtube.com/watch?v=ApYBcKEq53A&list=PLWkx_y_OWhl1rYx79ungQIz8D7sqNS
 - thanks espanso for inspirations: https://espanso.org/install/linux/
 - https://element.io/
 - and much more
+
+
+##### Tipps for developer:
+
+if you use PyCharm as external Editor and AutoKey Editor you may do the following:
+
+"If you disable "Settings/Preferences | Appearance & Behavior | System Settings | Synchronization | Synchronize files on frame or editor tab activation" option ... IDE will show notification bar on top with "Reload" prompt (and possible other options -- depends on situation). But if you have it enabled .. it reloads file with no extra questions asked."
+ (Andriy Bazanov, https://intellij-support.jetbrains.com/hc/en-us/community/posts/360000395260-Auto-reload-file-changes?page=1#community_comment_360000080239 )
