@@ -15,9 +15,7 @@ CoordMode, Pixel, Screen
 ; /home/administrator/ahk/lintalist/lintalist.ahk
 
 
-; BAföG ; testtesttest
-
-ClipboardFirst := RTrim(LTrim(Clipboard, " `t:"))
+ClipboardFirst := RTrim(LTrim(Clipboard, " `n`t:"))
 
 SendLevel, 99
 
