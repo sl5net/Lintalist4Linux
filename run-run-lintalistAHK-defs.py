@@ -72,7 +72,7 @@ def beeps(duration=.1, freq=2000, loops=1):
 # <<<<<<<<<< read_keyword
 # <<<<<<<<<< read_keyword
 def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard):
-    global cOld, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
+    global doPopupNotify_howItWorks, cOld, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
     if doReplaceIfPrefixIsThis:
         # selct word and prefix e.g.  :test
         doSelctWordAndPrefix = True
@@ -123,8 +123,35 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # keyboard.send_keys("\n#1 first_class='%s'" % first_class)
     # 1 first_class='autokey-gtk.Autokey-gtkinitialContent'
 
+    # :asdsdf
+
+    popupNotify_howItWorks('get_clipboard')
+
+    doReplace = False
+    try:
+        cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+    except:
+        cOld = ""
+        beeps(duration=.1, freq=1500, loops=3)
+    if not cOld:
+        popupNotify_howItWorks("NOT cOld = " + cOld + " ==> exit()")
+        beeps(duration=.1, freq=1500, loops=1)
+        exit()
+    if not doReplaceIfPrefixIsThis:
+        popupNotify_howItWorks("NOT doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis + " ==> exit()")
+        beeps(duration=.1, freq=1500, loops=2)
+        exit()
+    if cOld[0:1] == doReplaceIfPrefixIsThis:  # :test :test
+        doReplace = True
+        popupNotify_howItWorks("found doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis)
+        if doPopupNotify_howItWorks:
+            beeps(duration=.2, freq=2000, loops=2)
+    else:
+        popupNotify_howItWorks("NOT found in keyword = >>" + cOld + "<<\n , doReplaceIfPrefixIsThis = >>" + doReplaceIfPrefixIsThis + "<<")
+
+
     # keyboard.release_key('<ctrl>')
-    popupNotify("run run-lintalistAHK.ahk")
+    popupNotify_howItWorks("run run-lintalistAHK.ahk")
     # beeps(duration=.25, freq=5000, loops=1)
     try:
         # subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
@@ -137,27 +164,10 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         # os.system(myCmd)
     except subprocess.CalledProcessError:
         time.sleep(0.2)
-    # cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-    doReplace = False
-    try:
-        cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-        if cOld[0:1] == doReplaceIfPrefixIsThis:  # :test :test
-            doReplace = True
-            if True:
-                duration = .2  # second
-                freq = 2000  # Hz
-                os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
-                os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
-            # first_chars = sample_str[0:3]
-            # quit()
 
-    except:
-        cOld = ""
-        duration = 0.1  # second
-        freq = 1500  # Hz
-        for x in range(3):
-            os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
-            time.sleep(0.1)
+
+    # :lo :Heide
+
     # :tes2016/01t Heide
     # 100 line
     # php2012/01 cello-technologie.de
@@ -173,7 +183,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # BREAK x is '101
     # time.sleep(2)
     # keyboard.send_keys('<ctrl>+v')
-    return (timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title)
+    return (doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title)
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
@@ -181,3 +191,5 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
+
+# :umm

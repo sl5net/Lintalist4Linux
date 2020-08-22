@@ -16,8 +16,7 @@ do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
 
 
 ####### dont change to following:
-cNew = ""
-
+cNew = cOld = ""
 
 # TODO s : delete or read a time in future:
 # https://exceptionshub.com/python-sound-alarm-when-code-finishes.html

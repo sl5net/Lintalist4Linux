@@ -17,8 +17,7 @@ do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
 
 
 ####### dont change to following:
-cNew = ""
-
+cNew = cOld = ""
 
 # TODO s : delete or read a time in future:
 # https://exceptionshub.com/python-sound-alarm-when-code-finishes.html
@@ -100,7 +99,7 @@ def beeps(duration=.1, freq=2000, loops=1):
 # <<<<<<<<<< read_keyword
 # <<<<<<<<<< read_keyword
 def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard):
-    global cOld, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
+    global doPopupNotify_howItWorks, cOld, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
     if doReplaceIfPrefixIsThis:
         # selct word and prefix e.g.  :test
         doSelctWordAndPrefix = True
@@ -151,8 +150,33 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # keyboard.send_keys("\n#1 first_class='%s'" % first_class)
     # 1 first_class='autokey-gtk.Autokey-gtkinitialContent'
 
+    popupNotify_howItWorks('get_clipboard')
+
+    doReplace = False
+    try:
+        cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+    except:
+        cOld = ""
+        beeps(duration=.1, freq=1500, loops=3)
+    if not cOld:
+        popupNotify_howItWorks("NOT cOld = " + cOld + " ==> exit()")
+        beeps(duration=.1, freq=1500, loops=1)
+        exit()
+    if not doReplaceIfPrefixIsThis:
+        popupNotify_howItWorks("NOT doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis + " ==> exit()")
+        beeps(duration=.1, freq=1500, loops=2)
+        exit()
+    if cOld[0:1] == doReplaceIfPrefixIsThis:  # :test :test
+        doReplace = True
+        popupNotify_howItWorks("found doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis)
+        if doPopupNotify_howItWorks:
+            beeps(duration=.2, freq=2000, loops=2)
+    else:
+        popupNotify_howItWorks("NOT found in keyword = >>" + cOld + "<<\n , doReplaceIfPrefixIsThis = >>" + doReplaceIfPrefixIsThis + "<<")
+
+
     # keyboard.release_key('<ctrl>')
-    popupNotify("run run-lintalistAHK.ahk")
+    popupNotify_howItWorks("run run-lintalistAHK.ahk")
     # beeps(duration=.25, freq=5000, loops=1)
     try:
         # subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
@@ -165,27 +189,10 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         # os.system(myCmd)
     except subprocess.CalledProcessError:
         time.sleep(0.2)
-    # cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-    doReplace = False
-    try:
-        cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-        if cOld[0:1] == doReplaceIfPrefixIsThis:  # :test :test
-            doReplace = True
-            if True:
-                duration = .2  # second
-                freq = 2000  # Hz
-                os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
-                os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
-            # first_chars = sample_str[0:3]
-            # quit()
 
-    except:
-        cOld = ""
-        duration = 0.1  # second
-        freq = 1500  # Hz
-        for x in range(3):
-            os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
-            time.sleep(0.1)
+
+    # :lo :Heide
+
     # :tes2016/01t Heide
     # 100 line
     # php2012/01 cello-technologie.de
@@ -201,7 +208,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # BREAK x is '101
     # time.sleep(2)
     # keyboard.send_keys('<ctrl>+v')
-    return (timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title)
+    return (doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title)
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
@@ -210,6 +217,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
 
+# :umm
 # this file will be (hopefully merged to) ...-all.py
 
 writeAllFile_from_main_defs(path)
@@ -222,18 +230,16 @@ if doBeepsWelcomeAtEachRun:
     beeps()  # beeps(duration=.8, freq=1500, loops=2)
 
 popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
-(timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
+(doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
 
 for x in range(0, 900):  # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
         popupNotify_howItWorks("BREAK at Loop %s because timeValueForBREAKLoopInSec > '%s'" % (str(x), str(timeValueForBREAKLoopInSec)))
         break
-    active_title = window.get_active_title()
-    if active_title == first_title:
+    if window.get_active_title() == first_title:
         popupNotify("active_title == first_title ==> we are back")
         break
     time.sleep(timeValueInLoopInSec)
-
 try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
 except:
@@ -242,27 +248,20 @@ if len(str(cNew)) < 1 or cNew == cOld:
     popupNotify_howItWorks("no new result ==> exit")
     exit()  # quit()
 
-popupNotify_howItWorks("result = " + cNew)
-
-# if len(cNew) > 0 AND cNew == cOld:
-if cNew == cOld:
-    quit()  # exit() # quit() asdffasdff asdffasdffasdffasdff  javajava
-    # try:
-
-    # cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-
-    # time.sleep(0.4) 
-    # keyboard.fake_keypress('<control>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
-
-    # keyboard.release_key('<ctrl>')
-
 if doReplace:  # :test  :test  :test  :test  :test
+
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
-    if True:
-        beeps(duration=.8, freq=7000, loops=1)
+    popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
+    beeps(duration=.8, freq=1500, loops=2)
     quit()
 
-# keyboard.send_keys('<right><left>') #  deselect  :test MONDSdd
+if doPopupNotify_howItWorks:
+    popupNotify_howItWorks("result = " + cNew)
+    beeps(duration=.8, freq=1500, loops=5)
+
+popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + cOld )
+
+# keyboard.send_keys('<right><left>') #  deselect  :uff
 
 if do_ifNoPrefix_useFocusedWord_pasteResultRight:
     keyboard.send_keys('<right>')  # <right>

@@ -10,18 +10,16 @@ if doBeepsWelcomeAtEachRun:
     beeps()  # beeps(duration=.8, freq=1500, loops=2)
 
 popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
-(timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
+(doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
 
 for x in range(0, 900):  # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
         popupNotify_howItWorks("BREAK at Loop %s because timeValueForBREAKLoopInSec > '%s'" % (str(x), str(timeValueForBREAKLoopInSec)))
         break
-    active_title = window.get_active_title()
-    if active_title == first_title:
+    if window.get_active_title() == first_title:
         popupNotify("active_title == first_title ==> we are back")
         break
     time.sleep(timeValueInLoopInSec)
-
 try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
 except:
@@ -30,16 +28,20 @@ if len(str(cNew)) < 1 or cNew == cOld:
     popupNotify_howItWorks("no new result ==> exit")
     exit()  # quit()
 
-popupNotify_howItWorks("result = " + cNew)
-
 if doReplace:  # :test  :test  :test  :test  :test
-    popupNotify_howItWorks("doReplace")
+
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
-    if True:
-        beeps(duration=.8, freq=7000, loops=1)
+    popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
+    beeps(duration=.8, freq=1500, loops=2)
     quit()
 
-# keyboard.send_keys('<right><left>') #  deselect  :test MONDSdd
+if doPopupNotify_howItWorks:
+    popupNotify_howItWorks("result = " + cNew)
+    beeps(duration=.8, freq=1500, loops=5)
+
+popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + cOld )
+
+# keyboard.send_keys('<right><left>') #  deselect  :uff
 
 if do_ifNoPrefix_useFocusedWord_pasteResultRight:
     keyboard.send_keys('<right>')  # <right>
