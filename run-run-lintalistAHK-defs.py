@@ -123,7 +123,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # keyboard.send_keys("\n#1 first_class='%s'" % first_class)
     # 1 first_class='autokey-gtk.Autokey-gtkinitialContent'
 
-    # :asdsdf
+    # 20-08-22 15:59:31
 
     popupNotify_howItWorks('get_clipboard')
 
@@ -132,20 +132,21 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
     except:
         cOld = ""
-        beeps(duration=.1, freq=1500, loops=3)
+        beeps(duration=.1, freq=2000, loops=1)
+        popupNotify_howItWorks("get_clipboard except :-O" )
     if not cOld:
         popupNotify_howItWorks("NOT cOld = " + cOld + " ==> exit()")
-        beeps(duration=.1, freq=1500, loops=1)
+        beeps(duration=.1, freq=2000, loops=2)
         exit()
     if not doReplaceIfPrefixIsThis:
         popupNotify_howItWorks("NOT doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis + " ==> exit()")
-        beeps(duration=.1, freq=1500, loops=2)
+        beeps(duration=.1, freq=2000, loops=3)
         exit()
     if cOld[0:1] == doReplaceIfPrefixIsThis:  # :test :test
         doReplace = True
         popupNotify_howItWorks("found doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis)
-        if doPopupNotify_howItWorks:
-            beeps(duration=.2, freq=2000, loops=2)
+        # if doPopupNotify_howItWorks:
+        #     beeps(duration=.2, freq=1000, loops=2)
     else:
         popupNotify_howItWorks("NOT found in keyword = >>" + cOld + "<<\n , doReplaceIfPrefixIsThis = >>" + doReplaceIfPrefixIsThis + "<<")
 
