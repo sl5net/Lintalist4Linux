@@ -22,15 +22,18 @@ def writeAllFile_from_main_defs():
     data = "# Attention: !!! don`t edit thi file. this file will be result from other files merged.\n"
 
     getmtimeDefs = os.path.getmtime(path + 'run-run-lintalistAHK-defs.py')
+    getmtimeConfig = os.path.getmtime(path + 'run-run-lintalistAHK-config.py')
     getmtimeMain = os.path.getmtime(path + 'run-run-lintalistAHK-main.py')
     getmtimeAll = os.path.getmtime(path + 'run-run-lintalistAHK-all.py')
 
-    if getmtimeAll < getmtimeDefs or getmtimeAll < getmtimeMain:
+    if getmtimeAll < getmtimeDefs or getmtimeAll < getmtimeConfig or getmtimeAll < getmtimeMain:
         subprocess.Popen(['notify-send', ' need update'])  # will be showed right top
         # Reading data from file1
         with open(path + 'run-run-lintalistAHK-defs.py') as fp:
             data += fp.read()
         # Reading data from file2
+        with open(path + 'run-run-lintalistAHK-config.py') as fp:
+            data += "\n" + fp.read()
         with open(path + 'run-run-lintalistAHK-main.py') as fp:
             data += "\n" + fp.read()
         with open(path + 'run-run-lintalistAHK-all.py', 'w') as fp:

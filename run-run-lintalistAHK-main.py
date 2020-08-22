@@ -3,21 +3,13 @@
 subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 # copy file https://stackoverflow.com/a/123212/2891692
 # demonstrate merging of two files
-path = "/home/administrator/.config/autokey/data/Sample Scripts/"
 
 writeAllFile_from_main_defs()
 subprocess.Popen(['notify-send', path + 'run-run-lintalistAHK-all.py'])  # will be showed right top
 
-beeps(duration=.8, freq=1500, loops=2)
+if doBeepsWelcomeAtEachRun:
+    beeps(duration=.8, freq=1500, loops=2)
 
-# <<<<<<<<<< config begin
-# doSelectWord
-# doCopyWord2clipboard = True
-
-doReplaceIfPrefixIsThis = ":"
-do_ifNoPrefix_useFocusedWord_pasteResultRight = True
-do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
-# >>>>>>>>>> config end
 (timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
 # quit()
 
