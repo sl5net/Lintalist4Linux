@@ -230,6 +230,10 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 
 writeAllFile_from_main_defs(path)
 
+if doPopupNotify_howItWorks:
+    popupNotify_howItWorks("doPopupNotify_howItWorks is set TRUE\n in the config file. Great :)")
+
+
 if doPopupNotify_welcomeAtEachRun:
     popupNotify("doPopupNotify_welcomeAtEachRun")
     pass
@@ -237,7 +241,9 @@ if doBeepsWelcomeAtEachRun:
     popupNotify("doBeepsWelcomeAtEachRun")
     beeps()  # beeps(duration=.8, freq=1500, loops=2)
 
-popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
+
+
+# popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
 (doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
 
 for x in range(0, 900):  # default is 25
@@ -264,7 +270,8 @@ if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
 
 if doPopupNotify_howItWorks:
     popupNotify_howItWorks("result = " + cNew)
-    # beeps(duration=.8, freq=1500, loops=5)
+    # beeps(duration=.8, freq=1500, loop
+    # loopss=5)
 
 popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + cOld )
 

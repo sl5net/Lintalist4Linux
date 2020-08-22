@@ -2,6 +2,10 @@
 
 writeAllFile_from_main_defs(path)
 
+if doPopupNotify_howItWorks:
+    popupNotify_howItWorks("doPopupNotify_howItWorks is set TRUE\n in the config file. Great :)")
+
+
 if doPopupNotify_welcomeAtEachRun:
     popupNotify("doPopupNotify_welcomeAtEachRun")
     pass
@@ -9,7 +13,9 @@ if doBeepsWelcomeAtEachRun:
     popupNotify("doBeepsWelcomeAtEachRun")
     beeps()  # beeps(duration=.8, freq=1500, loops=2)
 
-popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
+
+
+# popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
 (doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
 
 for x in range(0, 900):  # default is 25

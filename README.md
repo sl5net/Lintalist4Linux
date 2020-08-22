@@ -30,8 +30,8 @@ not tested with Windows (probably work ?)
 # installation (recommended):
 - LinuxMint (new versions) or maybe other Linux
 - wine (may use your Software Manager)
-- Winetricks (maybe not needet) (may use your Software Manager or read here: https://wiki.winehq.org/Winetricks#Installing_winetricks)
-- AutoKey (may use your Software Manager or read here: https://github.com/autokey/autokey#installation )
+- Winetricks (maybe not needet) (may use your Software Manager or https://wiki.winehq.org/Winetricks#Installing_winetricks)
+- AutoKey (may use your Software Manager or https://github.com/autokey/autokey#installation )
 - AutoHotKey ( https://www.autohotkey.com/ or https://github.com/Lexikos/AutoHotkey_L )
 - Lintalist ( https://lintalist.github.io/ )
 
