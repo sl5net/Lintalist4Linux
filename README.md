@@ -32,7 +32,7 @@ not tested with Windows (probably work ?)
 - wine (may use your Software Manager)
 - Winetricks (maybe not needet) (may use your Software Manager or read here: https://wiki.winehq.org/Winetricks#Installing_winetricks)
 - AutoKey (may use your Software Manager or read here: https://github.com/autokey/autokey#installation )
-- AutoHotKey ( https://www.autohotkey.com/ )
+- AutoHotKey ( https://www.autohotkey.com/ or https://github.com/Lexikos/AutoHotkey_L )
 - Lintalist ( https://lintalist.github.io/ )
 
 ### copy files and configuration:
