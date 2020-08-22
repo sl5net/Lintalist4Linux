@@ -39,7 +39,7 @@ run-run-run-lintalistAHK *** .py<br>
 scripts to 
 <br>/home/ YOU /.config/autokey/data/Sample Scripts/
 1. open AutoKey App
-1. click run-run-run-lintalistAHK-all.py<br> and set shortcut
+1. click run-run-lintalistAHK-all.py<br> and set shortcut
 
 # recommended Preferences:
 
