@@ -34,10 +34,12 @@ Tested with LinuxMint Version 20
 - AutoHotKey
 - Lintalist
 
-copy <br>
-run-run-run-lintalistAHK.py 
-to <br>
-/home/ YOU /.config/autokey/data/Sample Scripts/
+1. copy <br>
+run-run-run-lintalistAHK *** .py<br>
+scripts to 
+<br>/home/ YOU /.config/autokey/data/Sample Scripts/
+1. open AutoKey App
+1. click run-run-run-lintalistAHK-all.py<br> and set shortcut
 
 # recommended Preferences:
 
@@ -105,9 +107,10 @@ if you use PyCharm as external Editor and AutoKey Editor you may do the followin
  As developer i use (as workaround) to link AutoKey .py files together too an bigger file.
  Please read first comments inside the files.
  
- TODO/Off-topic:
+  TODO/Off-topic:
  As developer i use (as workaround) kotlinC as Linker .py files together zu an bigger file:
  I used for installation SDKMAN!. Details here:
  `$ curl -s https://get.sdkman.io | bash`
  new terminal:
  `$ sdk install kotlin`
+ 
