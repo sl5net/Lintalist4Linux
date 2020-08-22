@@ -120,3 +120,15 @@ if you use PyCharm as external Editor and AutoKey Editor you may do the followin
  `$ curl -s https://get.sdkman.io | bash`
  new terminal:
  `$ sdk install kotlin`
+
+
+##### Tips for user don't want use github now:
+
+You could download without account or login: 
+
+Latest:
+- https://github.com/sl5net/Lintalist4Linux/archive/master.zip
+
+Specific Version:
+- https://github.com/sl5net/Lintalist4Linux/archive/0.95.zip
+- https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz

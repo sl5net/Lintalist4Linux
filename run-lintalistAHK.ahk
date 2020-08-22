@@ -91,7 +91,7 @@ else
 
 }
 
-Send,{ShiftUp}
+Send,{ShiftUp} ; sometimes it was hanging
 
 ; Msgbox,Ok  MsgboxMsgboxMsgboxMsgbox  MsgboxMsgboxMsgboxMsgbox box  box     MsgboxMsgboxMsgboxMsgbox
 
