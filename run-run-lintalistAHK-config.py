@@ -8,3 +8,6 @@ doBeepsWelcomeAtEachRun = False
 doReplaceIfPrefixIsThis = ":"
 do_ifNoPrefix_useFocusedWord_pasteResultRight = True
 do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
+
+#__________________ end of config
+

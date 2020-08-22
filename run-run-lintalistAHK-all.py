@@ -17,21 +17,23 @@ import os, time, datetime, pathlib, subprocess
 #>>>>>>>>>>>>
 
 
-def writeAllFile_from_main_defs():
-    path = "/home/administrator/.config/autokey/data/Sample Scripts/"
+def writeAllFile_from_main_defs(path):
+    # path = "/home/administrator/.config/autokey/data/Sample Scripts/"
     # global data
-    data = "# Attention: !!! don`t edit thi file. this file will be result from other files merged.\n"
+    data = "# Attention: !!! don`t edit thi file. this file will be result from other files merged."
 
+    getmtimeConfig = os.path.getmtime(path + 'run-run-lintalistAHK-config.py')
     getmtimeDefs = os.path.getmtime(path + 'run-run-lintalistAHK-defs.py')
     getmtimeMain = os.path.getmtime(path + 'run-run-lintalistAHK-main.py')
     getmtimeAll = os.path.getmtime(path + 'run-run-lintalistAHK-all.py')
 
-    if getmtimeAll < getmtimeDefs or getmtimeAll < getmtimeMain:
+    if getmtimeAll < getmtimeDefs or getmtimeAll < getmtimeConfig or getmtimeAll < getmtimeMain:
         subprocess.Popen(['notify-send', ' need update'])  # will be showed right top
         # Reading data from file1
+        with open(path + 'run-run-lintalistAHK-config.py') as fp:
+            data += "\n" + fp.read()
         with open(path + 'run-run-lintalistAHK-defs.py') as fp:
-            data += fp.read()
-        # Reading data from file2
+            data += "\n" + fp.read()
         with open(path + 'run-run-lintalistAHK-main.py') as fp:
             data += "\n" + fp.read()
         with open(path + 'run-run-lintalistAHK-all.py', 'w') as fp:
@@ -180,24 +182,30 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 
 # this file will be (hopefully merged to) ...-all.py
 
-subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
-# copy file https://stackoverflow.com/a/123212/2891692
-# demonstrate merging of two files
 path = "/home/administrator/.config/autokey/data/Sample Scripts/"
 
-writeAllFile_from_main_defs()
-subprocess.Popen(['notify-send', path + 'run-run-lintalistAHK-all.py'])  # will be showed right top
-
-beeps(duration=.8, freq=1500, loops=2)
-
-# <<<<<<<<<< config begin
-# doSelectWord
-# doCopyWord2clipboard = True
+doBeepsWelcomeAtEachRun = False
+# subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 
 doReplaceIfPrefixIsThis = ":"
 do_ifNoPrefix_useFocusedWord_pasteResultRight = True
 do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
-# >>>>>>>>>> config end
+
+#__________________ end of config
+
+
+# this file will be (hopefully merged to) ...-all.py
+
+subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
+# copy file https://stackoverflow.com/a/123212/2891692
+# demonstrate merging of two files
+
+writeAllFile_from_main_defs(path)
+subprocess.Popen(['notify-send', path + 'run-run-lintalistAHK-all.py'])  # will be showed right top
+
+if doBeepsWelcomeAtEachRun:
+    beeps(duration=.8, freq=1500, loops=2)
+
 (timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
 # quit()
 

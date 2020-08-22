@@ -4,7 +4,7 @@ subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed 
 # copy file https://stackoverflow.com/a/123212/2891692
 # demonstrate merging of two files
 
-writeAllFile_from_main_defs()
+writeAllFile_from_main_defs(path)
 subprocess.Popen(['notify-send', path + 'run-run-lintalistAHK-all.py'])  # will be showed right top
 
 if doBeepsWelcomeAtEachRun:
