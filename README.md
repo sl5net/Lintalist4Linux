@@ -14,7 +14,7 @@ Lintalist4Linux
     1. adds new line behind your word
         1. for example `now` adds the result into a new line. for e.g. 20.08.2020 16:48:24 and selects this line 
 1. If you want many Results for one keyword the Lintalist-Menu ⇶ is opening before (see more in Lintalist-Configuration about AutoExecuteOnce)
-3. Also you have the result in your clipboard.
+1. Also you have the result in your clipboard.
 
 https://lintalist.github.io/ says (10.08.2020):
 "Lintalist allows you to store and (incrementally) search <br>
