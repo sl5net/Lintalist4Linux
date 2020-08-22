@@ -25,6 +25,9 @@ def popupNotify_howItWorks(text):
         subprocess.Popen(['notify-send', text])  # will be showed right top
 
 def writeAllFile_from_main_defs(path):
+    global do_DisableUpdatingThe_all_file
+    if do_DisableUpdatingThe_all_file:
+        return
     # path = "/home/administrator/.config/autokey/data/Sample Scripts/"
     # global data
     data = "# Attention: !!! don`t edit thi file. this file will be result from other files merged."

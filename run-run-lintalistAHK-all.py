@@ -13,6 +13,8 @@ doReplaceIfPrefixIsThis = ":"
 do_ifNoPrefix_useFocusedWord_pasteResultRight = True
 do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
 
+do_DisableUpdatingThe_all_file = False  # not recommended if you developing at this py files !
+
 #__________________ end of config
 
 
@@ -52,6 +54,9 @@ def popupNotify_howItWorks(text):
         subprocess.Popen(['notify-send', text])  # will be showed right top
 
 def writeAllFile_from_main_defs(path):
+    global do_DisableUpdatingThe_all_file
+    if do_DisableUpdatingThe_all_file:
+        return
     # path = "/home/administrator/.config/autokey/data/Sample Scripts/"
     # global data
     data = "# Attention: !!! don`t edit thi file. this file will be result from other files merged."
@@ -251,7 +256,7 @@ if len(str(cNew)) < 1 or cNew == cOld:
     popupNotify_howItWorks("no new result ==> exit")
     exit()  # quit()
 
-if doReplace:  # :test  :test  :test  :test  :test :now
+if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
     popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
     # beeps(duration=.8, freq=1500, loops=2)
@@ -259,7 +264,7 @@ if doReplace:  # :test  :test  :test  :test  :test :now
 
 if doPopupNotify_howItWorks:
     popupNotify_howItWorks("result = " + cNew)
-    beeps(duration=.8, freq=1500, loops=5)
+    # beeps(duration=.8, freq=1500, loops=5)
 
 popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + cOld )
 

@@ -36,7 +36,8 @@ if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
 
 if doPopupNotify_howItWorks:
     popupNotify_howItWorks("result = " + cNew)
-    beeps(duration=.8, freq=1500, loops=5)
+    # beeps(duration=.8, freq=1500, loop
+    # loopss=5)
 
 popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + cOld )
 

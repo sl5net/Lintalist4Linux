@@ -12,6 +12,8 @@ doReplaceIfPrefixIsThis = ":"
 do_ifNoPrefix_useFocusedWord_pasteResultRight = True
 do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
 
+do_DisableUpdatingThe_all_file = False  # not recommended if you developing at this py files !
+
 #__________________ end of config
 
 
