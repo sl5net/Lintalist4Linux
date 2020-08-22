@@ -101,3 +101,9 @@ if you use PyCharm as external Editor and AutoKey Editor you may do the followin
 
 "If you disable "Settings/Preferences | Appearance & Behavior | System Settings | Synchronization | Synchronize files on frame or editor tab activation" option ... IDE will show notification bar on top with "Reload" prompt (and possible other options -- depends on situation). But if you have it enabled .. it reloads file with no extra questions asked."
  (Andriy Bazanov, https://intellij-support.jetbrains.com/hc/en-us/community/posts/360000395260-Auto-reload-file-changes?page=1#community_comment_360000080239 )
+ 
+ As developer i use (as workaround) kotlinC as Linker .py files together zu an bigger file:
+ I used for installation SDKMAN!. Details here:
+ `$ curl -s https://get.sdkman.io | bash`
+ new terminal:
+ `$ sdk install kotlin`

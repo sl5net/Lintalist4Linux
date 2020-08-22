@@ -22,6 +22,8 @@ cOld = ""
 # line 20 Heide kjkjhkjh 5
 # kjhlkjhvv
 
+
+
 if do_ifNoPrefix_useFocusedWord_pasteResultRight:
     # unselct maybe selected word word
     keyboard.send_keys('<left><right>')
