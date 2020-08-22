@@ -1,5 +1,14 @@
 # this file will be (hopefully merged to) ...-all.py
 
+# the following f-keys commands are working:
+# keyboard.fake_keypress('<f4>') # edit snippet
+# keyboard.fake_keypress('<f5>') # copy snippet
+# keyboard.fake_keypress('<f5>') # move snippet
+# keyboard.fake_keypress('<f7>') # new snippet
+# keyboard.fake_keypress('<f8>') # remove snippet
+# keyboard.fake_keypress('<f10>') # manage bundels
+
+
 import os, time, datetime, pathlib, subprocess
 
 #<<<<<<<<<<<<

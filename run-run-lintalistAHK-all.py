@@ -1,6 +1,15 @@
 # Attention: !!! don`t edit thi file. this file will be result from other files merged.
 # this file will be (hopefully merged to) ...-all.py
 
+# the following f-keys commands are working:
+# keyboard.fake_keypress('<f4>') # edit snippet
+# keyboard.fake_keypress('<f5>') # copy snippet
+# keyboard.fake_keypress('<f5>') # move snippet
+# keyboard.fake_keypress('<f7>') # new snippet
+# keyboard.fake_keypress('<f8>') # remove snippet
+# keyboard.fake_keypress('<f10>') # manage bundels
+
+
 import os, time, datetime, pathlib, subprocess
 
 #<<<<<<<<<<<<
@@ -189,13 +198,8 @@ doReplaceIfPrefixIsThis = ":"
 do_ifNoPrefix_useFocusedWord_pasteResultRight = True
 do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
 # >>>>>>>>>> config end
-
-
 (timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
-
-
-quit()
-
+# quit()
 
 for x in range(0, 900):  # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
@@ -211,24 +215,16 @@ for x in range(0, 900):  # default is 25
     if active_title == first_title:
         #  keyboard.fake_keypress('<left>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
         if False:
-            duration = 0.4  # second
-            freq = 3000  # Hz
-            os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
+            beeps(duration=.4, freq=3000, loops=1)
         break
-
     time.sleep(timeValueInLoopInSec)
-
 cNew = ""
-
 try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
     if len(str(cNew)) < 1 and cNew != cOld:
         exit()  # quit()
 except:
     time.sleep(0.1)
-
-### 150 line
-
 cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
 
 # if True:
@@ -236,7 +232,6 @@ cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autok
 #        cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
 #    except:
 #        cNew = "" 
-# lllasdfsdfl welt
 
 # if len(cNew) > 0 AND cNew == cOld:
 if cNew == cOld:
@@ -253,18 +248,10 @@ if cNew == cOld:
 if doReplace:  # :test  :test  :test  :test  :test
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
     if True:
-        duration = .8  # second
-        freq = 7000  # Hz
-        os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
+        beeps(duration=.8, freq=7000, loops=1)
     quit()
 
 # keyboard.send_keys('<right><left>') #  deselect  :test MONDSdd
-
-if False:
-    duration = .8  # second
-    freq = 1500  # Hz
-    for x in range(2):
-        os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
 
 if do_ifNoPrefix_useFocusedWord_pasteResultRight:
     keyboard.send_keys('<right>')  # <right>
@@ -292,19 +279,3 @@ keyboard.release_key('<shift>')  # sometimes i got hanging shift key
 
 time.sleep(1)
 
-if False:  # except:
-    duration = 0.1  # second
-    freq = 1500  # Hz
-    for x in range(4):
-        os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
-        time.sleep(0.1)
-
-time.sleep(0.4)
-
-# the following f-keys commands are working:    
-# keyboard.fake_keypress('<f4>') # edit snippet
-# keyboard.fake_keypress('<f5>') # copy snippet
-# keyboard.fake_keypress('<f5>') # move snippet
-# keyboard.fake_keypress('<f7>') # new snippet
-# keyboard.fake_keypress('<f8>') # remove snippet
-# keyboard.fake_keypress('<f10>') # manage bundels
