@@ -5,14 +5,14 @@ Linux and Windows -platform Text Replacer/Adder/Scripter written in AutoKey/Phyt
 ## How it works
 
 Lintalist4Linux
- 
+
 1. waits for shortcut (recommended Ctrl+K or simple F12)
 1. reads your word as keyword (for example `:date` , `:now` or `now` or `address` etc.)
     1. replace your word
-        1. for example `:date` and replaces it with 20.08.2020 
-        1. for example `:now` and replaces it with 20.08.2020 16:48:24 
+        1. for example `:date` and replaces it with 20.08.2020
+        1. for example `:now` and replaces it with 20.08.2020 16:48:24
     1. adds new line behind your word
-        1. for example `now` adds the result into a new line. for e.g. 20.08.2020 16:48:24 and selects this line 
+        1. for example `now` adds the result into a new line. for e.g. 20.08.2020 16:48:24 and selects this line
 1. If you want many Results for one keyword the Lintalist-Menu ⇶ is opening before (see more in Lintalist-Configuration about AutoExecuteOnce)
 1. Also you have the result in your clipboard.
 
@@ -21,10 +21,10 @@ https://lintalist.github.io/ says (10.08.2020):
 and edit texts in bundles and paste a selected text in your active program.<br>
 ... Lintalist is open source and developed in AutoHotkey ..."
 <br><br>
+if you want see how it works while it works open the config file and set:
+`doPopupNotify_howItWorks = True`
 
-Tested with LinuxMint Version 20 
- :now
-
+Tested with LinuxMint Version 20
 
 # installation (recommended):
 - LinuxMint (new versions) or maybe other Linux
@@ -36,18 +36,18 @@ Tested with LinuxMint Version 20
 
 1. copy <br>
 run-run-run-lintalistAHK *** .py<br>
-scripts to 
+scripts to
 <br>/home/ YOU /.config/autokey/data/Sample Scripts/
 1. open AutoKey App
 1. click run-run-lintalistAHK-all.py<br> and set shortcut
 
 # recommended Preferences:
 
-edit one line of each file (so they find your scripts) 
+edit one line of each file (so they find your scripts)
 
 ## Autokey - Preferences:
 - enable: Automatically start Autokey at login
-- Set a Hotkey in that py-File 
+- Set a Hotkey in that py-File
 
 ## Lintalist - Settings:
 - QuickSearchHotkey: F1 (needed reflected inside run-lintalistAHK.ahk)<br>
@@ -66,8 +66,8 @@ FormatTime, timestampyyMMddHHmmss , %A_now%,yyMMddHHmmss
 FormatTime, timestampyyMMddHHmmssPretty, %A_now%,yy:MM:dd HH:mm:ss
 clipboard := timestampyyMMddHHmmssPretty
 </pre>
-    
-- AutoExecuteOnce: 2 
+
+- AutoExecuteOnce: 2
 <pre>
 Default: 0
 If only one result is left during the search AutoExecute (no need to press enter)
@@ -88,7 +88,7 @@ https://www.youtube.com/watch?v=ApYBcKEq53A&list=PLWkx_y_OWhl1rYx79ungQIz8D7sqNS
 
 ## Thank you too:
 
-- Linux, and all the people there 
+- Linux, and all the people there
 - https://wiki.winehq.org/Winetricks
 - autohotkey, and all the people there
 - https://lintalist.github.io/ , and all the people there
@@ -106,11 +106,10 @@ if you use PyCharm as external Editor and AutoKey Editor you may do the followin
 
  As developer i use (as workaround) to link AutoKey .py files together too an bigger file.
  Please read first comments inside the files.
- 
+
   TODO/Off-topic:
  As developer i use (as workaround) kotlinC as Linker .py files together zu an bigger file:
  I used for installation SDKMAN!. Details here:
  `$ curl -s https://get.sdkman.io | bash`
  new terminal:
  `$ sdk install kotlin`
- 

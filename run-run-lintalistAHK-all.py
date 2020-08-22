@@ -1,6 +1,33 @@
 # Attention: !!! don`t edit thi file. this file will be result from other files merged.
 # this file will be (hopefully merged to) ...-all.py
 
+
+path = "/home/administrator/.config/autokey/data/Sample Scripts/"
+
+doBeepsWelcomeAtEachRun = False
+doPopupNotify_welcomeAtEachRun = False  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
+doPopupNotify_howItWorks = True  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
+# subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
+
+doReplaceIfPrefixIsThis = ":"
+do_ifNoPrefix_useFocusedWord_pasteResultRight = True
+do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
+
+#__________________ end of config
+
+
+####### dont change to following:
+cNew = ""
+
+
+# TODO s : delete or read a time in future:
+# https://exceptionshub.com/python-sound-alarm-when-code-finishes.html
+# On Debian/Ubuntu/LinuxMint you need to run in your terminal: # sudo apt install sox
+
+
+
+# this file will be (hopefully merged to) ...-all.py
+
 # the following f-keys commands are working:
 # keyboard.fake_keypress('<f4>') # edit snippet
 # keyboard.fake_keypress('<f5>') # copy snippet
@@ -16,6 +43,14 @@ import os, time, datetime, pathlib, subprocess
 # Todo: do this: https://github.com/autokey/autokey/issues/248
 #>>>>>>>>>>>>
 
+
+def popupNotify(text):
+    subprocess.Popen(['notify-send', text])  # will be showed right top
+
+def popupNotify_howItWorks(text):
+    global doPopupNotify_howItWorks
+    if doPopupNotify_howItWorks:
+        subprocess.Popen(['notify-send', text])  # will be showed right top
 
 def writeAllFile_from_main_defs(path):
     # path = "/home/administrator/.config/autokey/data/Sample Scripts/"
@@ -48,8 +83,7 @@ def writeAllFile_from_main_defs(path):
 
 
 #################
-
-def beeps(duration, freq, loops):
+def beeps(duration=.1, freq=2000, loops=1):
     # duration = .8  # second
     # freq = 1500  # Hz
     for x in range(loops):
@@ -116,18 +150,14 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # first_class = window.get_active_class()
     # keyboard.send_keys("\n#1 first_class='%s'" % first_class)
     # 1 first_class='autokey-gtk.Autokey-gtkinitialContent'
-    # https://exceptionshub.com/python-sound-alarm-when-code-finishes.html
-    # On Debian/Ubuntu/LinuxMint you need to run in your terminal:
-    # sudo apt install sox
-    duration = 0.25  # seconhi worldhi worldd ###hi worldhi worldhi world
-    freq = 5000  # Hz
-    os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
-    # 50 line
-    # keyboard.release_key('<f1>') # mayby problems ?
+
     # keyboard.release_key('<ctrl>')
+    popupNotify("run run-lintalistAHK.ahk")
+    # beeps(duration=.25, freq=5000, loops=1)
     try:
         # subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
         # import os
+
         myCmd = 'wine ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
         os.system(myCmd)
 
@@ -182,64 +212,37 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 
 # this file will be (hopefully merged to) ...-all.py
 
-path = "/home/administrator/.config/autokey/data/Sample Scripts/"
-
-doBeepsWelcomeAtEachRun = False
-# subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
-
-doReplaceIfPrefixIsThis = ":"
-do_ifNoPrefix_useFocusedWord_pasteResultRight = True
-do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
-
-#__________________ end of config
-
-
-# this file will be (hopefully merged to) ...-all.py
-
-subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
-# copy file https://stackoverflow.com/a/123212/2891692
-# demonstrate merging of two files
-
 writeAllFile_from_main_defs(path)
-subprocess.Popen(['notify-send', path + 'run-run-lintalistAHK-all.py'])  # will be showed right top
 
+if doPopupNotify_welcomeAtEachRun:
+    popupNotify("doPopupNotify_welcomeAtEachRun")
+    pass
 if doBeepsWelcomeAtEachRun:
-    beeps(duration=.8, freq=1500, loops=2)
+    popupNotify("doBeepsWelcomeAtEachRun")
+    beeps()  # beeps(duration=.8, freq=1500, loops=2)
 
+popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
 (timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
-# quit()
 
 for x in range(0, 900):  # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
-        # keyboard.send_keys("BREAK at Loop %s because timeValueForBREAKLoopInSec > '%s'" % (str(x), str(timeValueForBREAKLoopInSec)))
-        # ^- too check the last x value if interested in
+        popupNotify_howItWorks("BREAK at Loop %s because timeValueForBREAKLoopInSec > '%s'" % (str(x), str(timeValueForBREAKLoopInSec)))
         break
-
     active_title = window.get_active_title()
-    # active_class = window.get_active_class()
-
-    # if active_title == first_title and active_class == first_class:
-    # if active_class == first_class:
     if active_title == first_title:
-        #  keyboard.fake_keypress('<left>') # posibility to show script is working. https://code.google.com/archive/p/autokey/wikis/SpecialKeys.wiki
-        if False:
-            beeps(duration=.4, freq=3000, loops=1)
+        popupNotify("active_title == first_title ==> we are back")
         break
     time.sleep(timeValueInLoopInSec)
-cNew = ""
+
 try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-    if len(str(cNew)) < 1 and cNew != cOld:
-        exit()  # quit()
 except:
     time.sleep(0.1)
-cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+if len(str(cNew)) < 1 or cNew == cOld:
+    popupNotify_howItWorks("no new result ==> exit")
+    exit()  # quit()
 
-# if True:
-#     try:
-#        cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-#    except:
-#        cNew = "" 
+popupNotify_howItWorks("result = " + cNew)
 
 # if len(cNew) > 0 AND cNew == cOld:
 if cNew == cOld:

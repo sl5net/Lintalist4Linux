@@ -16,6 +16,14 @@ import os, time, datetime, pathlib, subprocess
 #>>>>>>>>>>>>
 
 
+def popupNotify(text):
+    subprocess.Popen(['notify-send', text])  # will be showed right top
+
+def popupNotify_howItWorks(text):
+    global doPopupNotify_howItWorks
+    if doPopupNotify_howItWorks:
+        subprocess.Popen(['notify-send', text])  # will be showed right top
+
 def writeAllFile_from_main_defs(path):
     # path = "/home/administrator/.config/autokey/data/Sample Scripts/"
     # global data
@@ -47,8 +55,7 @@ def writeAllFile_from_main_defs(path):
 
 
 #################
-
-def beeps(duration, freq, loops):
+def beeps(duration=.1, freq=2000, loops=1):
     # duration = .8  # second
     # freq = 1500  # Hz
     for x in range(loops):
@@ -115,18 +122,14 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # first_class = window.get_active_class()
     # keyboard.send_keys("\n#1 first_class='%s'" % first_class)
     # 1 first_class='autokey-gtk.Autokey-gtkinitialContent'
-    # https://exceptionshub.com/python-sound-alarm-when-code-finishes.html
-    # On Debian/Ubuntu/LinuxMint you need to run in your terminal:
-    # sudo apt install sox
-    duration = 0.25  # seconhi worldhi worldd ###hi worldhi worldhi world
-    freq = 5000  # Hz
-    os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
-    # 50 line
-    # keyboard.release_key('<f1>') # mayby problems ?
+
     # keyboard.release_key('<ctrl>')
+    popupNotify("run run-lintalistAHK.ahk")
+    # beeps(duration=.25, freq=5000, loops=1)
     try:
         # subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
         # import os
+
         myCmd = 'wine ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
         os.system(myCmd)
 
