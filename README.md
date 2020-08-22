@@ -25,6 +25,7 @@ if you want see how it works while it works open the config file and set:
 `doPopupNotify_howItWorks = True`
 
 Tested with LinuxMint Version 20
+not tested with Windows (probably work ?)
 
 # installation (recommended):
 - LinuxMint (new versions) or maybe other Linux
