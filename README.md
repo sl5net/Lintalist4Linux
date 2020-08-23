@@ -1,18 +1,18 @@
 # Lintalist4Linux
 
-Linux and Windows -platform Text Replacer/Adder/Scripter written in AutoKey/Phyton and AutoHotKey with the Help from Lintalist  
+Linux and Windows -platform **Text Replacer/Adder/Scripter** written in AutoKey/Phyton and AutoHotKey with the Help from Lintalist  
 
 ## How it works
 
 Lintalist4Linux
 
-1. waits for shortcut (recommended `Ctrl`+`K` or simple `F12`)
+1. waits for shortcut (please configure. recommended `Ctrl`+`K` or simple `F12`)
 1. reads your word as keyword (for example `:date` , `:now` or `now` or `address` etc.)
     1. replace your word
-        1. for example `:date` and replaces it with 20.08.2020
-        1. for example `:now` and replaces it with 20.08.2020 16:48:24
+        1. for example `:date` and replaces it with `20.08.2020`
+        1. for example `:now` and replaces it with `20.08.2020 16:48:24`
     1. adds new line behind your word
-        1. for example `now` adds the result into a new line. for e.g. 20.08.2020 16:48:24 and selects this line
+        1. for example `now` adds the result into a new line. for e.g. `20.08.2020 16:48:24` and selects this line
 1. If you want many Results for one keyword the Lintalist-Menu ⇶ is opening before (see more in Lintalist-Configuration about AutoExecuteOnce)
 1. Also you have the result in your clipboard.
 
@@ -24,8 +24,7 @@ and edit texts in bundles and paste a selected text in your active program.<br>
 if you want see how it works while it works open the config file and set:
 `doPopupNotify_howItWorks = True`
 
-Tested with LinuxMint Version 20
-not tested with Windows (probably work ?)
+Tested with the following recommended installation:
 
 # installation (recommended):
 - [LinuxMint](https://linuxmint.com/edition.php?id=283) (tested with "Linux Mint 20 Ulyana - ******Xfce****** (64-bit)" may works with other Linux OS or Window OS)
@@ -133,18 +132,3 @@ Latest:
 Specific Version:
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.zip
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz
-
-- [ ] Be awesome
-- [ ] Prepare dinner
-  - [ ] Research recipe
-  - [ ] Buy ingredients
-  - [ ] Cook recipe
-- [ ] Sleep
-
-- [ ] Mercury
-- [x] Venus
-- [x] Earth
-  - [x] Moon
-- [x] Mars
-  - [ ] Deimos
-  - [ ] Phobos
