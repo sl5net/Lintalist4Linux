@@ -6,7 +6,7 @@ Linux and Windows -platform Text Replacer/Adder/Scripter written in AutoKey/Phyt
 
 Lintalist4Linux
 
-1. waits for shortcut (recommended Ctrl+K or simple F12)
+1. waits for shortcut (recommended `Ctrl`+`K` or simple `F12`)
 1. reads your word as keyword (for example `:date` , `:now` or `now` or `address` etc.)
     1. replace your word
         1. for example `:date` and replaces it with 20.08.2020
@@ -16,7 +16,7 @@ Lintalist4Linux
 1. If you want many Results for one keyword the Lintalist-Menu ⇶ is opening before (see more in Lintalist-Configuration about AutoExecuteOnce)
 1. Also you have the result in your clipboard.
 
-https://lintalist.github.io/ says (10.08.2020):
+[lintalist.github.io](https://lintalist.github.io/)  says (10.08.2020):<br>
 "Lintalist allows you to store and (incrementally) search <br>
 and edit texts in bundles and paste a selected text in your active program.<br>
 ... Lintalist is open source and developed in AutoHotkey ..."
@@ -28,12 +28,12 @@ Tested with LinuxMint Version 20
 not tested with Windows (probably work ?)
 
 # installation (recommended):
-- LinuxMint (new versions) or maybe other Linux
-- wine (may use your Software Manager)
-- Winetricks (maybe not needet) (may use your Software Manager or https://wiki.winehq.org/Winetricks#Installing_winetricks)
-- AutoKey (may use your Software Manager or https://github.com/autokey/autokey#installation )
-- AutoHotKey ( https://www.autohotkey.com/ or https://github.com/Lexikos/AutoHotkey_L )
-- Lintalist ( https://lintalist.github.io/ )
+- [LinuxMint](https://linuxmint.com/edition.php?id=283) (tested with "Linux Mint 20 Ulyana - ******Xfce****** (64-bit)" may works with other Linux OS or Window OS)
+- Wine (HowTo: [linuxbabe.com/ .. install-wine-linux-mint](https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1) )
+- [Winetricks wiki](https://wiki.winehq.org/Winetricks#Installing_winetricks) 
+- [AutoKey](https://github.com/autokey/autokey#installation) (or may use your Software Manager )
+- [AutoHotKey.com](https://www.autohotkey.com/)  ( maybe [github.com/Lexikos/AutoHotkey_L](https://github.com/Lexikos/AutoHotkey_L) )
+- [lintalist.github.io](https://lintalist.github.io/)
 
 ### copy files and configuration:
 
@@ -68,11 +68,11 @@ You find QuickSearchHotkey nearly at the last page inside this long list into th
     - Example: field 1: now , field 2: clipboard := a_now
 
 Or:    
-<pre>
+```AutoHotKey
 FormatTime, timestampyyMMddHHmmss , %A_now%,yyMMddHHmmss
 FormatTime, timestampyyMMddHHmmssPretty, %A_now%,yy:MM:dd HH:mm:ss
 clipboard := timestampyyMMddHHmmssPretty
-</pre>
+```
 
 - AutoExecuteOnce: 2
 <pre>
@@ -121,6 +121,7 @@ if you use PyCharm as external Editor and AutoKey Editor you may do the followin
  new terminal:
  `$ sdk install kotlin`
 
+https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md
 
 ##### Tips for user don't want use github now:
 
@@ -132,3 +133,18 @@ Latest:
 Specific Version:
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.zip
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz
+
+- [ ] Be awesome
+- [ ] Prepare dinner
+  - [ ] Research recipe
+  - [ ] Buy ingredients
+  - [ ] Cook recipe
+- [ ] Sleep
+
+- [ ] Mercury
+- [x] Venus
+- [x] Earth
+  - [x] Moon
+- [x] Mars
+  - [ ] Deimos
+  - [ ] Phobos
