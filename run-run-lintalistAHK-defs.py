@@ -165,6 +165,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         exit()
     if clipboardKey == ':':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
         popupNotify_howItWorks("type clipboard :D")
+        len_clipboardBackup = len(clipboardBackup)
         keyboard.send_keys(clipboardBackup)
         select_text(keyboard, len_clipboardBackup)
         keyboard.send_keys('<ctrl>+c') # stay with old clpbord. copy clipboardBackup
