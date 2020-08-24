@@ -137,8 +137,8 @@ Specific Version:
 ###### TODOs (just for fun ;) i like TODO list style
 
 features:
-- [x] `keyowrd` adds result behind
-- [x] `:keyowrd` replaces text with result
+- [x] `keyowrd` adds result (if many it opens menu) behind and save in clipboard
+- [x] `:keyowrd` replaces text with result (if many it opens menu) and save in clipboard
 - [x] `:` without text lets write the clipboard (not using `ctrl` + `v` method)
 - [x] `:` sends your clipboard 1 times. separated with tab-key  (not using `ctrl` + `v` method)
 - [x] `²` sends your clipboard 2 times. separated with tab-key  (not using `ctrl` + `v` method)
