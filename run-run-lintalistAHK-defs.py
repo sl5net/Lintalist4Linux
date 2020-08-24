@@ -251,8 +251,12 @@ def select_text(keyboard, len_clipboardBackup = 0):  #  0 if dont know the clipb
     if not len_clipboardBackup or len_clipboardBackup > 100:
         keyboard.send_keys('<ctrl>+<shift>+<left>')  # faster but not as exact. forgets special letters.
     else:
+        keyboard.press_key('<shift>')
         for i in range(0, len_clipboardBackup):
-            keyboard.send_keys('<shift>+<left>') # exact method
+            keyboard.send_keys('<left>') # exact method
+            # keyboard.send_keys('<shift>+<left>') # exact method
+        keyboard.release_key('<shift>')
+
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword

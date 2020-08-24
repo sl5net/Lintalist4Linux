@@ -41,6 +41,7 @@ if len_clipboardNew < 1 or cNew == clipboardKey:
 if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
 
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
+    time.sleep(2) #  100mili needed in some apps   20-08-24 17:18:48
     select_text(keyboard, len_clipboardNew)
     popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
     # beeps(duration=.8, freq=1500, loops=2)

@@ -134,7 +134,7 @@ Specific Version:
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz
 
 
-###### TODOs
+###### TODOs (just for fun ;) i like TODO lists
 
 - [x] feature: just : without text lets write the clipboard (not ^v method)
 - [x] feature:  : replaces text with result

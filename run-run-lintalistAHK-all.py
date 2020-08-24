@@ -280,8 +280,12 @@ def select_text(keyboard, len_clipboardBackup = 0):  #  0 if dont know the clipb
     if not len_clipboardBackup or len_clipboardBackup > 100:
         keyboard.send_keys('<ctrl>+<shift>+<left>')  # faster but not as exact. forgets special letters.
     else:
+        keyboard.press_key('<shift>')
         for i in range(0, len_clipboardBackup):
-            keyboard.send_keys('<shift>+<left>') # exact method
+            keyboard.send_keys('<left>') # exact method
+            # keyboard.send_keys('<shift>+<left>') # exact method
+        keyboard.release_key('<shift>')
+
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
@@ -329,11 +333,12 @@ if len_clipboardNew < 1 or cNew == clipboardKey:
     popupNotify_howItWorks("no new result ==> exit")
     exit()  # quit()
 
-# L@SL5.de :Se
+# L@SL5.de Sebastian
 
 if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
 
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
+    time.sleep(2) #  100mili needed in some apps   20-08-24 17:18:48
     select_text(keyboard, len_clipboardNew)
     popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
     # beeps(duration=.8, freq=1500, loops=2)
