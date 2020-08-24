@@ -185,17 +185,25 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         popupNotify_howItWorks("get_clipboard except :-O")
 
     if clipboardKey == ' :':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
-        keyboard.send_keys(' ' + clipboardBackup)
-        keyboard.send_keys('<ctrl>+<shift>+<left>')
+        popupNotify_howItWorks("type clipboard :)")
+        if clipboardBackup:
+            keyboard.send_keys(' ' + clipboardBackup)
+            keyboard.send_keys('<ctrl>+<shift>+<left>')
+            keyboard.send_keys('<ctrl>+c') # stay with old clpbord
         exit()
-        return
     if clipboardKey == ':':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
+        popupNotify_howItWorks("type clipboard :D")
         keyboard.send_keys(clipboardBackup)
         keyboard.send_keys('<ctrl>+<shift>+<left>')
+        keyboard.send_keys('<ctrl>+c') # stay with old clpbord
+        popupNotify_howItWorks("NOT doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis + " ==> exit()")
         exit()
-        return
 
-        # de de de de exit exit     :seb exceptexceptexcept except except k ( asdf asdf return return return  except return except
+        popupNotify_howItWorks("^_^")
+
+        # clipboardBackup  clipboardBackup           popupNotify_howItWorks("type clipboard :D") asdf asdf          popupNotify_howItWorks("type clipboard")
+
+        # de :de de de exit exit   Sebastian   :    Sebastian exceptexceptexcept except except k ( asdf asdf return return return  except return except
         # Sebastianseb :seb
     firstChar = clipboardKey[0:1]
 
