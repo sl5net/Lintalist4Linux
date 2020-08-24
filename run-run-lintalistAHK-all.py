@@ -186,24 +186,25 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 
     if clipboardKey == ' :':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
         popupNotify_howItWorks("type clipboard :)")
-        if clipboardBackup:
+        len_clipboardBackup = len(clipboardBackup)
+        if len_clipboardBackup > 0: # or clipboardBackup == "" or clipboardBackup == " ":
             keyboard.send_keys(' ' + clipboardBackup)
-            keyboard.send_keys('<ctrl>+<shift>+<left>')
-            keyboard.send_keys('<ctrl>+c') # stay with old clpbord
+            select_text(keyboard, len_clipboardBackup)
+            keyboard.send_keys('<ctrl>+c')  # stay with old clpbord. copy clipboardBackup
         exit()
     if clipboardKey == ':':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
         popupNotify_howItWorks("type clipboard :D")
         keyboard.send_keys(clipboardBackup)
-        keyboard.send_keys('<ctrl>+<shift>+<left>')
-        keyboard.send_keys('<ctrl>+c') # stay with old clpbord
+        select_text(keyboard, len_clipboardBackup)
+        keyboard.send_keys('<ctrl>+c') # stay with old clpbord. copy clipboardBackup
         popupNotify_howItWorks("NOT doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis + " ==> exit()")
         exit()
 
         popupNotify_howItWorks("^_^")
 
-        # clipboardBackup  clipboardBackup           popupNotify_howItWorks("type clipboard :D") asdf asdf          popupNotify_howItWorks("type clipboard")
+        # clipboardBackup clipboardBackup  clipboardBackup clipboardBackup  clipboardBackup           popupNotify_howItWorks("type clipboard :D") asdf asdf          popupNotify_howItWorks("type clipboard")
 
-        # de :de de de exit exit   Sebastian   :    Sebastian exceptexceptexcept except except k ( asdf asdf return return return  except return except
+        # de de de de L@SL5.de L@SL5.de de de exit exit   Sebastian   :    Sebastian exceptexceptexcept except except k ( asdf asdf return return return  except return except
         # Sebastianseb :seb
     firstChar = clipboardKey[0:1]
 
@@ -273,6 +274,14 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # time.sleep(2)
     # keyboard.send_keys('<ctrl>+v')
     return (doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title)
+
+
+def select_text(keyboard, len_clipboardBackup = 0):  #  0 if dont know the clipboard/text but try select anyway
+    if not len_clipboardBackup or len_clipboardBackup > 100:
+        keyboard.send_keys('<ctrl>+<shift>+<left>')  # faster but not as exact. forgets special letters.
+    else:
+        for i in range(0, len_clipboardBackup):
+            keyboard.send_keys('<shift>+<left>') # exact method
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
@@ -313,20 +322,26 @@ try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
 except:
     time.sleep(0.1)
-if len(str(cNew)) < 1 or cNew == clipboardKey:
+
+len_clipboardNew = len(str(cNew))
+
+if len_clipboardNew < 1 or cNew == clipboardKey:
     popupNotify_howItWorks("no new result ==> exit")
     exit()  # quit()
+
+# L@SL5.de :Se
 
 if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
 
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
+    select_text(keyboard, len_clipboardNew)
     popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
     # beeps(duration=.8, freq=1500, loops=2)
     quit()
 
 if doPopupNotify_howItWorks:
     popupNotify_howItWorks("result = " + cNew)
-    # beeps(duration=.8, freq=1500, loop
+    # beeps(duration=.8, freq=1500, loop L@SL5.de : : L@SL5.de L@SL5.de L@SL5.de  L@SL5.de
     # loopss=5)
 
 popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + clipboardKey )

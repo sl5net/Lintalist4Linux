@@ -29,20 +29,26 @@ try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
 except:
     time.sleep(0.1)
-if len(str(cNew)) < 1 or cNew == clipboardKey:
+
+len_clipboardNew = len(str(cNew))
+
+if len_clipboardNew < 1 or cNew == clipboardKey:
     popupNotify_howItWorks("no new result ==> exit")
     exit()  # quit()
+
+# L@SL5.de Sebastian
 
 if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
 
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
+    select_text(keyboard, len_clipboardNew)
     popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
     # beeps(duration=.8, freq=1500, loops=2)
     quit()
 
 if doPopupNotify_howItWorks:
     popupNotify_howItWorks("result = " + cNew)
-    # beeps(duration=.8, freq=1500, loop
+    # beeps(duration=.8, freq=1500, loop L@SL5.de : : L@SL5.de L@SL5.de L@SL5.de  L@SL5.de
     # loopss=5)
 
 popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + clipboardKey )

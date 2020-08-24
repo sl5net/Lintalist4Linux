@@ -157,16 +157,17 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 
     if clipboardKey == ' :':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
         popupNotify_howItWorks("type clipboard :)")
-        if clipboardBackup:
+        len_clipboardBackup = len(clipboardBackup)
+        if len_clipboardBackup > 0: # or clipboardBackup == "" or clipboardBackup == " ":
             keyboard.send_keys(' ' + clipboardBackup)
-            keyboard.send_keys('<ctrl>+<shift>+<left>')
-            keyboard.send_keys('<ctrl>+c') # stay with old clpbord
+            select_text(keyboard, len_clipboardBackup)
+            keyboard.send_keys('<ctrl>+c')  # stay with old clpbord. copy clipboardBackup
         exit()
     if clipboardKey == ':':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
         popupNotify_howItWorks("type clipboard :D")
         keyboard.send_keys(clipboardBackup)
-        keyboard.send_keys('<ctrl>+<shift>+<left>')
-        keyboard.send_keys('<ctrl>+c') # stay with old clpbord
+        select_text(keyboard, len_clipboardBackup)
+        keyboard.send_keys('<ctrl>+c') # stay with old clpbord. copy clipboardBackup
         popupNotify_howItWorks("NOT doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis + " ==> exit()")
         exit()
 
@@ -174,7 +175,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 
         # clipboardBackup clipboardBackup  clipboardBackup clipboardBackup  clipboardBackup           popupNotify_howItWorks("type clipboard :D") asdf asdf          popupNotify_howItWorks("type clipboard")
 
-        # de :de de de exit exit   Sebastian   :    Sebastian exceptexceptexcept except except k ( asdf asdf return return return  except return except
+        # de de de de L@SL5.de L@SL5.de de de exit exit   Sebastian   :    Sebastian exceptexceptexcept except except k ( asdf asdf return return return  except return except
         # Sebastianseb :seb
     firstChar = clipboardKey[0:1]
 
@@ -244,6 +245,14 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # time.sleep(2)
     # keyboard.send_keys('<ctrl>+v')
     return (doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title)
+
+
+def select_text(keyboard, len_clipboardBackup = 0):  #  0 if dont know the clipboard/text but try select anyway
+    if not len_clipboardBackup or len_clipboardBackup > 100:
+        keyboard.send_keys('<ctrl>+<shift>+<left>')  # faster but not as exact. forgets special letters.
+    else:
+        for i in range(0, len_clipboardBackup):
+            keyboard.send_keys('<shift>+<left>') # exact method
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
