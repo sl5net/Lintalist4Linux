@@ -19,7 +19,7 @@ do_DisableUpdatingThe_all_file = False  # not recommended if you developing at t
 
 
 ####### dont change to following:
-cNew = cOld = ""
+cNew = clipboardKey = ""
 
 # TODO s : delete or read a time in future:
 # https://exceptionshub.com/python-sound-alarm-when-code-finishes.html
@@ -104,11 +104,24 @@ def beeps(duration=.1, freq=2000, loops=1):
 # <<<<<<<<<< read_keyword
 # <<<<<<<<<< read_keyword
 def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard):
-    global doPopupNotify_howItWorks, cOld, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
+    global doPopupNotify_howItWorks, clipboardKey, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
     if doReplaceIfPrefixIsThis:
         # selct word and prefix e.g.  :test
         doSelctWordAndPrefix = True
-    cOld = ""
+    clipboardBackup = ""
+
+    clipboardBackup = ''
+    try:
+        clipboardBackup = clipboard.get_clipboard()  #  .lstrip  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+    except:
+        clipboardBackup = ""
+        beeps(duration=.1, freq=2000, loops=1)
+        popupNotify_howItWorks("get_clipboard except :-O")
+
+    popupNotify_howItWorks('clipboardBackup= ' + clipboardBackup)
+    # quit() #   :
+
+    clipboardKey = ""
     # line 20 Heide kjkjhkjh 5
     # kjhlkjhvv
     if do_ifNoPrefix_useFocusedWord_pasteResultRight:
@@ -118,6 +131,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         # keyboard.send_keys('<right>')
 
         if doSelctWordAndPrefix:
+
             keyboard.release_key('<ctrl>')  # keyboard.press_key('<ctrl>')
             time.sleep(.1)  # seems importend time while using in pycharm
             keyboard.send_keys('<ctrl>+<left>')  # not works in every e.g. editor like pycharm
@@ -155,32 +169,59 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # keyboard.send_keys("\n#1 first_class='%s'" % first_class)
     # 1 first_class='autokey-gtk.Autokey-gtkinitialContent'
 
-    # 20-08-22 15:59:31
+    # 20-08-22 15:59:31 uff
 
     popupNotify_howItWorks('get_clipboard')
 
     doReplace = False
+
+    firstChar = ''
     try:
-        cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+        clipboardKey = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+        time.sleep(0.1)
+
+        if clipboardKey == ' :' or clipboardKey == ':':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
+            keyboard.send_keys(clipboardBackup)
+            keyboard.send_keys('<ctrl>+<shift>+<left>')
+            keyboard.send_keys('<ctrl>+c')
+            quit()  #        :sebsebseb seb    asdfsdf  sdfdfgsdfdfgsdfdfgsdfdfgsdfdfgsdfdfg sdfdfgsdfdfgsdfdfg sdfdfgsdfdfgsdfdfgsdfdfgsdfdfgsdfdfg - :- sdfdfgsdfdfgsdfdfgsdfdfgsdfdfgsdfdfgsdfdfgsdfdfgsdfdfg
+            # :seb
+
+        firstChar = clipboardKey[0:1]
     except:
-        cOld = ""
+        clipboardKey = ""
         beeps(duration=.1, freq=2000, loops=1)
         popupNotify_howItWorks("get_clipboard except :-O" )
-    if not cOld:
-        popupNotify_howItWorks("NOT cOld = " + cOld + " ==> exit()")
+    if not clipboardKey:
+        popupNotify_howItWorks("NOT clipboardKey = " + clipboardKey + " ==> exit()")
         beeps(duration=.1, freq=2000, loops=2)
         exit()
     if not doReplaceIfPrefixIsThis:
         popupNotify_howItWorks("NOT doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis + " ==> exit()")
         beeps(duration=.1, freq=2000, loops=3)
         exit()
-    if cOld[0:1] == doReplaceIfPrefixIsThis:  # :test :test
+
+    # popupNotify_howItWorks('firstChar = ' + firstChar + ' , clipboardKey = ' + clipboardKey)
+    # time.sleep(2)
+    # quit()
+
+
+    if firstChar == doReplaceIfPrefixIsThis:  # :test :test ff uihu : :
         doReplace = True
         popupNotify_howItWorks("found doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis)
-        # if doPopupNotify_howItWorks:
+        # if doPopupNotify_howItWorks:   :test
         #     beeps(duration=.2, freq=1000, loops=2)
     else:
-        popupNotify_howItWorks("NOT found in keyword = >>" + cOld + "<<\n , doReplaceIfPrefixIsThis = >>" + doReplaceIfPrefixIsThis + "<<")
+        try:
+            popupNotify_howItWorks("NOT found in keyword = >>" + clipboardKey + "<<\n , doReplaceIfPrefixIsThis = >>" + doReplaceIfPrefixIsThis + "<<")
+        except:
+            popupNotify_howItWorks("NOT found in keyword")
+    # asdf
+
+    #if doReplaceIfPrefixIsThis == clipboardKey:
+    # keyboard.send_keys('-' + clipboardKey + '-')
+    # keyboard.send_keys('-' + clipboardBackup + '-')
+    # quit()  # testk testk : : clipboardBackup  : : :  clipboardBackup'-' clipboardBackupclipboardBackupclipboardBackup
 
 
     # keyboard.release_key('<ctrl>')
@@ -231,7 +272,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 writeAllFile_from_main_defs(path)
 
 if doPopupNotify_howItWorks:
-    popupNotify_howItWorks("doPopupNotify_howItWorks is set TRUE\n in the config file. Great :)")
+    popupNotify_howItWorks("doPopupNotify_howItWorks is set TRUE\n in the ..config.py file. Great :)")
 
 
 if doPopupNotify_welcomeAtEachRun:
@@ -240,7 +281,6 @@ if doPopupNotify_welcomeAtEachRun:
 if doBeepsWelcomeAtEachRun:
     popupNotify("doBeepsWelcomeAtEachRun")
     beeps()  # beeps(duration=.8, freq=1500, loops=2)
-
 
 
 # popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
@@ -258,11 +298,12 @@ try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
 except:
     time.sleep(0.1)
-if len(str(cNew)) < 1 or cNew == cOld:
+if len(str(cNew)) < 1 or cNew == clipboardKey:
     popupNotify_howItWorks("no new result ==> exit")
     exit()  # quit()
 
 if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
+
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
     popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
     # beeps(duration=.8, freq=1500, loops=2)
@@ -273,7 +314,7 @@ if doPopupNotify_howItWorks:
     # beeps(duration=.8, freq=1500, loop
     # loopss=5)
 
-popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + cOld )
+popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + clipboardKey )
 
 # keyboard.send_keys('<right><left>') #  deselect  :uff
 

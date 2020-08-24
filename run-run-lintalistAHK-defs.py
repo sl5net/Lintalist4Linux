@@ -75,11 +75,24 @@ def beeps(duration=.1, freq=2000, loops=1):
 # <<<<<<<<<< read_keyword
 # <<<<<<<<<< read_keyword
 def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard):
-    global doPopupNotify_howItWorks, cOld, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
+    global doPopupNotify_howItWorks, clipboardKey, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
     if doReplaceIfPrefixIsThis:
         # selct word and prefix e.g.  :test
         doSelctWordAndPrefix = True
-    cOld = ""
+    clipboardBackup = ""
+
+    clipboardBackup = ''
+    try:
+        clipboardBackup = clipboard.get_clipboard()  #  .lstrip  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+    except:
+        clipboardBackup = ""
+        beeps(duration=.1, freq=2000, loops=1)
+        popupNotify_howItWorks("get_clipboard except :-O")
+
+    popupNotify_howItWorks('clipboardBackup= ' + clipboardBackup)
+    # quit() #   :
+
+    clipboardKey = ""
     # line 20 Heide kjkjhkjh 5
     # kjhlkjhvv
     if do_ifNoPrefix_useFocusedWord_pasteResultRight:
@@ -89,6 +102,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         # keyboard.send_keys('<right>')
 
         if doSelctWordAndPrefix:
+
             keyboard.release_key('<ctrl>')  # keyboard.press_key('<ctrl>')
             time.sleep(.1)  # seems importend time while using in pycharm
             keyboard.send_keys('<ctrl>+<left>')  # not works in every e.g. editor like pycharm
@@ -126,32 +140,58 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     # keyboard.send_keys("\n#1 first_class='%s'" % first_class)
     # 1 first_class='autokey-gtk.Autokey-gtkinitialContent'
 
-    # 20-08-22 15:59:31
+    # 20-08-22 15:59:31 uff
 
     popupNotify_howItWorks('get_clipboard')
 
     doReplace = False
+
+    firstChar = ''
     try:
-        cOld = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+        clipboardKey = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+        time.sleep(0.1)
+
+        if clipboardKey == ' :' or clipboardKey == ':':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
+            keyboard.send_keys(clipboardBackup)
+            keyboard.send_keys('<ctrl>+<shift>+<left>')
+            keyboard.send_keys('<ctrl>+c')
+            quit()
+
+        firstChar = clipboardKey[0:1]
     except:
-        cOld = ""
+        clipboardKey = ""
         beeps(duration=.1, freq=2000, loops=1)
         popupNotify_howItWorks("get_clipboard except :-O" )
-    if not cOld:
-        popupNotify_howItWorks("NOT cOld = " + cOld + " ==> exit()")
+    if not clipboardKey:
+        popupNotify_howItWorks("NOT clipboardKey = " + clipboardKey + " ==> exit()")
         beeps(duration=.1, freq=2000, loops=2)
         exit()
     if not doReplaceIfPrefixIsThis:
         popupNotify_howItWorks("NOT doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis + " ==> exit()")
         beeps(duration=.1, freq=2000, loops=3)
         exit()
-    if cOld[0:1] == doReplaceIfPrefixIsThis:  # :test :test
+
+    # popupNotify_howItWorks('firstChar = ' + firstChar + ' , clipboardKey = ' + clipboardKey)
+    # time.sleep(2)
+    # quit()
+
+
+    if firstChar == doReplaceIfPrefixIsThis:  # :test :test ff uihu : :
         doReplace = True
         popupNotify_howItWorks("found doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis)
-        # if doPopupNotify_howItWorks:
+        # if doPopupNotify_howItWorks:   :test
         #     beeps(duration=.2, freq=1000, loops=2)
     else:
-        popupNotify_howItWorks("NOT found in keyword = >>" + cOld + "<<\n , doReplaceIfPrefixIsThis = >>" + doReplaceIfPrefixIsThis + "<<")
+        try:
+            popupNotify_howItWorks("NOT found in keyword = >>" + clipboardKey + "<<\n , doReplaceIfPrefixIsThis = >>" + doReplaceIfPrefixIsThis + "<<")
+        except:
+            popupNotify_howItWorks("NOT found in keyword")
+    # asdf
+
+    #if doReplaceIfPrefixIsThis == clipboardKey:
+    # keyboard.send_keys('-' + clipboardKey + '-')
+    # keyboard.send_keys('-' + clipboardBackup + '-')
+    # quit()  # testk testk : : clipboardBackup  : : :  clipboardBackup'-' clipboardBackupclipboardBackupclipboardBackup
 
 
     # keyboard.release_key('<ctrl>')

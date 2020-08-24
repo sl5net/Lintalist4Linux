@@ -3,7 +3,7 @@
 writeAllFile_from_main_defs(path)
 
 if doPopupNotify_howItWorks:
-    popupNotify_howItWorks("doPopupNotify_howItWorks is set TRUE\n in the config file. Great :)")
+    popupNotify_howItWorks("doPopupNotify_howItWorks is set TRUE\n in the ..config.py file. Great :)")
 
 
 if doPopupNotify_welcomeAtEachRun:
@@ -12,7 +12,6 @@ if doPopupNotify_welcomeAtEachRun:
 if doBeepsWelcomeAtEachRun:
     popupNotify("doBeepsWelcomeAtEachRun")
     beeps()  # beeps(duration=.8, freq=1500, loops=2)
-
 
 
 # popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
@@ -30,11 +29,12 @@ try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
 except:
     time.sleep(0.1)
-if len(str(cNew)) < 1 or cNew == cOld:
+if len(str(cNew)) < 1 or cNew == clipboardKey:
     popupNotify_howItWorks("no new result ==> exit")
     exit()  # quit()
 
 if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
+
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
     popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
     # beeps(duration=.8, freq=1500, loops=2)
@@ -45,7 +45,7 @@ if doPopupNotify_howItWorks:
     # beeps(duration=.8, freq=1500, loop
     # loopss=5)
 
-popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + cOld )
+popupNotify_howItWorks("no Prefix " + doReplaceIfPrefixIsThis + " in " + clipboardKey )
 
 # keyboard.send_keys('<right><left>') #  deselect  :uff
 

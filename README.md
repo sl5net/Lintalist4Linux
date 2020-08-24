@@ -132,3 +132,9 @@ Latest:
 Specific Version:
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.zip
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz
+
+
+###### TODOs
+
+- [x] feature: just : without text lets write the clipboard (not ^v method)
+- [x] feature:  : replaces text with result

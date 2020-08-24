@@ -18,7 +18,7 @@ do_DisableUpdatingThe_all_file = False  # not recommended if you developing at t
 
 
 ####### dont change to following:
-cNew = cOld = ""
+cNew = clipboardKey = ""
 
 # TODO s : delete or read a time in future:
 # https://exceptionshub.com/python-sound-alarm-when-code-finishes.html
