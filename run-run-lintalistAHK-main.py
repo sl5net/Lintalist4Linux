@@ -16,7 +16,7 @@ if doBeepsWelcomeAtEachRun:
 
 
 # popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
-(doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
+(clipboardKey, doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
 
 for x in range(0, 900):  # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
@@ -32,6 +32,8 @@ except:
     time.sleep(0.1)
 
 len_clipboardNew = len(str(cNew))
+
+clipboardKey = clipboardKey.lstrip()
 
 if len_clipboardNew < 1 or cNew == clipboardKey:
     popupNotify_howItWorks("no new result ==> exit")
