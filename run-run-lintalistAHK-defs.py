@@ -150,18 +150,28 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     try:
         clipboardKey = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
         time.sleep(0.1)
-
-        if clipboardKey == ' :' or clipboardKey == ':':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
-            keyboard.send_keys(clipboardBackup)
-            keyboard.send_keys('<ctrl>+<shift>+<left>')
-            keyboard.send_keys('<ctrl>+c')
-            quit()
-
-        firstChar = clipboardKey[0:1]
     except:
         clipboardKey = ""
         beeps(duration=.1, freq=2000, loops=1)
-        popupNotify_howItWorks("get_clipboard except :-O" )
+        popupNotify_howItWorks("get_clipboard except :-O")
+
+    if clipboardKey == ' :':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
+        keyboard.send_keys(' ' + clipboardBackup)
+        keyboard.send_keys('<ctrl>+<shift>+<left>')
+        keyboard.send_keys('<ctrl>+c')
+        exit()
+        return
+    if clipboardKey == ':':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
+        keyboard.send_keys(clipboardBackup)
+        keyboard.send_keys('<ctrl>+<shift>+<left>')
+        keyboard.send_keys('<ctrl>+c')
+        exit()
+        return
+
+        # de de de de exit exit     :seb exceptexceptexcept except except k ( asdf asdf return return return  except return except
+        # Sebastianseb :seb
+    firstChar = clipboardKey[0:1]
+
     if not clipboardKey:
         popupNotify_howItWorks("NOT clipboardKey = " + clipboardKey + " ==> exit()")
         beeps(duration=.1, freq=2000, loops=2)
