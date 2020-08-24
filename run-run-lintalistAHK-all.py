@@ -187,13 +187,11 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     if clipboardKey == ' :':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
         keyboard.send_keys(' ' + clipboardBackup)
         keyboard.send_keys('<ctrl>+<shift>+<left>')
-        keyboard.send_keys('<ctrl>+c')
         exit()
         return
     if clipboardKey == ':':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
         keyboard.send_keys(clipboardBackup)
         keyboard.send_keys('<ctrl>+<shift>+<left>')
-        keyboard.send_keys('<ctrl>+c')
         exit()
         return
 
