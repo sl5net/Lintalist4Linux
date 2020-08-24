@@ -8,6 +8,12 @@
 # keyboard.fake_keypress('<f8>') # remove snippet
 # keyboard.fake_keypress('<f10>') # manage bundels
 
+# from time import sleep
+
+def slow_send(word, delay):
+    for c in word:
+        keyboard.send_keys(c)
+        time.sleep(delay)
 
 import os, time, datetime, pathlib, subprocess # TODO: one day install: http://omz-software.com/pythonista/docs/ios/clipboard.html
 
@@ -213,8 +219,17 @@ def copy_word_2_clipboard_focusedInTheMiddle(clipboard, keyboard):
     # test
 
 def check_key_endChar_and_may_replace(clipboard, clipboardBackup, doReplaceIfPrefixIsThis, keyboard):
-    # check if its only :
-    keyboard.send_keys('<shift>+<left>')
+    # this all works not in some websites. for e.g. career5.successfactors.eu
+    # in some register forms alls specialkey send the form. only letters not
+
+
+    # check if its only dummy_send :
+    # keyboard.press_key('<shift>')
+    # quit()
+    # keyboard.release_key('<shift>')
+
+    keyboard.send_keys('<shift>+<left>') # this works not in some websites. for e.g. career5.successfactors.eu
+
     keyboard.send_keys('<ctrl>+c')
     time.sleep(0.1)
     try:
@@ -226,11 +241,27 @@ def check_key_endChar_and_may_replace(clipboard, clipboardBackup, doReplaceIfPre
         # doReplace = True
         popupNotify_howItWorks("found doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis)
         keyboard.send_keys(clipboardBackup)
+        # slow_send(clipboardBackup, 1)
+        len_clipboardBackup = len(clipboardBackup)
+        select_text(keyboard, len_clipboardBackup)
+        keyboard.send_keys('<ctrl>+c')  # stay with old clipboard. copy clipboardBackup
+        quit()  #
+    if clipboardKey_endChar == "²":  # special comando. sends it two times with tab beetween
+        # doReplace = True
+        popupNotify_howItWorks("found doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis)
+        keyboard.send_keys(clipboardBackup)
+        keyboard.send_keys("<tab>")
+        keyboard.send_keys(clipboardBackup)
+        # slow_send(clipboardBackup, 1)
         len_clipboardBackup = len(clipboardBackup)
         select_text(keyboard, len_clipboardBackup)
         keyboard.send_keys('<ctrl>+c')  # stay with old clipboard. copy clipboardBackup
         quit()  #
     return clipboardKey_endChar
+
+
+# asdf  ² :  : asdasdfasdasdfasdasdf Sebastian Sebastian ² Sebastian :  Sebastian : Sebastian : Sebastian Sebastian :
+
 
 
 def select_text(keyboard, len_clipboardBackup = 0):  #  0 if dont know the clipboard/text but try select anyway

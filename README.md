@@ -134,7 +134,11 @@ Specific Version:
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz
 
 
-###### TODOs (just for fun ;) i like TODO lists
+###### TODOs (just for fun ;) i like TODO list style
 
-- [x] feature: just : without text lets write the clipboard (not ^v method)
-- [x] feature:  : replaces text with result
+features:
+- [x] `keyowrd` adds result behind
+- [x] `:keyowrd` replaces text with result
+- [x] `:` without text lets write the clipboard (not using `ctrl` + `v` method)
+- [x] `:` sends your clipboard 1 times. separated with tab-key  (not using `ctrl` + `v` method)
+- [x] `²` sends your clipboard 2 times. separated with tab-key  (not using `ctrl` + `v` method)
