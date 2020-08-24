@@ -38,7 +38,7 @@ cNew = clipboardKey = ""
 # keyboard.fake_keypress('<f10>') # manage bundels
 
 
-import os, time, datetime, pathlib, subprocess
+import os, time, datetime, pathlib, subprocess # TODO: one day install: http://omz-software.com/pythonista/docs/ios/clipboard.html
 
 #<<<<<<<<<<<<
 # Todo: do this: https://github.com/autokey/autokey/issues/248
@@ -118,7 +118,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         beeps(duration=.1, freq=2000, loops=1)
         popupNotify_howItWorks("get_clipboard except :-O")
 
-    popupNotify_howItWorks('clipboardBackup= ' + clipboardBackup)
+    # popupNotify_howItWorks('clipboardBackup= ' + clipboardBackup)
     # quit() #   :
 
     clipboardKey = ""
@@ -132,21 +132,38 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 
         if doSelctWordAndPrefix:
 
-            keyboard.release_key('<ctrl>')  # keyboard.press_key('<ctrl>')
-            time.sleep(.1)  # seems importend time while using in pycharm
-            keyboard.send_keys('<ctrl>+<left>')  # not works in every e.g. editor like pycharm
-            # time.sleep(.1)
-            # keyboard.press_key('<ctrl>')
-            # keyboard.send_keys('<left>')
-            # time.sleep(.1)
-            # keyboard.release_key('<ctrl>')
-            # time.sleep(.1)
-            keyboard.send_keys('<left>')
 
-            # time.sleep(2) # asdf
+            keyboard.send_keys('<shift>+<left>')
+            keyboard.send_keys('<ctrl>+c')
+            time.sleep(0.1)
+            try:
+                clipboardKey_endChar2 = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+            except:
+                clipboardKey_endChar2 = ''
+            popupNotify_howItWorks("clipboardKey_endChar2 = " + clipboardKey_endChar2)
+            if clipboardKey_endChar2 == doReplaceIfPrefixIsThis:
+                doReplace = True
+                popupNotify_howItWorks("found doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis)
+                keyboard.send_keys(clipboardBackup)
+                len_clipboardBackup = len(clipboardBackup)
+                select_text(keyboard, len_clipboardBackup)
+                keyboard.send_keys('<ctrl>+c')  # stay with old clpbord. copy clipboardBackup
+                quit()
 
-            keyboard.send_keys('<shift>+<right>')
-            keyboard.send_keys('<ctrl>+<shift>+<right>')
+            else:
+                keyboard.release_key('<ctrl>')  # keyboard.press_key('<ctrl>')
+                time.sleep(.1)  # seems importend time while using in pycharm
+                keyboard.send_keys('<ctrl>+<left>')  # not works in every e.g. editor like pycharm
+                # time.sleep(.1)
+                # keyboard.press_key('<ctrl>')
+                # keyboard.send_keys('<left>')
+                # time.sleep(.1)
+                # keyboard.release_key('<ctrl>')
+                # time.sleep(.1)
+                keyboard.send_keys('<left>')
+
+                keyboard.send_keys('<shift>+<right>')
+                keyboard.send_keys('<ctrl>+<shift>+<right>')
         else:
             # selct word
             keyboard.send_keys('<ctrl>+<left>')
@@ -155,6 +172,9 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         # keyboard.send_keys('<ctrl>+v')
 
         keyboard.release_key('<shift>')  # sometimes i got hanging shift key
+
+        # quit()   #  test l :
+
         # keyboard.release_key('<ctrl>')
     # 30 line
     #####################
@@ -191,14 +211,36 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
             keyboard.send_keys(' ' + clipboardBackup)
             select_text(keyboard, len_clipboardBackup)
             keyboard.send_keys('<ctrl>+c')  # stay with old clpbord. copy clipboardBackup
+            # now overwrite if possible:
+            # clipboard.set = clipboardBackup
+            # clipboard.set = " oma " #  # TODO: one day install: http://omz-software.com/pythonista/docs/ios/clipboard.html
+            # beeps(duration=.1, freq=2000, loops=2)
+
+            # nnn nnn nnn nnn  nnn ooo : ooo ooo     : : :  :
+
         exit()
     if clipboardKey == ':':  # if only ' :' is selected only let clipbord write (not via STRG+v 9
         popupNotify_howItWorks("type clipboard :D")
         len_clipboardBackup = len(clipboardBackup)
         keyboard.send_keys(clipboardBackup)
         select_text(keyboard, len_clipboardBackup)
-        keyboard.send_keys('<ctrl>+c') # stay with old clpbord. copy clipboardBackup
-        popupNotify_howItWorks("NOT doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis + " ==> exit()")
+        # popupNotify_howItWorks("NOT doReplaceIfPrefixIsThis = " + doReplaceIfPrefixIsThis + " ==> exit()")
+
+
+        # TODO: folowing only works if selection text is working
+        keyboard.send_keys('<ctrl>+c') # stay with old clipboard. copy clipboardBackup
+        # now overwrite if possible:
+        # beeps(duration=.1, freq=2000, loops=1)
+        # try:
+        #     pass
+        # except:
+        #     time.sleep(0.000001)
+
+
+
+        #  asdfsd asdfsd asdfsd
+        # asdfsdf asdfsd asdfsd asdfsd fff   fff fff
+
         exit()
 
         popupNotify_howItWorks("^_^")
@@ -278,14 +320,15 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 
 
 def select_text(keyboard, len_clipboardBackup = 0):  #  0 if dont know the clipboard/text but try select anyway
+    keyboard.release_key('<ctrl>')
     if not len_clipboardBackup or len_clipboardBackup > 100:
         keyboard.send_keys('<ctrl>+<shift>+<left>')  # faster but not as exact. forgets special letters.
     else:
-        keyboard.press_key('<shift>')
+        # keyboard.press_key('<shift>') ### <=== disabled this way of selection 20-08-24 21:23:35
         for i in range(0, len_clipboardBackup):
-            keyboard.send_keys('<left>') # exact method
-            # keyboard.send_keys('<shift>+<left>') # exact method
-        keyboard.release_key('<shift>')
+            # keyboard.send_keys('<left>') # exact method
+            keyboard.send_keys('<shift>+<left>') # exact method
+        # keyboard.release_key('<shift>')
 
 #>>>>>>>>>>>>>> read_keyword
 #>>>>>>>>>>>>>> read_keyword
@@ -310,6 +353,7 @@ if doPopupNotify_welcomeAtEachRun:
 if doBeepsWelcomeAtEachRun:
     popupNotify("doBeepsWelcomeAtEachRun")
     beeps()  # beeps(duration=.8, freq=1500, loops=2)
+
 
 
 # popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
@@ -339,7 +383,7 @@ if len_clipboardNew < 1 or cNew == clipboardKey:
 if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
 
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
-    time.sleep(2) #  100mili needed in some apps   20-08-24 17:18:48
+    time.sleep(0.2) #  200mili needed in some apps   20-08-24 17:18:48
     select_text(keyboard, len_clipboardNew)
     popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
     # beeps(duration=.8, freq=1500, loops=2)
