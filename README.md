@@ -13,10 +13,12 @@ Example: `phone|` or `address|`, `email|`, `now|`, `date|` etc. Or use [autohotk
 1. The Replace-Text-Method (and press shortcut): 
     - [x] `:keyword` **replaces** text with result (if many it opens menu) and save in clipboard
     - without text
-        - [x] `:` + press `F12` writes out your clipboard content
-        - [x] `²` + press `F12` writes out your clipboard 2 times. separated with tab-key
+        - [x] `:` and press `F12` writes out your clipboard content
+        - [x] `²` and press `F12` writes out your clipboard 2 times. separated with tab-key
 
 More explanation:
+- Where can I use that, type the text?
+    - All over. On websites in a chat, in the console. All over.
 - you don't need write the complete keyword. e.g. writing `address|` or `addr|`  `adr|` or `ad|` is may enough if you use fuzzy search.
 - scripting with [... autohotkey commands](https://www.autohotkey.com/docs/commands/FormatTime.htm): 
     - for example `:date` and replaces it with `20.08.2020`
@@ -151,5 +153,4 @@ download specific Version:
 - [github.io/Lintalist4Linux](https://sl5net.github.io/Lintalist4Linux/) <br> 
 Diese Seite auf Deutsch übersetzt: <br>
 [translate.google](https://translate.google.com/translate?sl=en&tl=de&u=https%3A%2F%2Fsl5net.github.io%2FLintalist4Linux%2F)
-
 
