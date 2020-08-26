@@ -145,5 +145,8 @@ Specific Version:
 
 Your are here:
 - https://github.com/sl5net/Lintalist4Linux  <br>or at gitHub-Page:
-- [github.io/Lintalist4Linux](https://sl5net.github.io/Lintalist4Linux/) 
+- [github.io/Lintalist4Linux](https://sl5net.github.io/Lintalist4Linux/) <br> 
+Diese Seite auf Deutsch übersetzt: <br>
+[translate.google](https://translate.google.com/translate?sl=en&tl=de&u=https%3A%2F%2Fsl5net.github.io%2FLintalist4Linux%2F)
+
 
