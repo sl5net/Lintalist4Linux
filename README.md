@@ -11,14 +11,14 @@ Example: `phone|` or `address|`, `email|`, `now|`, `date|` etc. Or use [autohotk
      and lists all matching results. <br>
     - [x] With the Enter key, your selection is placed after your search term and saved in the clipboard.
 1. The Replace-Text-Method (and press shortcut): 
-    - [x] `:keyword` replaces text with result (if many it opens menu) and save in clipboard
+    - [x] `:keyword` **replaces** text with result (if many it opens menu) and save in clipboard
     - without text
         - [x] `:` + press `F12` lets write the clipboard
         - [x] `:` + press `F12` sends your clipboard 1 times. separated with tab-key
         - [x] `²` + press `F12` sends your clipboard 2 times. separated with tab-key
 
 More explanation:
-- you don't need write the complete keyword. e.g. writing `address|` or `addr|`  `adr|` or `ad|` my is enough if you use fuzzy search.
+- you don't need write the complete keyword. e.g. writing `address|` or `addr|`  `adr|` or `ad|` is may enough if you use fuzzy search.
 - scripting with [... autohotkey commands](https://www.autohotkey.com/docs/commands/FormatTime.htm): 
     - for example `:date` and replaces it with `20.08.2020`
     - for example `:now` and replaces it with `20.08.2020 16:48:24`
