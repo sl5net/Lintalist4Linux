@@ -14,7 +14,7 @@ Example: `phone|` or `address|`, `email|`, `now|`, `date|` etc. Or use [autohotk
     - [x] `:keyword` **replaces** text with result (if many it opens menu) and save in clipboard
     - without text
         - [x] `:` + press `F12` lets write the clipboard
-        - [x] `:` + press `F12` sends your clipboard 1 times. separated with tab-key
+        - [x] `:` + press `F12` sends your clipboard 1 times.
         - [x] `²` + press `F12` sends your clipboard 2 times. separated with tab-key
 
 More explanation:
