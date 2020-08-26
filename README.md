@@ -30,10 +30,13 @@ More explanation:
 ### For just simple replacements you like maybe:
 
 #### Using only simple replacements in its app:
-Telegram [telegram.org](telegram.org) or [element.io](https://element.io/) Chat emoji codes. For e.g. `:smiley:` or `:-)`
+Telegram [telegram.org](telegram.org) or [element.io](https://element.io/) Chat emoji codes.<br> 
+For e.g. `:smiley:` or `:-)` More examples: [telegram-emoji-list-codes-descriptions/](https://k3a.me/telegram-emoji-list-codes-descriptions/)
 
 #### Using only simple replacements everywhere:
 Maybe you want to install the following at the same time, as a supplement: [espanso.org](https://espanso.org/)
+
+#### Using simple and complex replacements everywhere:
 
 [lintalist.github.io](https://lintalist.github.io/)  says (10.08.2020):<br>
 "Lintalist allows you to store and (incrementally) search <br>
@@ -43,9 +46,10 @@ and edit texts in bundles and paste a selected text in your active program.<br>
 if you want see how it works while it works open the config file and set:
 `doPopupNotify_howItWorks = True`
 
+# installation (recommended):
+
 Tested with the following recommended installation:
 
-# installation (recommended):
 - [LinuxMint](https://linuxmint.com/edition.php?id=283) (tested with "Linux Mint 20 Ulyana - ******Xfce****** (64-bit)" may works with other Linux OS or Window OS)
 - Wine (HowTo: [linuxbabe.com/ .. install-wine-linux-mint](https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1) )
 - [Winetricks wiki](https://wiki.winehq.org/Winetricks#Installing_winetricks) 
