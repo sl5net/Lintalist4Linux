@@ -129,6 +129,10 @@ if you use PyCharm as external Editor and AutoKey Editor you may do the followin
 
 https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md
 
+### Motivation
+I having trouble fixing bugs in the [global-IntelliSense-everywhere](https://github.com/sl5net/global-IntelliSense-everywhere)
+ program and was looking for an alternative. 
+The solution here is a little different, but it works.
 
 # download
 
