@@ -5,9 +5,11 @@ Linux and Windows -platform **Text Replacer/Adder/Scripter** written in AutoKey/
 ## How it works
 1. The Add-Text-Method: 
     1. set your cursor (looks like `|`) **behind a word** (example: `phone`) in your text.<br> 
-Example: `phone|` or `address|`, `email|`, `now|`, `date|`, [... autohotkey commands](https://www.autohotkey.com/docs/commands/FormatTime.htm)
+Example: `phone|` or `address|`, `email|`, `now|`, `date|` etc. Or use [autohotkey commands](https://www.autohotkey.com/docs/commands/FormatTime.htm)
     1. Press key combination (please configure. recommended `F12`)
-    - [x] Database opens, **searching** results from your word (e.g. `phone`), and adds result behind and save result in clipboard.
+    - [x] The database opens and **searches** for results for your search term (e.g. `phone`)
+     and lists all matching results. <br>
+    - [x] With the Enter key, your selection is placed after your search term and saved in the clipboard.
 1. The Replace-Text-Method (and press shortcut): 
     - [x] `:keyword` replaces text with result (if many it opens menu) and save in clipboard
     - without text
