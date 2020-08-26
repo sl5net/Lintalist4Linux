@@ -47,7 +47,7 @@ Tested with the following recommended installation:
 ### copy files and configuration:
 
 1. copy <br>
-run-run-run-lintalistAHK *** .py<br>
+run-run-lintalistAHK *** .py<br>
 scripts to
 <br>/home/ YOU /.config/autokey/data/Sample Scripts/
 1. copy <br>
@@ -55,7 +55,7 @@ run-lintalistAHK.ahk<br>
 to<br>
 /home/ YOU /Documents/github/Lintalist4Linux/run-lintalistAHK.ahk
 1. open AutoKey App
-1. click run-run-lintalistAHK-all.py<br> and set shortcut
+1. click run-run-lintalistAHK-all.py<br> and set shortcut (for e.g. `F12`)
 
 # recommended Preferences:
 
