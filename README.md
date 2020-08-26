@@ -22,7 +22,7 @@ More explanation:
 - You always also have the result in your clipboard.
 - In some cases (e.g. if you simple want send your clipboard) it not using  `ctrl` + `v` method intern.
 
-Maybe you want to install the following at the same time, as a supplement: https://espanso.org/
+Maybe you want to install the following at the same time, as a supplement: [espanso.org](https://espanso.org/)
 
 [lintalist.github.io](https://lintalist.github.io/)  says (10.08.2020):<br>
 "Lintalist allows you to store and (incrementally) search <br>
