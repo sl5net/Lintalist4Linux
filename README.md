@@ -25,7 +25,7 @@ More explanation:
     - for example `:now` and replaces it with `20.08.2020 16:48:24`
 - If you want many Results for one keyword the Lintalist-Menu ⇶ is opening before (see more in Lintalist-Configuration about AutoExecuteOnce)
 - You always also have the result in your clipboard.
-- In some cases (e.g. if you simple want send your clipboard) it not using  `ctrl` + `v` method intern.
+- In some cases (e.g. if you simple want send your clipboard) it is not using  `ctrl` + `v` method intern. it`is writing it, not pasting it.
 
 Maybe you want to install the following at the same time, as a supplement: [espanso.org](https://espanso.org/)
 
