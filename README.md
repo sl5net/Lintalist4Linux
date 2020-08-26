@@ -3,18 +3,23 @@
 Linux and Windows -platform **Text Replacer/Adder/Scripter** written in AutoKey/Phyton and AutoHotKey with the Help from Lintalist  
 
 ## How it works
+1. The Add-Text-Method: 
+    1. set your cursor (looks like `|`) **behind a word** (example: `phone`) in your text.<br> 
+Example: `phone|` or `address|`, `email|`, `now|`, `date|`, [... autohotkey commands](https://www.autohotkey.com/docs/commands/FormatTime.htm)
+    1. Press shortcut (please configure. recommended `F12`)
+    - [x] Database opens, **searching** results from your word (e.g. `phone`), and adds result behind and save result in clipboard.
+1. The Replace-Text-Method (and press shortcut): 
+    - [x] `:keyword` replaces text with result (if many it opens menu) and save in clipboard
+    - [x] `:` without text, press `F12`) lets write the clipboard
+    - [x] `:` , press `F12` sends your clipboard 1 times. separated with tab-key
+    - [x] `²` , press `F12` sends your clipboard 2 times. separated with tab-key
 
-Lintalist4Linux
-
-1. waits for shortcut (please configure. recommended `Ctrl`+`K` or simple `F12`)
-1. reads your word as keyword (for example `:date` , `:now` or `now` or `address` etc.)
-    1. replace your word
-        1. for example `:date` and replaces it with `20.08.2020`
-        1. for example `:now` and replaces it with `20.08.2020 16:48:24`
-    1. adds new line behind your word
-        1. for example `now` adds the result into a new line. for e.g. `20.08.2020 16:48:24` and selects this line
-1. If you want many Results for one keyword the Lintalist-Menu ⇶ is opening before (see more in Lintalist-Configuration about AutoExecuteOnce)
-1. Also you have the result in your clipboard.
+More explanation:
+- for example `:date` and replaces it with `20.08.2020`
+- for example `:now` and replaces it with `20.08.2020 16:48:24`
+- If you want many Results for one keyword the Lintalist-Menu ⇶ is opening before (see more in Lintalist-Configuration about AutoExecuteOnce)
+- You always also have the result in your clipboard.
+- In some cases (e.g. if you simple want send your clipboard) it not using  `ctrl` + `v` method intern.
 
 [lintalist.github.io](https://lintalist.github.io/)  says (10.08.2020):<br>
 "Lintalist allows you to store and (incrementally) search <br>
@@ -133,6 +138,9 @@ Specific Version:
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.zip
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz
 
+Your are here:
+- https://github.com/sl5net/Lintalist4Linux  or at gitHub-Page
+- https://sl5net.github.io/Lintalist4Linux/ 
 
 ###### TODOs (just for fun ;) i like TODO list style
 
