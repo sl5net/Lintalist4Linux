@@ -16,8 +16,10 @@ Example: `phone|` or `address|`, `email|`, `now|`, `date|`, [... autohotkey comm
         - [x] `²` + press `F12` sends your clipboard 2 times. separated with tab-key
 
 More explanation:
-- for example `:date` and replaces it with `20.08.2020`
-- for example `:now` and replaces it with `20.08.2020 16:48:24`
+- you don't need write the complete keyword. e.g. writing `address|` or `addr|`  `adr|` or `ad|` my is enough if you use fuzzy search.
+- scripting with [... autohotkey commands](https://www.autohotkey.com/docs/commands/FormatTime.htm): 
+    - for example `:date` and replaces it with `20.08.2020`
+    - for example `:now` and replaces it with `20.08.2020 16:48:24`
 - If you want many Results for one keyword the Lintalist-Menu ⇶ is opening before (see more in Lintalist-Configuration about AutoExecuteOnce)
 - You always also have the result in your clipboard.
 - In some cases (e.g. if you simple want send your clipboard) it not using  `ctrl` + `v` method intern.
@@ -142,6 +144,6 @@ Specific Version:
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz
 
 Your are here:
-- https://github.com/sl5net/Lintalist4Linux  or at gitHub-Page
-- https://sl5net.github.io/Lintalist4Linux/ 
+- https://github.com/sl5net/Lintalist4Linux  <br>or at gitHub-Page:
+- [github.io/Lintalist4Linux](https://sl5net.github.io/Lintalist4Linux/) 
 
