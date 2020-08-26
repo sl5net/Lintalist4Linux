@@ -113,17 +113,14 @@ https://www.youtube.com/watch?v=ApYBcKEq53A&list=PLWkx_y_OWhl1rYx79ungQIz8D7sqNS
 - and much more
 
 
-##### Tipps for developer:
+##### Tip's for developer:
 
 if you use PyCharm as external Editor and AutoKey Editor you may do the following:
 
 ⚠⚠⚠⚠ "If you disable "Settings/Preferences | Appearance & Behavior | System Settings | Synchronization | Synchronize files on frame or editor tab activation" option ... IDE will show notification bar on top with "Reload" prompt (and possible other options -- depends on situation). But if you have it enabled .. it reloads file with no extra questions asked."
  (Andriy Bazanov, https://intellij-support.jetbrains.com/hc/en-us/community/posts/360000395260-Auto-reload-file-changes?page=1#community_comment_360000080239 )
 
- As developer i use (as workaround) to link AutoKey .py files together too an bigger file.
- Please read first comments inside the files.
-
-  TODO/Off-topic:
+- TODO/Off-topic:
  As developer i use (as workaround) kotlinC as Linker .py files together zu an bigger file:
  I used for installation SDKMAN!. Details here:
  `$ curl -s https://get.sdkman.io | bash`
@@ -132,9 +129,10 @@ if you use PyCharm as external Editor and AutoKey Editor you may do the followin
 
 https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md
 
-##### Tips for user don't want use github now:
 
-You could download without account or login: 
+# download
+
+You could download without github account: 
 
 download Latest Version:
 - [master.zip](https://github.com/sl5net/Lintalist4Linux/archive/master.zip)
@@ -143,7 +141,7 @@ download specific Version:
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.zip
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz
 
-Your are here:
+### Your are here:
 - [github.com/Lintalist4Linux](https://github.com/sl5net/Lintalist4Linux)  <br>or at gitHub-Page:
 - [github.io/Lintalist4Linux](https://sl5net.github.io/Lintalist4Linux/) <br> 
 Diese Seite auf Deutsch übersetzt: <br>
