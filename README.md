@@ -6,7 +6,7 @@ Linux and Windows -platform **Text Replacer/Adder/Scripter** written in AutoKey/
 1. The Add-Text-Method: 
     1. set your cursor (looks like `|`) **behind a word** (example: `phone`) in your text.<br> 
 Example: `phone|` or `address|`, `email|`, `now|`, `date|`, [... autohotkey commands](https://www.autohotkey.com/docs/commands/FormatTime.htm)
-    1. Press shortcut (please configure. recommended `F12`)
+    1. Press key combination (please configure. recommended `F12`)
     - [x] Database opens, **searching** results from your word (e.g. `phone`), and adds result behind and save result in clipboard.
 1. The Replace-Text-Method (and press shortcut): 
     - [x] `:keyword` replaces text with result (if many it opens menu) and save in clipboard
@@ -138,8 +138,8 @@ download Latest Version:
 - [master.zip](https://github.com/sl5net/Lintalist4Linux/archive/master.zip)
 
 download specific Version:
-- https://github.com/sl5net/Lintalist4Linux/archive/0.95.zip
-- https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz
+- https://github.com/sl5net/Lintalist4Linux/archive/0.98.zip
+- https://github.com/sl5net/Lintalist4Linux/archive/0.98.tar.gz
 
 ### Your are here:
 - [github.com/Lintalist4Linux](https://github.com/sl5net/Lintalist4Linux)  <br>or at gitHub-Page:
