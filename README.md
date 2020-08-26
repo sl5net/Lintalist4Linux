@@ -10,9 +10,9 @@ Example: `phone|` or `address|`, `email|`, `now|`, `date|` etc. Or use [autohotk
     - [x] The database opens and **searches** for results for your search term (e.g. `phone`)
      and lists all matching results. <br>
     - [x] With the Enter key, your selection is placed after your search term and saved in the clipboard.
-1. The Replace-Text-Method (and press shortcut): 
+1. The Replace-Text-Method (its when you using your text after the “:” character (and then press shortcut `F12`): 
     - [x] `:keyword` **replaces** text with result (if many it opens menu) and save in clipboard
-    - without text
+    - without text: 
         - [x] `:` and press `F12` writes out your clipboard content
         - [x] `²` and press `F12` writes out your clipboard 2 times. separated with tab-key
 
@@ -27,6 +27,12 @@ More explanation:
 - You always also have the result in your clipboard.
 - In some cases (e.g. if you simple want send your clipboard) it is not using  `ctrl` + `v` method intern. it`is writing it, not pasting it.
 
+### For just simple replacements you like maybe:
+
+#### Using only simple replacements in its app:
+Telegram [telegram.org](telegram.org) or [element.io](https://element.io/) Chat emoji codes. For e.g. `:smiley:` or `:-)`
+
+#### Using only simple replacements everywhere:
 Maybe you want to install the following at the same time, as a supplement: [espanso.org](https://espanso.org/)
 
 [lintalist.github.io](https://lintalist.github.io/)  says (10.08.2020):<br>
