@@ -10,9 +10,10 @@ Example: `phone|` or `address|`, `email|`, `now|`, `date|`, [... autohotkey comm
     - [x] Database opens, **searching** results from your word (e.g. `phone`), and adds result behind and save result in clipboard.
 1. The Replace-Text-Method (and press shortcut): 
     - [x] `:keyword` replaces text with result (if many it opens menu) and save in clipboard
-    - [x] `:` without text, press `F12`) lets write the clipboard
-    - [x] `:` , press `F12` sends your clipboard 1 times. separated with tab-key
-    - [x] `²` , press `F12` sends your clipboard 2 times. separated with tab-key
+    - without text
+        - [x] `:` + press `F12` lets write the clipboard
+        - [x] `:` + press `F12` sends your clipboard 1 times. separated with tab-key
+        - [x] `²` + press `F12` sends your clipboard 2 times. separated with tab-key
 
 More explanation:
 - for example `:date` and replaces it with `20.08.2020`
@@ -20,6 +21,8 @@ More explanation:
 - If you want many Results for one keyword the Lintalist-Menu ⇶ is opening before (see more in Lintalist-Configuration about AutoExecuteOnce)
 - You always also have the result in your clipboard.
 - In some cases (e.g. if you simple want send your clipboard) it not using  `ctrl` + `v` method intern.
+
+Maybe you want to install the following at the same time, as a supplement: https://espanso.org/
 
 [lintalist.github.io](https://lintalist.github.io/)  says (10.08.2020):<br>
 "Lintalist allows you to store and (incrementally) search <br>
