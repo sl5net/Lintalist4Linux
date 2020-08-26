@@ -136,10 +136,10 @@ https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md
 
 You could download without account or login: 
 
-Latest:
-- https://github.com/sl5net/Lintalist4Linux/archive/master.zip
+download Latest Version:
+- [master.zip](https://github.com/sl5net/Lintalist4Linux/archive/master.zip)
 
-Specific Version:
+download specific Version:
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.zip
 - https://github.com/sl5net/Lintalist4Linux/archive/0.95.tar.gz
 
