@@ -51,7 +51,10 @@ if you want see how it works while it works open the config file and set:
 Tested with the following recommended installation:
 
 - [LinuxMint](https://linuxmint.com/edition.php?id=283) (tested with "Linux Mint 20 Ulyana - ******Xfce****** (64-bit)" may works with other Linux OS or Window OS)
-- Wine (HowTo: [linuxbabe.com/ .. install-wine-linux-mint](https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1) )
+- Wine
+<br>⚠⚠ i got error message installing Wine at Linux Ubuntu and installing wine in Linux Mint:
+This helps me: 
+<br>[http://ubuntuhandbook.org/index.php/2020/01/install-wine-5-0-stable-ubuntu-18-04-19-10/](http://ubuntuhandbook.org/index.php/2020/01/install-wine-5-0-stable-ubuntu-18-04-19-10/)
 - [Winetricks wiki](https://wiki.winehq.org/Winetricks#Installing_winetricks) 
 - [AutoKey](https://github.com/autokey/autokey#installation) (or may use your Software Manager )
 - [AutoHotKey.com](https://www.autohotkey.com/)  ( maybe [github.com/Lexikos/AutoHotkey_L](https://github.com/Lexikos/AutoHotkey_L) )
