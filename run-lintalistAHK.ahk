@@ -2,38 +2,26 @@
 #NoTrayIcon
 #SingleInstance Ignore
 #Persistent
+
+pathHome := "Z:\home\" ; dont change this. its same for all users
+
+;<<<<<<<< configure
+yourUserName := "administrator ; configure here your user name
+path := pathHome yourUserName "\ahk\lintalist\" ; configure folder where lintalist is stored
+;>>>>>>>> configure
+
+
+; :world
+
 SetWorkingDir, %A_ScriptDir%
 SetBatchLines, -1
 CoordMode, Pixel, Screen
-
-; the same place in different notations:
-; C:\users\administrator\Desktop\sendF1v2.ahk
-; /home/administrator/Desktop/sendF1v2.ahk
-; https://github.com/sl5net/Lintalist4Linux-version-0.00000001-Alpha
-
-; Z:\home\administrator\ahk\lintalist\lintalist.ahk
-; /home/administrator/ahk/lintalist/lintalist.ahk
-
 
 ClipboardFirst := RTrim(LTrim(Clipboard, " `n`t:"))
 
 SendLevel, 99
 
 Sleep,100
-
-; if( WinExist("Lintalist") ){
-; MsgBox,lintalist found :)
-; }else{
-; MsgBox,Lintalist NOT found :(
-; run,Z:\home\administrator\ahk\lintalist\lintalist.ahk
-; }
-
-  ; this run commands working at the moment:
-  ; ~$ wine ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe /home/administrator/Desktop/sendF1v2.ahk
-
-; dont use it like:
-; $ wine /home/me/Desktop/sendF1v2.ahk
-; wine: Bad EXE format for Z:\home\me\Desktop\sendF1v2.ahk.
 
 SendInput,{f1}
 
@@ -47,7 +35,7 @@ winTitleLintalist := "Lintalist - 1.9.13 ahk_class AutoHotkeyGUI"
 WinWait, % winTitleLintalist, , 3
 if ErrorLevel
 {
-    run,Z:\home\administrator\ahk\lintalist\lintalist.ahk
+    run,% path . "\lintalist.ahk"
     ; MsgBox , Options, Title, Text, Timeout
     ; MsgBox, ,ups pls wait a second, WinWait timed out. '... Lintalist- ...'Window not found => i try again, 3
     MsgBox, ,ups lintalist not found. Try again?, Try again? '... Lintalist- ...'Window not found

@@ -60,6 +60,10 @@ This helps me:
 - [AutoHotKey.com](https://www.autohotkey.com/)  ( maybe [github.com/Lexikos/AutoHotkey_L](https://github.com/Lexikos/AutoHotkey_L) )
 - [lintalist.github.io](https://lintalist.github.io/)
 
+BTW i installed Linux Ubuntu-minimal in Virtualbox. ( 20-08-27 18:33:08 )<br>
+needs minimum 12 GB Hard Disk. Use RAM more then 4 GB. Maybe RAM 6GB ( 20-08-27 18:33:08 )<br> 
+https://youtu.be/XtV0OQmUYy8  ( 20-08-27 18:33:08 )
+
 ### copy files and configuration:
 
 1. copy <br>

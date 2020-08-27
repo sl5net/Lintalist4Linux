@@ -30,7 +30,7 @@ def popupNotify_howItWorks(text):
     if doPopupNotify_howItWorks:
         subprocess.Popen(['notify-send', text])  # will be showed right top
 
-def writeAllFile_from_main_defs(path):
+def writeAllFile_from_main_defs(path,rewriteAlways = False):
     global do_DisableUpdatingThe_all_file
     if do_DisableUpdatingThe_all_file:
         return
@@ -38,12 +38,13 @@ def writeAllFile_from_main_defs(path):
     # global data
     data = "# Attention: !!! don`t edit thi file. this file will be result from other files merged."
 
-    getmtimeConfig = os.path.getmtime(path + 'run-run-lintalistAHK-config.py')
-    getmtimeDefs = os.path.getmtime(path + 'run-run-lintalistAHK-defs.py')
-    getmtimeMain = os.path.getmtime(path + 'run-run-lintalistAHK-main.py')
-    getmtimeAll = os.path.getmtime(path + 'run-run-lintalistAHK-all.py')
+    if not rewriteAlways:
+        getmtimeConfig = os.path.getmtime(path + 'run-run-lintalistAHK-config.py')
+        getmtimeDefs = os.path.getmtime(path + 'run-run-lintalistAHK-defs.py')
+        getmtimeMain = os.path.getmtime(path + 'run-run-lintalistAHK-main.py')
+        getmtimeAll = os.path.getmtime(path + 'run-run-lintalistAHK-all.py')
 
-    if getmtimeAll < getmtimeDefs or getmtimeAll < getmtimeConfig or getmtimeAll < getmtimeMain:
+    if rewriteAlways or (getmtimeAll < getmtimeDefs or getmtimeAll < getmtimeConfig or getmtimeAll < getmtimeMain):
         subprocess.Popen(['notify-send', ' need update'])  # will be showed right top
         # Reading data from file1
         with open(path + 'run-run-lintalistAHK-config.py') as fp:
