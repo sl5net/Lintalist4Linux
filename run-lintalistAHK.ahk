@@ -6,7 +6,7 @@
 pathHome := "Z:\home\" ; dont change this. its same for all users
 
 ;<<<<<<<< configure
-yourUserName := "administrator ; configure here your user name
+yourUserName := "administrator" ; configure here your user name
 path := pathHome yourUserName "\ahk\lintalist\" ; configure folder where lintalist is stored
 ;>>>>>>>> configure
 
