@@ -11,7 +11,7 @@ path := pathHome yourUserName "\ahk\lintalist\" ; configure folder where lintali
 ;>>>>>>>> configure
 
 
-; :world
+; 2015/07 -  world2015/07 -  world
 
 SetWorkingDir, %A_ScriptDir%
 SetBatchLines, -1
@@ -38,12 +38,17 @@ if ErrorLevel
     run,% path . "\lintalist.ahk"
     ; MsgBox , Options, Title, Text, Timeout
     ; MsgBox, ,ups pls wait a second, WinWait timed out. '... Lintalist- ...'Window not found => i try again, 3
-    MsgBox, ,ups lintalist not found. Try again?, Try again? '... Lintalist- ...'Window not found
-    ; ExitApp
-    reload
-    return
+    ; MsgBox, ,ups lintalist not found. Try again?, Try again? '... Lintalist- ...'Window not found
+    WinWait, % winTitleLintalist, , 3
+    if ErrorLevel
+    {
+        MsgBox, ,ups lintalist not found. , '... Lintalist- ...'Window not found
+        ExitApp
+    }
+    ; reload
+    ; return
 }
-else
+if True
 {
 
   WinActivate ; use the window found above  
