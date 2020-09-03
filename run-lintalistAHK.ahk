@@ -2,6 +2,10 @@
 #NoTrayIcon
 #SingleInstance Ignore
 #Persistent
+SetWorkingDir, %A_ScriptDir%
+SetBatchLines, -1
+CoordMode, Pixel, Screen
+
 
 pathHome := "Z:\home\" ; dont change this. its same for all users
 
@@ -11,11 +15,8 @@ path := pathHome yourUserName "\ahk\lintalist\" ; configure folder where lintali
 ;>>>>>>>> configure
 
 
-; 2015/07 -  world2015/07 -  world
 
-SetWorkingDir, %A_ScriptDir%
-SetBatchLines, -1
-CoordMode, Pixel, Screen
+
 
 ClipboardFirst := RTrim(LTrim(Clipboard, " `n`t:"))
 
@@ -35,16 +36,16 @@ winTitleLintalist := "Lintalist - 1.9.13 ahk_class AutoHotkeyGUI"
 WinWait, % winTitleLintalist, , 3
 if ErrorLevel
 {
-    run,% path . "\lintalist.ahk"
+    lintalistAHK_path := path . "\lintalist.ahk"
+    run, % lintalistAHK_path
     ; MsgBox , Options, Title, Text, Timeout
     ; MsgBox, ,ups pls wait a second, WinWait timed out. '... Lintalist- ...'Window not found => i try again, 3
     ; MsgBox, ,ups lintalist not found. Try again?, Try again? '... Lintalist- ...'Window not found
     WinWait, % winTitleLintalist, , 3
     if ErrorLevel
-    {
-        MsgBox, ,ups lintalist not found. , '... Lintalist- ...'Window not found
-        ExitApp
-    }
+      ExitApp
+
+
     ; reload
     ; return
 }
@@ -84,7 +85,7 @@ if True
 
 }
 
-Send,{ShiftUp} ; sometimes it was hanging
+Send,{ShiftUp} ; sometimes it was hanging 20-08-22 16:28:15
 
 ; Msgbox,Ok  MsgboxMsgboxMsgboxMsgbox  MsgboxMsgboxMsgboxMsgbox box  box     MsgboxMsgboxMsgboxMsgbox
 
@@ -100,3 +101,4 @@ if(!StrLen(c)){
 
 ExitApp
 
+; 
