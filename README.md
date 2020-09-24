@@ -60,9 +60,19 @@ This helps me:
 - [AutoHotKey.com](https://www.autohotkey.com/)  ( maybe [github.com/Lexikos/AutoHotkey_L](https://github.com/Lexikos/AutoHotkey_L) )
 - [lintalist.github.io](https://lintalist.github.io/)
 
+download Latest Version:
+- [master.zip](https://github.com/sl5net/Lintalist4Linux/archive/master.zip)
+
+
 BTW i installed Linux Ubuntu-minimal in Virtualbox. ( 20-08-27 18:33:08 )<br>
 needs minimum 12 GB Hard Disk. Use RAM more then 4 GB. Maybe RAM 6GB ( 20-08-27 18:33:08 )<br> 
 https://youtu.be/XtV0OQmUYy8  ( 20-08-27 18:33:08 )
+
+BTW i installed Linux KDEneon (User Edition 64bit) today. ( 24.09.2020  )<br>
+needs all wine trick that you could see above. Works great then
+
+
+
 
 ### copy files and configuration:
 
