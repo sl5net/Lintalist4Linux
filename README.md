@@ -69,7 +69,8 @@ needs minimum 12 GB Hard Disk. Use RAM more then 4 GB. Maybe RAM 6GB ( 20-08-27 
 https://youtu.be/XtV0OQmUYy8  ( 20-08-27 18:33:08 )
 
 BTW i installed Linux KDEneon (User Edition 64bit) today. ( 24.09.2020  )<br>
-needs all wine trick that you could see above. Works great then
+needs all wine trick that you could see above. Looks great but AutoKey missing some functionallity.
+⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠ Important: autokey "will not function 100% on distributions that default to using Wayland (like KDE) instead of Xorg."
 
 
 
