@@ -80,11 +80,11 @@ needs all wine trick that you could see above. Looks great but AutoKey missing s
 1. copy <br>
 run-run-lintalistAHK *** .py<br>
 scripts to
-<br>/home/ YOU /.config/autokey/data/Sample Scripts/
+<br>~/.config/autokey/data/Sample Scripts/
 1. copy <br>
 run-lintalistAHK.ahk<br>
 to<br>
-/home/ YOU /Documents/github/Lintalist4Linux/run-lintalistAHK.ahk
+~/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk
 1. open AutoKey App
 1. click run-run-lintalistAHK-all.py<br> and set shortcut (for e.g. `F12`)
 
