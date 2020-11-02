@@ -7,10 +7,14 @@ SetBatchLines, -1
 CoordMode, Pixel, Screen
 
 
+; MsgBox,% A_UserName
+; hallo
+
+
 pathHome := "Z:\home\" ; dont change this. its same for all users
 
 ;<<<<<<<< configure
-yourUserName := "administrator" ; configure here your user name
+yourUserName := A_UserName ; configure here your user name
 path := pathHome yourUserName "\ahk\lintalist64\" ; configure folder where lintalist is stored
 ; path := pathHome yourUserName "\Documents\github\lintalist64\" ; configure folder where lintalist is stored
 
