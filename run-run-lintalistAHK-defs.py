@@ -34,7 +34,7 @@ def writeAllFile_from_main_defs(path,rewriteAlways = False):
     global do_DisableUpdatingThe_all_file
     if do_DisableUpdatingThe_all_file:
         return
-    # path = "/home/administrator/.config/autokey/data/Sample Scripts/"
+    path = home + "/.config/autokey/data/Sample Scripts/"
     # global data
     data = "# Attention: !!! don`t edit thi file. this file will be result from other files merged."
 
@@ -154,13 +154,14 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     popupNotify_howItWorks("run run-lintalistAHK.ahk")
     # beeps(duration=.25, freq=5000, loops=1)
     try:
-        # subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
+        # subprocess.Popen(["/bin/bash", home + "/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
         # import os :seb
 
-        myCmd = 'wine ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+        myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ' + home + '/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+        # myCmd = 'wine /home/administrator/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ~/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
         os.system(myCmd)
 
-        # myCmd = kotlinc - script "/home/administrator/.config/autokey/data/Sample Scripts/PyLink.kts" - - -d. /
+        # myCmd = kotlinc - script home + "/.config/autokey/data/Sample Scripts/PyLink.kts" - - -d. /
         # os.system(myCmd)
     except subprocess.CalledProcessError:
         time.sleep(0.2)

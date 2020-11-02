@@ -1,7 +1,9 @@
 # this file will be (hopefully merged to) ...-all.py
 
+from pathlib import Path
+home = str(Path.home())
 
-path = "/home/administrator/.config/autokey/data/Sample Scripts/"
+path = home + "/.config/autokey/data/Sample Scripts/"
 
 doBeepsWelcomeAtEachRun = False
 doPopupNotify_welcomeAtEachRun = False  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top

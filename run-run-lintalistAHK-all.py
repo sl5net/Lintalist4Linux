@@ -1,8 +1,16 @@
 # Attention: !!! don`t edit thi file. this file will be result from other files merged.
 # this file will be (hopefully merged to) ...-all.py
 
+from pathlib import Path
+home = str(Path.home())
 
-path = "/home/administrator/.config/autokey/data/Sample Scripts/"
+#/‾‾‾ CPU too high !!!!!!!!!!!!!!!!
+# this is buggy. i got CPU to 10% thats really to much
+# do_DisableUpdatingThe_all_file = False  # not recommended if you developing at this py files !
+do_DisableUpdatingThe_all_file = True  # not recommended if you developing at this py files !
+#\___ CPU too high !!!!!!!!!!!!!!!!
+
+path = home + "/.config/autokey/data/Sample Scripts/"
 
 doBeepsWelcomeAtEachRun = False
 doPopupNotify_welcomeAtEachRun = False  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
@@ -13,7 +21,6 @@ doReplaceIfPrefixIsThis = ":"
 do_ifNoPrefix_useFocusedWord_pasteResultRight = True
 do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
 
-do_DisableUpdatingThe_all_file = False  # not recommended if you developing at this py files !
 
 #__________________ end of config
 
@@ -59,20 +66,21 @@ def popupNotify_howItWorks(text):
     if doPopupNotify_howItWorks:
         subprocess.Popen(['notify-send', text])  # will be showed right top
 
-def writeAllFile_from_main_defs(path):
+def writeAllFile_from_main_defs(path,rewriteAlways = False):
     global do_DisableUpdatingThe_all_file
     if do_DisableUpdatingThe_all_file:
         return
-    # path = "/home/administrator/.config/autokey/data/Sample Scripts/"
+    path = home + "/.config/autokey/data/Sample Scripts/"
     # global data
     data = "# Attention: !!! don`t edit thi file. this file will be result from other files merged."
 
-    getmtimeConfig = os.path.getmtime(path + 'run-run-lintalistAHK-config.py')
-    getmtimeDefs = os.path.getmtime(path + 'run-run-lintalistAHK-defs.py')
-    getmtimeMain = os.path.getmtime(path + 'run-run-lintalistAHK-main.py')
-    getmtimeAll = os.path.getmtime(path + 'run-run-lintalistAHK-all.py')
+    if not rewriteAlways:
+        getmtimeConfig = os.path.getmtime(path + 'run-run-lintalistAHK-config.py')
+        getmtimeDefs = os.path.getmtime(path + 'run-run-lintalistAHK-defs.py')
+        getmtimeMain = os.path.getmtime(path + 'run-run-lintalistAHK-main.py')
+        getmtimeAll = os.path.getmtime(path + 'run-run-lintalistAHK-all.py')
 
-    if getmtimeAll < getmtimeDefs or getmtimeAll < getmtimeConfig or getmtimeAll < getmtimeMain:
+    if rewriteAlways or (getmtimeAll < getmtimeDefs or getmtimeAll < getmtimeConfig or getmtimeAll < getmtimeMain):
         subprocess.Popen(['notify-send', ' need update'])  # will be showed right top
         # Reading data from file1
         with open(path + 'run-run-lintalistAHK-config.py') as fp:
@@ -182,13 +190,14 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     popupNotify_howItWorks("run run-lintalistAHK.ahk")
     # beeps(duration=.25, freq=5000, loops=1)
     try:
-        # subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
+        # subprocess.Popen(["/bin/bash", home + "/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
         # import os :seb
 
-        myCmd = 'wine ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+        myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ' + home + '/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+        # myCmd = 'wine /home/administrator/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ~/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
         os.system(myCmd)
 
-        # myCmd = kotlinc - script "/home/administrator/.config/autokey/data/Sample Scripts/PyLink.kts" - - -d. /
+        # myCmd = kotlinc - script home + "/.config/autokey/data/Sample Scripts/PyLink.kts" - - -d. /
         # os.system(myCmd)
     except subprocess.CalledProcessError:
         time.sleep(0.2)

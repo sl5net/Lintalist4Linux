@@ -1,11 +1,16 @@
-writeAllFile_from_main_defs(path,True)
+# import os, time, datetime, pathlib, subprocess # TODO: one day install: http://omz-software.com/pythonista/docs/ios/clipboard.html
+# from pathlib import Path
+# home = str(Path.home())
+# path = home + "/.config/autokey/data/Sample Scripts/"
+# do_DisableUpdatingThe_all_file = False
 
+# test
 
 def writeAllFile_from_main_defs(path,rewriteAlways = False):
     global do_DisableUpdatingThe_all_file
     if do_DisableUpdatingThe_all_file:
         return
-    # path = "/home/administrator/.config/autokey/data/Sample Scripts/"
+    path = home + "/.config/autokey/data/Sample Scripts/"
     # global data
     data = "# Attention: !!! don`t edit thi file. this file will be result from other files merged."
 
@@ -34,3 +39,4 @@ def writeAllFile_from_main_defs(path,rewriteAlways = False):
     # https://stackoverflow.com/questions/16226607/any-way-to-import-autokey-libraries-into-python-script
     # https://github.com/autokey/autokey/issues/248#issue-406386345
 
+writeAllFile_from_main_defs(path,True)
