@@ -81,6 +81,11 @@ needs all wine trick that you could see above. Looks great but AutoKey missing s
 run-run-lintalistAHK *** .py<br>
 scripts to
 <br>~/.config/autokey/data/Sample Scripts/
+1. copy Folder<br>
+~/Download/lintalist64<br>
+to<br>
+~/ahk/github/lintalist64
+<br>sorry to many folders this version<br>
 1. copy <br>
 run-lintalistAHK.ahk<br>
 to<br>
