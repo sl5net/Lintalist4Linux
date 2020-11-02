@@ -95,6 +95,12 @@ to<br>
 
 # recommended Preferences:
 
+run-lintalistAHK
+
+yourUserName := "XXXXXX" ; configure here your user name
+
+# recommended Preferences:
+
 edit one line of each file (so they find your scripts)
 
 ## Autokey - Preferences:
