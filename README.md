@@ -95,7 +95,7 @@ to<br>
 
 # recommended Preferences:
 
-run-lintalistAHK
+config
 
 yourUserName := "XXXXXX" ; configure here your user name
 
