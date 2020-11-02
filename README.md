@@ -93,9 +93,9 @@ to<br>
 1. open AutoKey App
 1. click run-run-lintalistAHK-all.py<br> and set shortcut (for e.g. `F12`)
 
-# recommended Preferences:
+# config:
 
-config
+run-lintalistAHK
 
 yourUserName := "XXXXXX" ; configure here your user name
 
