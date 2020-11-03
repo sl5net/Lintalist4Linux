@@ -72,10 +72,7 @@ This helps me:
 - [master.zip from Lintalist4Linux](https://github.com/sl5net/Lintalist4Linux/archive/master.zip)
 
 Video: 
-[Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/CFi3tdCCdxw)
-
-
-
+[Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/CFi3tdCCdxw) with https://github.com/sl5net/Lintalist4Linux/releases/tag/0.988
 
 
 
