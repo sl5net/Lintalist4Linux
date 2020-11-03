@@ -59,40 +59,27 @@ needs winetricks. Looks great but AutoKey missing some functionality.
 ⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠ Important: autokey "will not function 100% on distributions that default to using Wayland (like KDE) instead of Xorg."
 1. [Kubuntu 20.10](https://kubuntu.org/getkubuntu/) at 03.11.2020 (******KDE Desktop****** (64-bit)" may works with other Linux OS or Window OS)
 
-#### You need:
+You need maybe Linux, maybe kubuntu, maybe with KDE Desktop.
 
-- maybe Linux, maybe kubuntu, maybe with KDE Desktop.
-- Wine
+1. install Wine like here:
 <br>⚠⚠ i got error message installing Wine at Linux Ubuntu and installing wine in Linux Mint:
 This helps me: 
 <br>[http://ubuntuhandbook.org/index.php/2020/01/install-wine-5-0-stable-ubuntu-18-04-19-10/](http://ubuntuhandbook.org/index.php/2020/01/install-wine-5-0-stable-ubuntu-18-04-19-10/)
-- [AutoKey](https://github.com/autokey/autokey#installation) (or may use your Software Manager )
-- [AutoHotKey.com](https://www.autohotkey.com/)  ( maybe [github.com/Lexikos/AutoHotkey_L](https://github.com/Lexikos/AutoHotkey_L) )
-- [lintalist64.zip from lintalist.github.io](https://lintalist.github.io/)
-- [master.zip from Lintalist4Linux](https://github.com/sl5net/Lintalist4Linux/archive/master.zip)
-
-Video: 
-[Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/CFi3tdCCdxw) with https://github.com/sl5net/Lintalist4Linux/releases/tag/0.988
-
-
-
-### copy files and configuration:
-
-1. copy <br>
-run-run-lintalistAHK *** .py<br>
-scripts to (folder may not be created until Autokey is started for the first time)
-<br>~/.config/autokey/data/Sample Scripts/
-1. copy Folder<br>
-~/Download/lintalist64<br>
-to<br>
+1. install [AutoHotKey.com](https://www.autohotkey.com/)
+1. install [AutoKey](https://github.com/autokey/autokey#installation) (or may use your Software Manager )
+1. start AutoKey GUI
+1. close AutoKey GUI (a folder may not be created until Autokey is started for the first time))
+1. extract [master.zip from Lintalist4Linux](https://github.com/sl5net/Lintalist4Linux/archive/master.zip) to<br>
+~/.config/autokey/data/Sample Scripts/
+1. extract [lintalist64.zip from lintalist.github.io](https://lintalist.github.io/) to<br>
 ~/ahk/github/lintalist64
-<br>sorry to many folders this version<br>
-1. copy <br>
-run-lintalistAHK.ahk<br>
-to<br>
-~/Documents/github/Lintalist4Linux/
 1. open AutoKey App
 1. click run-run-lintalistAHK-all.py<br> and set shortcut (for e.g. `F12`)
+to<br>
+
+
+Video installation of v0.988:<br> 
+[Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/CFi3tdCCdxw) with https://github.com/sl5net/Lintalist4Linux/releases/tag/0.988
 
 # recommended Preferences:
 
