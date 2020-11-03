@@ -193,7 +193,8 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         # subprocess.Popen(["/bin/bash", home + "/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
         # import os :seb
 
-        myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ' + home + '/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+        # myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ' + home + '/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+        myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "' + home + '/.config/autokey/data/Sample Scripts/run-lintalistAHK.ahk"'
         # myCmd = 'wine /home/administrator/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ~/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
         os.system(myCmd)
 
@@ -324,7 +325,7 @@ def select_text(keyboard, len_clipboardBackup = 0):  #  0 if dont know the clipb
 # :umm
 # this file will be (hopefully merged to) ...-all.py
 
-writeAllFile_from_main_defs(path)
+# writeAllFile_from_main_defs(path)
 
 if doPopupNotify_howItWorks:
     popupNotify_howItWorks("doPopupNotify_howItWorks is set TRUE\n in the ..config.py file. Great :)")

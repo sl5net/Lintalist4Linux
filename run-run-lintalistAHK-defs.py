@@ -157,9 +157,12 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         # subprocess.Popen(["/bin/bash", home + "/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
         # import os :seb
 
-        myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ' + home + '/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+        # myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ' + home + '/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+        myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "' + home + '/.config/autokey/data/Sample Scripts/run-lintalistAHK.ahk"'
         # myCmd = 'wine /home/administrator/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ~/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
         os.system(myCmd)
+
+        # test
 
         # myCmd = kotlinc - script home + "/.config/autokey/data/Sample Scripts/PyLink.kts" - - -d. /
         # os.system(myCmd)
