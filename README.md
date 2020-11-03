@@ -74,7 +74,8 @@ This helps me:
 1. extract [lintalist64.zip from lintalist.github.io](https://lintalist.github.io/) to<br>
 ~/ahk/github/lintalist64
 
-Video installation of v0.988:<br> 
+## Video installation:
+Video installation of [v0.988](https://github.com/sl5net/Lintalist4Linux/releases/tag/0.988):<br> 
 [Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/CFi3tdCCdxw) with https://github.com/sl5net/Lintalist4Linux/releases/tag/0.988
 
 # recommended Preferences:
