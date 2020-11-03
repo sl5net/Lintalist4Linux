@@ -50,7 +50,9 @@ if you want see how it works while it works open the config file and set:
 
 Tested with the following recommended installation:
 
-- [LinuxMint](https://linuxmint.com/edition.php?id=283) (tested with "Linux Mint 20 Ulyana - ******Xfce****** (64-bit)" may works with other Linux OS or Window OS)
+1. [LinuxMint](https://linuxmint.com/edition.php?id=283) at 2019 (tested with "Linux Mint 20 Ulyana - ******Xfce****** (64-bit)" may works with other Linux OS or Window OS)
+1. [Kubuntu 20.10](https://kubuntu.org/getkubuntu/) at 03.11.2020 (******KDE Desktop****** (64-bit)" may works with other Linux OS or Window OS)
+
 - Wine
 <br>⚠⚠ i got error message installing Wine at Linux Ubuntu and installing wine in Linux Mint:
 This helps me: 
