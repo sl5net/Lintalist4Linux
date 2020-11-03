@@ -51,8 +51,17 @@ if you want see how it works while it works open the config file and set:
 Tested with the following recommended installation:
 
 1. [LinuxMint](https://linuxmint.com/edition.php?id=283) at 2019 (tested with "Linux Mint 20 Ulyana - ******Xfce****** (64-bit)" may works with other Linux OS or Window OS)
+1. Ubuntu-minimal in Virtualbox. ( 20-08-27 18:33:08 )<br>
+needs minimum 12 GB Hard Disk. Use RAM more then 4 GB. Maybe RAM 6GB ( 20-08-27 18:33:08 )<br> 
+https://youtu.be/XtV0OQmUYy8  at 27.08.2020
+1. KDEneon (User Edition 64bit) at 24.09.2020<br>
+needs winetricks. Looks great but AutoKey missing some functionality.
+⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠ Important: autokey "will not function 100% on distributions that default to using Wayland (like KDE) instead of Xorg."
 1. [Kubuntu 20.10](https://kubuntu.org/getkubuntu/) at 03.11.2020 (******KDE Desktop****** (64-bit)" may works with other Linux OS or Window OS)
 
+#### You need:
+
+- maybe Linux, maybe kubuntu, maybe with KDE Desktop.
 - Wine
 <br>⚠⚠ i got error message installing Wine at Linux Ubuntu and installing wine in Linux Mint:
 This helps me: 
@@ -65,13 +74,7 @@ This helps me:
 Video: 
 [Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/CFi3tdCCdxw)
 
-BTW i installed Linux Ubuntu-minimal in Virtualbox. ( 20-08-27 18:33:08 )<br>
-needs minimum 12 GB Hard Disk. Use RAM more then 4 GB. Maybe RAM 6GB ( 20-08-27 18:33:08 )<br> 
-https://youtu.be/XtV0OQmUYy8  ( 20-08-27 18:33:08 )
 
-BTW i installed Linux KDEneon (User Edition 64bit) today. ( 24.09.2020  )<br>
-needs all wine trick that you could see above. Looks great but AutoKey missing some functionallity.
-⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠ Important: autokey "will not function 100% on distributions that default to using Wayland (like KDE) instead of Xorg."
 
 
 
