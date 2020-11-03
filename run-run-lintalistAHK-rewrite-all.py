@@ -4,8 +4,6 @@
 # path = home + "/.config/autokey/data/Sample Scripts/"
 # do_DisableUpdatingThe_all_file = False
 
-# test
-
 def writeAllFile_from_main_defs(path,rewriteAlways = False):
     global do_DisableUpdatingThe_all_file
     if do_DisableUpdatingThe_all_file:
@@ -39,4 +37,4 @@ def writeAllFile_from_main_defs(path,rewriteAlways = False):
     # https://stackoverflow.com/questions/16226607/any-way-to-import-autokey-libraries-into-python-script
     # https://github.com/autokey/autokey/issues/248#issue-406386345
 
-writeAllFile_from_main_defs(path,True)
+# writeAllFile_from_main_defs(path,True)

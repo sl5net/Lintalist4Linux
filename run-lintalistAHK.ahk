@@ -15,8 +15,9 @@ pathHome := "Z:\home\" ; dont change this. its same for all users
 
 ;<<<<<<<< configure
 yourUserName := A_UserName
-path := pathHome yourUserName "\ahk\lintalist64\" ; configure folder where lintalist is stored
-; path := pathHome yourUserName "\Documents\github\lintalist64\" ; configure folder where lintalist is stored
+; path := pathHome yourUserName "\ahk\lintalist64" ; configure folder where lintalist is stored
+path := pathHome yourUserName "\ahk\github\lintalist64\" ; configure folder where lintalist is stored
+; path := pathHome yourUserName "\Documents\github\lintalist64" ; configure folder where lintalist is stored
 
 ;>>>>>>>> configure
 
@@ -38,7 +39,7 @@ winTitleLintalist := "Lintalist - 1.9.13 ahk_class AutoHotkeyGUI"
 WinWait, % winTitleLintalist, , 3
 if ErrorLevel
 {
-    lintalistAHK_path := path . "\lintalist.ahk"
+    lintalistAHK_path := path . "lintalist.ahk"
     run, % lintalistAHK_path
     ; MsgBox , Options, Title, Text, Timeout
     ; MsgBox, ,ups pls wait a second, WinWait timed out. '... Lintalist- ...'Window not found => i try again, 3

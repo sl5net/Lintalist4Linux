@@ -408,5 +408,9 @@ keyboard.release_key('<shift>')  # sometimes i got hanging shift key
 
 # 200 line
 
+# line
+
+popupNotify_howItWorks("End of Line in Lintalist4Linux byby")
+
 time.sleep(1)
 
