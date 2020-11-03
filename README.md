@@ -55,14 +55,13 @@ Tested with the following recommended installation:
 <br>⚠⚠ i got error message installing Wine at Linux Ubuntu and installing wine in Linux Mint:
 This helps me: 
 <br>[http://ubuntuhandbook.org/index.php/2020/01/install-wine-5-0-stable-ubuntu-18-04-19-10/](http://ubuntuhandbook.org/index.php/2020/01/install-wine-5-0-stable-ubuntu-18-04-19-10/)
-- [Winetricks wiki](https://wiki.winehq.org/Winetricks#Installing_winetricks) 
 - [AutoKey](https://github.com/autokey/autokey#installation) (or may use your Software Manager )
 - [AutoHotKey.com](https://www.autohotkey.com/)  ( maybe [github.com/Lexikos/AutoHotkey_L](https://github.com/Lexikos/AutoHotkey_L) )
-- [lintalist.github.io](https://lintalist.github.io/)
+- [lintalist64.zip from lintalist.github.io](https://lintalist.github.io/)
+- [master.zip from Lintalist4Linux](https://github.com/sl5net/Lintalist4Linux/archive/master.zip)
 
-download Latest Version:
-- [master.zip](https://github.com/sl5net/Lintalist4Linux/archive/master.zip)
-
+Video: 
+[Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/CFi3tdCCdxw)
 
 BTW i installed Linux Ubuntu-minimal in Virtualbox. ( 20-08-27 18:33:08 )<br>
 needs minimum 12 GB Hard Disk. Use RAM more then 4 GB. Maybe RAM 6GB ( 20-08-27 18:33:08 )<br> 
