@@ -73,10 +73,6 @@ This helps me:
 ~/.config/autokey/data/Sample Scripts/
 1. extract [lintalist64.zip from lintalist.github.io](https://lintalist.github.io/) to<br>
 ~/ahk/github/lintalist64
-1. open AutoKey App
-1. click run-run-lintalistAHK-all.py<br> and set shortcut (for e.g. `F12`)
-to<br>
-
 
 Video installation of v0.988:<br> 
 [Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/CFi3tdCCdxw) with https://github.com/sl5net/Lintalist4Linux/releases/tag/0.988
@@ -86,8 +82,10 @@ Video installation of v0.988:<br>
 edit one line of each file (so they find your scripts)
 
 ## Autokey - Preferences:
-- enable: Automatically start Autokey at login
-- Set a Hotkey in that py-File
+1. open AutoKey App
+1. click run-run-lintalistAHK-all.py<br> and set shortcut (for e.g. `F12`)
+to<br>
+1. enable: Automatically start Autokey at login
 
 ## Lintalist - Settings:
 - QuickSearchHotkey: F1 (needed reflected inside run-lintalistAHK.ahk)<br>
