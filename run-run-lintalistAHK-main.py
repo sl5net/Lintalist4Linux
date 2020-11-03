@@ -1,6 +1,6 @@
 # this file will be (hopefully merged to) ...-all.py
 
-writeAllFile_from_main_defs(path)
+# writeAllFile_from_main_defs(path)
 
 if doPopupNotify_howItWorks:
     popupNotify_howItWorks("doPopupNotify_howItWorks is set TRUE\n in the ..config.py file. Great :)")
