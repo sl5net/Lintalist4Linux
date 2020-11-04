@@ -83,7 +83,7 @@ Video installation of [v0.988](https://github.com/sl5net/Lintalist4Linux/release
 [Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/CFi3tdCCdxw) with https://github.com/sl5net/Lintalist4Linux/releases/tag/0.988
 
 Video installation of [v0.989]( https://github.com/sl5net/Lintalist4Linux/releases/tag/0.989 ):<br> 
-[Lintalist4Linux v0.99 Instalation liveDemo on Kubunto](https://youtu.be/6-QNnTuaYbM) with https://github.com/sl5net/Lintalist4Linux/releases/tag/0.989
+[Lintalist4Linux v0.989 Instalation liveDemo on Kubunto](https://youtu.be/6-QNnTuaYbM) with https://github.com/sl5net/Lintalist4Linux/releases/tag/0.989
 
 # recommended Preferences:
 
