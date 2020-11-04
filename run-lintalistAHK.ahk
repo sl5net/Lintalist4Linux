@@ -15,9 +15,9 @@ pathHome := "Z:\home\" ; dont change this. its same for all users
 
 ;<<<<<<<< configure
 yourUserName := A_UserName
-; path := pathHome yourUserName "\ahk\lintalist64" ; configure folder where lintalist is stored
-path := pathHome yourUserName "\ahk\github\lintalist64\" ; configure folder where lintalist is stored
-; path := pathHome yourUserName "\Documents\github\lintalist64" ; configure folder where lintalist is stored
+; path := pathHome yourUserName "\ahk\lintalist" ; configure folder where lintalist is stored
+path := pathHome yourUserName "\ahk\github\lintalist\" ; configure folder where lintalist is stored
+; path := pathHome yourUserName "\Documents\github\lintalist" ; configure folder where lintalist is stored
 
 ;>>>>>>>> configure
 

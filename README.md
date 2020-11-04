@@ -46,7 +46,7 @@ and edit texts in bundles and paste a selected text in your active program.<br>
 if you want see how it works while it works open the config file and set:
 `doPopupNotify_howItWorks = True`
 
-# installation (recommended):
+# installation step by step:
 
 Tested with the following recommended installation:
 
@@ -65,14 +65,18 @@ You need maybe Linux, maybe kubuntu, maybe with KDE Desktop.
 <br>⚠⚠ i got error message installing Wine at Linux Ubuntu and installing wine in Linux Mint:
 This helps me: 
 <br>[http://ubuntuhandbook.org/index.php/2020/01/install-wine-5-0-stable-ubuntu-18-04-19-10/](http://ubuntuhandbook.org/index.php/2020/01/install-wine-5-0-stable-ubuntu-18-04-19-10/)
-1. install [AutoHotKey.com](https://www.autohotkey.com/)
+1. install [AutoHotKey.com](https://www.autohotkey.com/download/ahk-install.exe)
 1. install [AutoKey](https://github.com/autokey/autokey#installation) (or may use your Software Manager )
 1. start AutoKey GUI
 1. close AutoKey GUI (a folder may not be created until Autokey is started for the first time))
 1. extract [master.zip from Lintalist4Linux](https://github.com/sl5net/Lintalist4Linux/archive/master.zip) to<br>
 ~/.config/autokey/data/Sample Scripts/
-1. extract [lintalist64.zip from lintalist.github.io](https://lintalist.github.io/) to<br>
-~/ahk/github/lintalist64
+1. extract [lintalist.zip from lintalist.github.io](https://github.com/lintalist/lintalist/releases/download/v1.9.13/lintalist.zip) to<br>
+~/ahk/github/lintalist
+
+# installation using just one line:
+
+sudo apt -y install autokey-qt ; echo "########## \n Please Exit AutohotKey (right Click Taskbar on little Icon) then the installation will continue automatically. \n#########" ; autokey-qt & sleep 3s ; killall -9 autokey-qt ; sudo apt -y install git ; mkdir ~/ahk ; mkdir ~/ahk/github; cd ~/ahk/github/ ; git clone https://github.com/lintalist/lintalist ; cd ~/Downloads/ ; git clone https://github.com/sl5net/Lintalist4Linux ; cp -r ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ; cp -r ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ; ~/.config/autokey/data/Sample\ Scripts/ ; sudo dpkg --add-architecture i386 ; wget -nc https://dl.winehq.org/wine-builds/winehq.key; sudo apt-key add winehq.key ; sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan main' ; sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport ; sudo apt update && sudo apt -y install --install-recommends winehq-stable ; wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe ; echo "Please Configure AutohotKey and AutoKey" ; autokey-qt;
 
 ## Video installation: 
 Video installation of [v0.988](https://github.com/sl5net/Lintalist4Linux/releases/tag/0.988):<br> 
