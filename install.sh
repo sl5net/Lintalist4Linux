@@ -1,7 +1,7 @@
 #!/bin/bash
-echo "########## Please Exit AutohotKey (right Click Taskbar on little Icon) then the installation will continue automatically. #########"
+echo "########## Please Exit AutoHotKey (right Click Taskbar on little Icon) then the installation will continue automatically. #########"
 autokey-qt & sleep 3s ; killall -9 autokey-qt
-sudo apt -y install git
+sudo apt -y install git || exit
 mkdir ~/ahk
 mkdir ~/ahk/github
 cd ~/ahk/github || exit
