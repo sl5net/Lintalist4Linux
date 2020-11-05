@@ -4,9 +4,9 @@ autokey-qt & sleep 3s ; killall -9 autokey-qt
 sudo apt -y install git
 mkdir ~/ahk
 mkdir ~/ahk/github
-cd ~/ahk/github/
+cd ~/ahk/github
 git clone https://github.com/lintalist/lintalist
-cd ~/Downloads/
+cd ~/Downloads
 git clone https://github.com/sl5net/Lintalist4Linux
 cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py
 cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk
