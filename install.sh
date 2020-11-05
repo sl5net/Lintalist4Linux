@@ -4,13 +4,12 @@ autokey-qt & sleep 3s ; killall -9 autokey-qt
 sudo apt -y install git
 mkdir ~/ahk
 mkdir ~/ahk/github
-cd ~/ahk/github
+cd ~/ahk/github || exit
 git clone https://github.com/lintalist/lintalist
-cd ~/Downloads
+cd ~/Downloads || exit
 git clone https://github.com/sl5net/Lintalist4Linux
-cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py
-cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk
-~/.config/autokey/data/Sample\ Scripts/
+cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ~/.config/autokey/data/Sample\ Scripts/
+cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ~/.config/autokey/data/Sample\ Scripts/
 sudo dpkg --add-architecture i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
