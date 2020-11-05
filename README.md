@@ -80,7 +80,7 @@ This helps me:
 
 the following line is experimental, in alpha phase [discuss on stackoverflow](https://stackoverflow.com/questions/64689749/sh-installer-syntax-error-newline-unexpected?noredirect=1#comment114384134_64689749): <br>
 ```
-sudo wget https://github.com/sl5net/Lintalist4Linux/blob/master/install.sh ~/Downloads/install.sh ; cd ~/Downloads ; sudo chmod 750 ./install.sh ; sudo ./install.sh
+sudo wget https://raw.githubusercontent.com/sl5net/Lintalist4Linux/master/install.sh ~/Downloads/install.sh ; cd ~/Downloads ; sudo chmod 750 ./install.sh ; sudo ./install.sh
 ```
 
 
