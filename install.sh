@@ -42,9 +42,10 @@ wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/D
 
 # https://askubuntu.com/questions/350208/what-does-2-dev-null-mean
 # /dev/null is the null device it takes any input you want and throws it away. It can be used to suppress any output.
+# & detaches app from the shell.
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null
 sleep 1s;
-cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null 2> /dev/null
+cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null 2> /dev/null &
 sleep 1s;
 
 # sleep 3s ; killall -9 lintalist
