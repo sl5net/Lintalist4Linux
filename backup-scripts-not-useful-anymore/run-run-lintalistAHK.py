@@ -131,8 +131,8 @@ for i in range(0, 30):
     if active_title != first_title:
         break
 
-timeValueInLoopInSec = 0.2
-timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
+timeValueInLoopInSec = 0.3
+timeValueForBREAKLoopInSec = 80  # timeOut. Prevention for endless loops
 
 # BREAK x is '101
 # time.sleep(2) 

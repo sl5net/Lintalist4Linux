@@ -182,8 +182,8 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         # if active_class != first_class:
         if active_title != first_title:
             break
-    timeValueInLoopInSec = 0.2
-    timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
+    timeValueInLoopInSec = 0.3
+    timeValueForBREAKLoopInSec = 80  # timeOut. Prevention for endless loops
     # BREAK x is '101
     # time.sleep(2)
     # keyboard.send_keys('<ctrl>+v')
