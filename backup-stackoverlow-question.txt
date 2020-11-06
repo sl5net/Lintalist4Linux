@@ -1,0 +1,12 @@
+@tripleee here install.sh is [downloaded](https://i.imgur.com/ukJRGf1.png) , [install.sh](https://gist.github.com/b2dd8ea0ecb3f6593d0cf5a6ced02179). I do not understand what you mean.
+
+
+That line cd ~/ahk/github, try changing it to follow the original cd ~/ahk/github/ and see if it works now. – Vlam 6 hours ago
+@Vlam has no other effect – SL5net 5 hours ago
+The trailing slash adds absolutely no value. The only difference is it will produce an error if github is not a directory, but certainly cd will fail in that case anyway. – tripleee 1 hour ago
+1
+You are messing up things for yourself by using sudo on things which do not require privileges. Downloading a file to your own downloads folder should absolutely not be done as root; then you also won't need to sudo chmod (or, eventually, sudo rm if you want to remove the file). – tripleee 42 mins ago
+By brief testing, the download link you provided fetches a bunch of HTML, not the actual script. Voting to close as trivial / typo. – tripleee 38 mins ago
+@tripleee here install.sh is downloaded. I do not understand what you mean. – SL5net 10 mins ago   Edit
+
+
