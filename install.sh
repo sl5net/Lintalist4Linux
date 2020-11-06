@@ -11,7 +11,8 @@
 
 # https://stackoverflow.com/a/20538015/2891692
 
-sudo apt -y install autokey-qt ; autokey-qt & sleep 3s ; killall -9 autokey-qt
+sudo apt -y install autokey-qt > /dev/null
+autokey-qt & sleep 3s ; killall -9 autokey-qt
 echo - "\n\n installs now AutoKey AutoHotKey wine Lintalist4Linux #########\n\n"
 sudo apt -y install git || exit
 mkdir ~/ahk ;
@@ -32,9 +33,9 @@ sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan m
 sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport
 sudo apt update && sudo apt -y install --install-recommends winehq-stable 2> /dev/null
 
-# clear
+clear
 # AutoHotkey_1.1.33.02_setup.exe
-wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe
+wget https://www.autohotkey.com/download/ahk-install.exe / ; wine ./ahk-install.exe
 
 # wine AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk -opengl > /dev/null 2> /dev/null &
 #wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null &
@@ -42,9 +43,11 @@ wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/D
 
 # https://askubuntu.com/questions/350208/what-does-2-dev-null-mean
 # /dev/null is the null device it takes any input you want and throws it away. It can be used to suppress any output.
+# & detaches app from the shell.
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null
+
 sleep 1s;
-cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null 2> /dev/null
+cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2 > /dev/null 2 > /dev/null &
 sleep 1s;
 
 # sleep 3s ; killall -9 lintalist
@@ -53,5 +56,6 @@ sleep 1s;
 sleep 10s;
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null
 echo -e "\n\nPlease Configure AutohotKey and AutoKey\n\n"
-autokey-qt
+autokey-qt /dev/null &
 
+# Downloads/AutoHotkey_1.1.33.02_setup.exe
