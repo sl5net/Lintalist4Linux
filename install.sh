@@ -16,6 +16,7 @@ cd ~/Downloads || exit ;
 git clone https://github.com/sl5net/Lintalist4Linux ;
 cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ~/.config/autokey/data/Sample\ Scripts/ ;
 cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ~/.config/autokey/data/Sample\ Scripts/ ;
+sudo apt update ;
 sudo dpkg --add-architecture i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key ;
 sudo apt-key add winehq.key
