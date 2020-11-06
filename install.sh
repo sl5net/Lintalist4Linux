@@ -2,8 +2,9 @@
 # Start it for e.g. so:
 #/‾‾‾ problems installing autohokey using this line
 # clear ; cd /tmp ; wget https://raw.githubusercontent.com/sl5net/Lintalist4Linux/master/install.sh ./install.sh ;    sudo chmod +wx ./install.sh ; ./install.sh ; rm ./install.sh ;
-#/‾‾‾ no problems # chmod +rwx
-# clear ; cd /tmp ; wget https://raw.githubusercontent.com/sl5net/Lintalist4Linux/master/install.sh ./install.sh ;    sudo chmod 777 ./install.sh ; ./install.sh ; rm ./install.sh ;
+
+#/‾‾‾ no problems # chmod +rwx :))))
+# clear ; cd /tmp ; rm ./install.sh ; wget https://raw.githubusercontent.com/sl5net/Lintalist4Linux/master/install.sh ./install.sh ;    sudo chmod 777 ./install.sh ; ./install.sh ; rm ./install.sh ;
 #/‾‾‾ no problems bash: ./install.sh: Permission denied
 # clear ; sudo wget https://raw.githubusercontent.com/sl5net/Lintalist4Linux/master/install.sh ~/Downloads/install.sh ; cd ~/Downloads ; sudo chmod 750 ./install.sh ; ./install.sh
 #/‾‾‾ solution without sh-script
@@ -19,6 +20,7 @@ echo - "\n\n installs now AutoKey AutoHotKey wine Lintalist4Linux #########\n\n"
 echo -e "\n\n install git \n"
 sudo apt -y install git || exit
 
+echo -e "\n\n Downloads \n"
 mkdir ~/ahk ;
 mkdir ~/ahk/github ;
 cd ~/ahk/github || exit ;
@@ -31,7 +33,6 @@ cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ~/.config/autokey/data/Sampl
 cp ~/Downloads/Lintalist4Linux/ConfigParser-set-ini-defaults.ahk ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk ;
 
 echo -e "\n\n apt update \n"
-sudo apt update 2> /dev/null;
 
 echo -e "\n\n wine \n"
 sudo dpkg --add-architecture i386
@@ -41,10 +42,15 @@ sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan m
 sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport
 sudo apt update && sudo apt -y install --install-recommends winehq-stable 2> /dev/null
 
+# Autohotkey
 # clear
 echo -e "\n\n wine ./ahk-install.exe \n"
 # AutoHotkey_1.1.33.02_setup.exe
-wget https://www.autohotkey.com/download/ahk-install.exe ; wine ./ahk-install.exe
+cd ~/Downloads || exit ;
+wget https://www.autohotkey.com/download/ahk-install.exe ;
+cd ~/Downloads || exit ;
+sudo wine ./ahk-install.exe
+sleep 3s;
 
 # wine AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk -opengl > /dev/null 2> /dev/null &
 #wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null &
@@ -58,7 +64,7 @@ cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/au
 
 echo -e "\n\n lintalist.ahk \n"
 sleep 1s;
-cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2 > /dev/null 2 > /dev/null &
+cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null &
 sleep 1s;
 
 # sleep 3s ; killall -9 lintalist

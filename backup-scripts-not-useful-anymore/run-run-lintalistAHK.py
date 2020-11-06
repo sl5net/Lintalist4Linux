@@ -88,7 +88,7 @@ os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (dura
 try:
     # subprocess.Popen(["/bin/bash", "/home/administrator/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
     # import os
-    myCmd = 'wine ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+    myCmd = 'wine ~/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe / ' home !!!!!!!!!!!!!' /Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
     os.system(myCmd)
 except subprocess.CalledProcessError:
     time.sleep(0.2)

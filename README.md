@@ -81,7 +81,7 @@ sudo apt -y install autokey-qt ; echo "########## \n Please Exit AutoKey (right 
 ```
 or
 ```
-clear ; cd /tmp ; wget https://raw.githubusercontent.com/sl5net/Lintalist4Linux/master/install.sh ./install.sh ; sudo chmod +rwx ./install.sh ; ./install.sh ; rm ./install.sh ;
+clear ; cd /tmp ; rm ./install.sh ; wget https://raw.githubusercontent.com/sl5net/Lintalist4Linux/master/install.sh ./install.sh ; sudo chmod +rwx ./install.sh ; ./install.sh ; rm ./install.sh ; cd ~
 ```
 
 ## Video installation: 
