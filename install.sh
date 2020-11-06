@@ -30,6 +30,8 @@ sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan m
 sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport
 sudo apt update && sudo apt -y install --install-recommends winehq-stable
 wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe
+wine ~/ahk/github/lintalist/lintalist.ahk ; sleep 1s ;
+# sleep 3s ; killall -9 lintalist
 wine ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk
 echo "Please Configure AutohotKey and AutoKey"
 autokey-qt
