@@ -11,10 +11,14 @@
 
 # https://stackoverflow.com/a/20538015/2891692
 
+echo -e "\n\n install autokey-qt \n"
 sudo apt -y install autokey-qt > /dev/null
 autokey-qt & sleep 3s ; killall -9 autokey-qt
 echo - "\n\n installs now AutoKey AutoHotKey wine Lintalist4Linux #########\n\n"
+
+echo -e "\n\n install git \n"
 sudo apt -y install git || exit
+
 mkdir ~/ahk ;
 mkdir ~/ahk/github ;
 cd ~/ahk/github || exit ;
@@ -25,7 +29,11 @@ git clone https://github.com/sl5net/Lintalist4Linux ;
 cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ~/.config/autokey/data/Sample\ Scripts/ ;
 cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ~/.config/autokey/data/Sample\ Scripts/ ;
 cp ~/Downloads/Lintalist4Linux/ConfigParser-set-ini-defaults.ahk ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk ;
+
+echo -e "\n\n apt update \n"
 sudo apt update 2> /dev/null;
+
+echo -e "\n\n wine \n"
 sudo dpkg --add-architecture i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key ;
 sudo apt-key add winehq.key
@@ -33,9 +41,10 @@ sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan m
 sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport
 sudo apt update && sudo apt -y install --install-recommends winehq-stable 2> /dev/null
 
-clear
+# clear
+echo -e "\n\n wine ./ahk-install.exe \n"
 # AutoHotkey_1.1.33.02_setup.exe
-wget https://www.autohotkey.com/download/ahk-install.exe / ; wine ./ahk-install.exe
+wget https://www.autohotkey.com/download/ahk-install.exe ; wine ./ahk-install.exe
 
 # wine AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk -opengl > /dev/null 2> /dev/null &
 #wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null &
@@ -44,8 +53,10 @@ wget https://www.autohotkey.com/download/ahk-install.exe / ; wine ./ahk-install.
 # https://askubuntu.com/questions/350208/what-does-2-dev-null-mean
 # /dev/null is the null device it takes any input you want and throws it away. It can be used to suppress any output.
 # & detaches app from the shell.
+echo -e "\n\n ConfigParser-set-ini-defaults.ahk \n"
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null
 
+echo -e "\n\n lintalist.ahk \n"
 sleep 1s;
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2 > /dev/null 2 > /dev/null &
 sleep 1s;
@@ -55,7 +66,5 @@ sleep 1s;
 #cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null
 sleep 10s;
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null
-echo -e "\n\nPlease Configure AutohotKey and AutoKey\n\n"
+echo -e "\n\nPlease Configure AutoKey (and Lintalist later)\n\n"
 autokey-qt /dev/null &
-
-# Downloads/AutoHotkey_1.1.33.02_setup.exe
