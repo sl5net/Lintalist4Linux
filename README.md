@@ -101,8 +101,6 @@ edit one line of each file (so they find your scripts)
 1. enable: Automatically start Autokey at login
 
 ## Lintalist - Settings:
-- QuickSearchHotkey: F1 (needed reflected inside run-lintalistAHK.ahk)<br>
-You find QuickSearchHotkey nearly at the last page inside this long list into the 'Lintalist - Settings'
 - PasteMethod s recommended (you find it in the middle of the long settings list):
     - 1=Paste snippet and keep it as the current clipboard content (so you can manually paste it again)
     - 2=Don't paste snippet content but copy it to the clipboard so you can manually paste it.

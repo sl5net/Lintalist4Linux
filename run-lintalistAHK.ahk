@@ -27,7 +27,7 @@ SendLevel, 99
 
 Sleep,100
 
-SendInput,{f1}
+SendInput,{f11}
 
 ;  A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match. A window's title can contain WinTitle anywhere inside it to be a match.
 
