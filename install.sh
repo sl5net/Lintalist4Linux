@@ -16,6 +16,7 @@ mkdir ~/ahk ;
 mkdir ~/ahk/github ;
 cd ~/ahk/github || exit ;
 git clone https://github.com/lintalist/lintalist ;
+# ~/ahk/github/lintalist ;
 cd ~/Downloads || exit ;
 git clone https://github.com/sl5net/Lintalist4Linux ;
 cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ~/.config/autokey/data/Sample\ Scripts/ ;
@@ -28,9 +29,11 @@ sudo apt-key add winehq.key
 sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan main'
 sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport
 sudo apt update && sudo apt -y install --install-recommends winehq-stable
-wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe ; wine ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk
+wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe
+wine ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk
 echo "Please Configure AutohotKey and AutoKey"
 autokey-qt
+wine ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk
 
 
 #sudo apt -y install autokey-qt
@@ -57,4 +60,5 @@ autokey-qt
 #wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe
 #echo "Please Configure AutohotKey and AutoKey"
 #autokey-qt
-#
+# ~/.config/autokey/data/Sample Scripts/.run-run-lintalistAHK-all.json
+
