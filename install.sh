@@ -12,7 +12,7 @@
 # https://stackoverflow.com/a/20538015/2891692
 
 sudo apt -y install autokey-qt ; autokey-qt & sleep 3s ; killall -9 autokey-qt
-# echo -e "\ņ Please Exit AutoKey (right Click Taskbar on little Icon) then the installation will continue automatically. #########"
+echo - "\n\n installs now AutoKey AutoHotKey wine Lintalist4Linux #########\n\n"
 sudo apt -y install git || exit
 mkdir ~/ahk ;
 mkdir ~/ahk/github ;
@@ -40,12 +40,15 @@ wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/D
 #wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null &
 #cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe WindowSpy.ahk -opengl > /dev/null 2> /dev/null &
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null &
+sleep 1s;
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null &
 sleep 1s;
 
 # sleep 3s ; killall -9 lintalist
 # wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk
 #cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null &
+sleep 10s;
+cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null &
 echo -e "\n\nPlease Configure AutohotKey and AutoKey\n\n"
-autokey-qt -opengl > /dev/null 2> /dev/null &
+autokey-qt
 
