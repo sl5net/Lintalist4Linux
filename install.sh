@@ -1,17 +1,17 @@
 #!/bin/bash
-echo "########## Please Exit AutoHotKey (right Click Taskbar on little Icon) then the installation will continue automatically. #########"
+echo "########## Please Exit AutoKey (right Click Taskbar on little Icon) then the installation will continue automatically. #########"
 autokey-qt & sleep 3s ; killall -9 autokey-qt
 sudo apt -y install git || exit
-mkdir ~/ahk
-mkdir ~/ahk/github
-cd ~/ahk/github || exit
-git clone https://github.com/lintalist/lintalist
-cd ~/Downloads || exit
-git clone https://github.com/sl5net/Lintalist4Linux
-cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ~/.config/autokey/data/Sample\ Scripts/
-cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ~/.config/autokey/data/Sample\ Scripts/
+mkdir ~/ahk ;
+mkdir ~/ahk/github ;
+cd ~/ahk/github || exit ;
+git clone https://github.com/lintalist/lintalist ;
+cd ~/Downloads || exit ;
+git clone https://github.com/sl5net/Lintalist4Linux ;
+cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ~/.config/autokey/data/Sample\ Scripts/ ;
+cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ~/.config/autokey/data/Sample\ Scripts/ ;
 sudo dpkg --add-architecture i386
-wget -nc https://dl.winehq.org/wine-builds/winehq.key
+wget -nc https://dl.winehq.org/wine-builds/winehq.key ;
 sudo apt-key add winehq.key
 sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan main'
 sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport
