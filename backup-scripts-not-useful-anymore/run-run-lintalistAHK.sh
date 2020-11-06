@@ -11,6 +11,7 @@
 # C:\users\administrator\Desktop\test.sh
 # /home/administrator/Desktop/test.sh
 
+# cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe WindowSpy.ahk -opengl > /dev/null 2> /dev/null &
 
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/
 # cd ~/.wine/drive_c/Program\ Files/Warcraft3/

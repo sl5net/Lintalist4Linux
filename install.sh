@@ -9,8 +9,10 @@
 #/‾‾‾ solution without sh-script
 # sudo apt -y install autokey-qt ; echo "########## \n Please Exit AutoKey (right Click Taskbar on little Icon) then the installation will continue automatically. \n#########" ; autokey-qt & sleep 3s ; killall -9 autokey-qt ; sudo apt -y install git ; mkdir ~/ahk ; mkdir ~/ahk/github; cd ~/ahk/github/ ; git clone https://github.com/lintalist/lintalist ; cd ~/Downloads/ ; git clone https://github.com/sl5net/Lintalist4Linux ; cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ; cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ; ~/.config/autokey/data/Sample\ Scripts/ ; sudo dpkg --add-architecture i386 ; wget -nc https://dl.winehq.org/wine-builds/winehq.key; sudo apt-key add winehq.key ; sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan main' ; sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport ; sudo apt update && sudo apt -y install --install-recommends winehq-stable ; wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe ; echo "Please Configure AutohotKey and AutoKey" ; autokey-qt;
 
+# https://stackoverflow.com/a/20538015/2891692
+
 sudo apt -y install autokey-qt ; autokey-qt & sleep 3s ; killall -9 autokey-qt
-echo "########## Please Exit AutoKey (right Click Taskbar on little Icon) then the installation will continue automatically. #########"
+# echo -e "\ņ Please Exit AutoKey (right Click Taskbar on little Icon) then the installation will continue automatically. #########"
 sudo apt -y install git || exit
 mkdir ~/ahk ;
 mkdir ~/ahk/github ;
@@ -30,13 +32,19 @@ sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan m
 sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport
 sudo apt update && sudo apt -y install --install-recommends winehq-stable
 wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe
-wine ~/ahk/github/lintalist/lintalist.ahk ; sleep 1s ;
-# sleep 3s ; killall -9 lintalist
-wine ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk
-echo "Please Configure AutohotKey and AutoKey"
-autokey-qt
-wine ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk
 
+# wine AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk -opengl > /dev/null 2> /dev/null &
+#wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null &
+#cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe WindowSpy.ahk -opengl > /dev/null 2> /dev/null &
+cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null &
+cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null &
+sleep 1s;
+
+# sleep 3s ; killall -9 lintalist
+# wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk
+#cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null &
+echo -e "\n\nPlease Configure AutohotKey and AutoKey\n\n"
+autokey-qt
 
 #sudo apt -y install autokey-qt
 #echo "########## \n Please Exit AutoKey (right Click Taskbar on little Icon) then the installation will continue automatically. \n#########"
