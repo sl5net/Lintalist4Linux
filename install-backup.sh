@@ -22,8 +22,8 @@ cd ~/Downloads || exit ;
 git clone https://github.com/sl5net/Lintalist4Linux ;
 cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ~/.config/autokey/data/Sample\ Scripts/ ;
 cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ~/.config/autokey/data/Sample\ Scripts/ ;
-cp ~/Downloads/Lintalist4Linux/ConfigParser-set-ini-defaults.ahk ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk ;
-cp ~/Downloads/Lintalist4Linux/ConfigParser-set-ini-defaults.ahk ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk ;
+cp ~/Downloads/Lintalist4Linux/configParser-set-ini-defaults.ahk ~/.config/autokey/data/Sample\ Scripts/configParser-set-ini-defaults.ahk ;
+cp ~/Downloads/Lintalist4Linux/configParser-set-ini-defaults.ahk ~/.config/autokey/data/Sample\ Scripts/configParser-set-ini-defaults.ahk ;
 sudo apt update ;
 sudo apt -y upgrade ;
 sudo dpkg --add-architecture i386
@@ -40,7 +40,7 @@ wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/D
 # wine AutoHotkey.exe /home/administrator/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk -opengl > /dev/null 2> /dev/null &
 #wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null &
 #cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe WindowSpy.ahk -opengl > /dev/null 2> /dev/null &
-cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null &
+cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/configParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null &
 cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null 2> /dev/null &
 sleep 1s;
 

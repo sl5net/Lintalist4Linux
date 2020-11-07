@@ -31,7 +31,8 @@ cd ~/Downloads || exit ;
 git clone https://github.com/sl5net/Lintalist4Linux ;
 cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ~/.config/autokey/data/Sample\ Scripts/ ;
 cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ~/.config/autokey/data/Sample\ Scripts/ ;
-cp ~/Downloads/Lintalist4Linux/ConfigParser-set-ini-defaults.ahk ~/.config/autokey/data/Sample\ Scripts/configParser-set-ini-defaults.ahk ;
+cp ~/Downloads/Lintalist4Linux/configParser-set-ini-defaults.ahk ~/.config/autokey/data/Sample\ Scripts/ ;
+cp ~/Downloads/Lintalist4Linux/configParser-set-defaults.py ~/.config/autokey/data/Sample\ Scripts/ ;
 
 echo -e "\n\n wine \n"
 sudo dpkg --add-architecture i386
@@ -60,8 +61,8 @@ sleep 3s;
 # https://askubuntu.com/questions/350208/what-does-2-dev-null-mean
 # /dev/null is the null device it takes any input you want and throws it away. It can be used to suppress any output.
 # & detaches app from the shell.
-echo -e "\n\n ConfigParser-set-ini-defaults.ahk \n"
-cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/ConfigParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null
+echo -e "\n\n configParser-set-ini-defaults.ahk \n"
+cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/.config/autokey/data/Sample\ Scripts/configParser-set-ini-defaults.ahk -opengl > /dev/null 2> /dev/null
 
 
 echo -e "\n\n#/‾‾‾ lintalist.ahk \n"
