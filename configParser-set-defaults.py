@@ -34,13 +34,17 @@ with open(jsonFilePath, 'w') as file:
 
 #/‾‾‾ configParser-set-ini-defaults.ahk
 myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "' + home + '/.config/autokey/data/Sample Scripts/configParser-set-ini-defaults.ahk" &'
+# wine /home/m/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "/home/m/.config/autokey/data/Sample Scripts/.config/autokey/data/Sample Scripts/configParser-set-ini-defaults.ahk" &
+# works:
+# wine /home/m/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "/home/m/.config/autokey/data/Sample Scripts/configParser-set-ini-defaults.ahk" &
+print(myCmd)
 os.system(myCmd)
 #\___ configParser-set-ini-defaults.ahk
 
 # myCmd = 'autokey-qt'  # sleep 1s ;
 # myCmd = 'autokey  > /dev/null &'  # sleep 1s ;
 myCmd = 'autokey  > /dev/null &'  # sleep 1s ;
-os.system(myCmd)
 print(myCmd)
+os.system(myCmd)
 # cd ~/.wine/drive_c/Program\ Files/AutoHotkey/ ; wine AutoHotkey.exe ~/ahk/github/lintalist/lintalist.ahk -opengl > /dev/null
 
