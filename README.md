@@ -93,6 +93,9 @@ clear ; cd /tmp ; rm ./install.sh ; wget https://raw.githubusercontent.com/sl5ne
 ```
 
 ## Video installation: 
+Video installation of [v0.990](https://github.com/sl5net/Lintalist4Linux/releases/tag/0.990):<br> 
+[Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/Xc4ALTB7gEw) with https://github.com/sl5net/Lintalist4Linux/releases/tag/0.990
+
 Video installation of [v0.988](https://github.com/sl5net/Lintalist4Linux/releases/tag/0.988):<br> 
 [Lintalist4Linux Instalation liveDemo on Kubunto - no sound - 23min](https://youtu.be/CFi3tdCCdxw) with https://github.com/sl5net/Lintalist4Linux/releases/tag/0.988
 
