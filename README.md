@@ -73,6 +73,9 @@ This helps me:
 ~/.config/autokey/data/Sample Scripts/
 1. extract [lintalist.zip from lintalist.github.io](https://github.com/lintalist/lintalist/releases/download/v1.9.13/lintalist.zip) to<br>
 ~/ahk/github/lintalist
+1. set in lintalist.ahk the Hotkey QuickSearchHotkey <kbd>F11</kbd>
+1. set in AutoKey the Hotkey -run-lintalistAHK-all.py to for e.g. <kbd>F12</kbd>
+
 
 # installation using just one line:
 
@@ -100,10 +103,10 @@ Video installation of [v0.989]( https://github.com/sl5net/Lintalist4Linux/releas
 
 edit one line of each file (so they find your scripts)
 
-## Autokey - Preferences:
+## Autokey - Preferences recommended:
 1. enable: Automatically start Autokey at login
 
-## Lintalist - Settings:
+## Lintalist - Settings recommended:
 - PasteMethod s recommended (you find it in the middle of the long settings list):
     - 1=Paste snippet and keep it as the current clipboard content (so you can manually paste it again)
     - 2=Don't paste snippet content but copy it to the clipboard so you can manually paste it.
