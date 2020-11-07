@@ -33,7 +33,10 @@ with open(jsonFilePath, 'w') as file:
     json.dump(data, file, indent=2)
 
 #/‾‾‾ configParser-set-ini-defaults.ahk
-myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "' + home + '/.config/autokey/data/Sample Scripts/configParser-set-ini-defaults.ahk" &'
+pathAutohotkeyExe = '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "'
+myCmd = 'wine ' + home + pathAutohotkeyExe + home + '/ahk/github/lintalist/lintalist.ahk" &'
+os.system("sleep 1s")
+myCmd = 'wine ' + home + pathAutohotkeyExe + home + '/.config/autokey/data/Sample Scripts/configParser-set-ini-defaults.ahk" &'
 # wine /home/m/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "/home/m/.config/autokey/data/Sample Scripts/.config/autokey/data/Sample Scripts/configParser-set-ini-defaults.ahk" &
 # works:
 # wine /home/m/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "/home/m/.config/autokey/data/Sample Scripts/configParser-set-ini-defaults.ahk" &
