@@ -101,8 +101,6 @@ Video installation of [v0.989]( https://github.com/sl5net/Lintalist4Linux/releas
 edit one line of each file (so they find your scripts)
 
 ## Autokey - Preferences:
-1. open AutoKey App
-1. click run-run-lintalistAHK-all.py<br> and set shortcut (for e.g. `F12`)
 1. enable: Automatically start Autokey at login
 
 ## Lintalist - Settings:
