@@ -46,6 +46,8 @@ and edit texts in bundles and paste a selected text in your active program.<br>
 if you want see how it works while it works open the config file and set:
 `doPopupNotify_howItWorks = True`
 
+
+
 # installation step by step:
 
 Tested with the following recommended installation:
@@ -191,3 +193,19 @@ download specific Version:
 Diese Seite auf Deutsch übersetzt: <br>
 [translate.google](https://translate.google.com/translate?sl=en&tl=de&u=https%3A%2F%2Fsl5net.github.io%2FLintalist4Linux%2F)
 
+
+# Known problems:
+
+## Known problems with wine:
+
+May this helps (sometimes me): Check: `Wintrick` > `wineprefix` > `Change settings` > `Prevent windbg from launching when an unhandled exception occurs`
+( https://unix.stackexchange.com/questions/572266/remove-or-prevent-launch-of-winebrowser-kubuntu-kde-plasma-5 )
+
+## Known problems with autoKey: 
+
+recommended:
+ 
+- dont use `.` into Script-Names:<br>
+not `unit-test.get_active_class` better  `unit-test-get_active_class`
+- move keyboard-shortcut: first delete, then set again   
+- set keyboard-shortcut: first enter easy later then the special key. dont record a combination (may autokey freezing)   
