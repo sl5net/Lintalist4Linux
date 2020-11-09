@@ -104,8 +104,6 @@ Video installation of [v0.989]( https://github.com/sl5net/Lintalist4Linux/releas
 
 # recommended Preferences:
 
-edit one line of each file (so they find your scripts)
-
 ## Autokey - Preferences recommended:
 1. enable: Automatically start Autokey at login
 
