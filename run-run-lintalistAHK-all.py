@@ -4,6 +4,9 @@
 from pathlib import Path
 home = str(Path.home())
 
+# BTW you can run a script using autokey-run --script {script-name}.
+
+
 #/‾‾‾ CPU too high !!!!!!!!!!!!!!!!
 # this is buggy. i got CPU to 10% thats really to much
 # do_DisableUpdatingThe_all_file = False  # not recommended if you developing at this py files !
@@ -13,9 +16,20 @@ do_DisableUpdatingThe_all_file = True  # not recommended if you developing at th
 path = home + "/.config/autokey/data/Sample Scripts/"
 
 doBeepsWelcomeAtEachRun = False
+
+#/‾‾‾ doPopupNotify
 doPopupNotify_welcomeAtEachRun = False  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
+doPopupNotify_howItWorks_counter = 0  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
+doPopupNotify_howItWorks_firstNr = 8  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
+doPopupNotify_howItWorks_ifFirstCharsIs = "#/‾"  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 doPopupNotify_howItWorks = True  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
+# doPopupNotify_howItWorks = False
 # subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
+if not doPopupNotify_howItWorks_ifFirstCharsIs == doPopupNotify_howItWorks_ifFirstCharsIs[:len(doPopupNotify_howItWorks_ifFirstCharsIs)] and doPopupNotify_howItWorks == True:
+    quit()
+#\___ doPopupNotify
+
+# :test
 
 doReplaceIfPrefixIsThis = ":"
 do_ifNoPrefix_useFocusedWord_pasteResultRight = True
@@ -62,14 +76,23 @@ def popupNotify(text):
     subprocess.Popen(['notify-send', text])  # will be showed right top
 
 def popupNotify_howItWorks(text):
-    global doPopupNotify_howItWorks
-    if doPopupNotify_howItWorks:
-        subprocess.Popen(['notify-send', text])  # will be showed right top
+    global doPopupNotify_howItWorks, doPopupNotify_howItWorks_counter
+    if not doPopupNotify_howItWorks:
+        return
+    doPopupNotify_howItWorks_counter = doPopupNotify_howItWorks_counter + 1
+    if not doPopupNotify_howItWorks_ifFirstCharsIs == text[:len(doPopupNotify_howItWorks_ifFirstCharsIs)]:
+        return
+    if doPopupNotify_howItWorks_counter < doPopupNotify_howItWorks_firstNr:
+        return
+    subprocess.Popen(['notify-send', str(doPopupNotify_howItWorks_counter) + ") " + text])  # will be showed right top
+    time.sleep(.2)
+
 
 def writeAllFile_from_main_defs(path,rewriteAlways = False):
     global do_DisableUpdatingThe_all_file
     if do_DisableUpdatingThe_all_file:
         return
+    popupNotify_howItWorks("start writeAllFile")
     path = home + "/.config/autokey/data/Sample Scripts/"
     # global data
     data = "# Attention: !!! don`t edit thi file. this file will be result from other files merged."
@@ -118,9 +141,9 @@ def beeps(duration=.1, freq=2000, loops=1):
 # <<<<<<<<<< read_keyword
 # <<<<<<<<<< read_keyword
 def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard):
-    global doPopupNotify_howItWorks, clipboardKey, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
+    global doPopupNotify_howItWorks, clipboardKey, clipboardBackup, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
     if doReplaceIfPrefixIsThis:
-        # selct word and prefix e.g.  :test
+        # select word and prefix e.g.  :test
         doSelctWordAndPrefix = True
     clipboardBackup = ""
 
@@ -134,25 +157,35 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 
     # check if its only :
     clipboardKey_endChar = check_key_endChar_and_may_replace(clipboard, clipboardBackup, doReplaceIfPrefixIsThis, keyboard)
+    popupNotify_howItWorks("#/‾‾‾ copy_word_2_clipboard_focusedInTheMiddle")
     copy_word_2_clipboard_focusedInTheMiddle(clipboard, keyboard)
+    popupNotify_howItWorks("#\___ copy_word_2_clipboard_focusedInTheMiddle")
+    popupNotify_howItWorks("#/‾‾‾ try_read_clipboard_without_visible_errors")
     clipboardKey = try_read_clipboard_without_visible_errors(clipboard)
+    popupNotify_howItWorks("#\___ try_read_clipboard_without_visible_errors")
 
 
+    popupNotify_howItWorks("#/‾‾‾ release_key('<shift>")
+    keyboard.release_key('<enter>')  # sometimes i got hanging shift key
     keyboard.release_key('<shift>')  # sometimes i got hanging shift key
+    popupNotify_howItWorks("#\___ release_key('<shift>")
 
+    popupNotify_howItWorks("#/‾‾‾ first_title = window.get_active_title()")
     first_title = window.get_active_title()
+    popupNotify_howItWorks("#\___ first_title = window.get_active_title()")
 
-    popupNotify_howItWorks('get_clipboard')
+    popupNotify_howItWorks("#/‾‾‾ get_clipboard")
+    popupNotify_howItWorks("clipboardKey = " + clipboardKey)
 
     doReplace = False
 
-    popupNotify_howItWorks("clipboardKey = " + clipboardKey)
     # time.sleep(1)
     # quit() # klkj klkjklkj lklkjlklkjlklkjlklkj
 
     # :seb
 
     firstChar = clipboardKey[0:1]
+    popupNotify_howItWorks("firstChar = " + firstChar)
 
     if not clipboardKey:
         popupNotify_howItWorks("NOT clipboardKey = " + clipboardKey + " ==> exit()")
@@ -187,21 +220,27 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
 
 
     # keyboard.release_key('<ctrl>')
-    popupNotify_howItWorks("run run-lintalistAHK.ahk")
     # beeps(duration=.25, freq=5000, loops=1)
     try:
         # subprocess.Popen(["/bin/bash", home + "/Documents/github/Lintalist4Linux/run-run-lintalistAHK.sh"])
         # import os :seb
 
         # myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ' + home + '/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
-        myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "' + home + '/.config/autokey/data/Sample Scripts/run-lintalistAHK.ahk"'
         # myCmd = 'wine /home/administrator/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe ~/Documents/github/Lintalist4Linux/run-lintalistAHK.ahk'
+        popupNotify_howItWorks("# /‾‾‾ run run-lintalistAHK.ahk")
+        myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "' + home + '/.config/autokey/data/Sample Scripts/run-lintalistAHK.ahk"'
         os.system(myCmd)
+        # system.exec_command("myCmd", getOutput=False)
+        popupNotify_howItWorks("# \___ run run-lintalistAHK.ahk")
+
+        # https://github.com/autokey/autokey/issues/440
 
         # myCmd = kotlinc - script home + "/.config/autokey/data/Sample Scripts/PyLink.kts" - - -d. /
         # os.system(myCmd)
     except subprocess.CalledProcessError:
+        popupNotify_howItWorks("CalledProcessError")
         time.sleep(0.2)
+
 
 
     # :lo :Heide
@@ -217,7 +256,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         if active_title != first_title:
             break
     timeValueInLoopInSec = 0.3
-    timeValueForBREAKLoopInSec = 80  # timeOut. Prevention for endless loops
+    timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
     # BREAK x is '101
     # time.sleep(2)
     # keyboard.send_keys('<ctrl>+v')
@@ -232,6 +271,7 @@ def try_read_clipboard_without_visible_errors(clipboard):
             slepSec = i * .1
             time.sleep(slepSec)
         except:
+            popupNotify_howItWorks("250: ERROR clipboard.get_clipboard ")
             slepSec = i * .1
             time.sleep(slepSec)
         if clipboardKey:
@@ -330,7 +370,6 @@ def select_text(keyboard, len_clipboardBackup = 0):  #  0 if dont know the clipb
 if doPopupNotify_howItWorks:
     popupNotify_howItWorks("doPopupNotify_howItWorks is set TRUE\n in the ..config.py file. Great :)")
 
-
 if doPopupNotify_welcomeAtEachRun:
     popupNotify("doPopupNotify_welcomeAtEachRun")
     pass
@@ -339,9 +378,10 @@ if doBeepsWelcomeAtEachRun:
     beeps()  # beeps(duration=.8, freq=1500, loops=2)
 
 
-
+popupNotify_howItWorks("#/‾‾‾ read_keyword")
 # popupNotify_howItWorks(path + 'run-run-lintalistAHK-all.py')
 (clipboardKey, doReplace, timeValueForBREAKLoopInSec, timeValueInLoopInSec, first_title) = read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard)
+popupNotify_howItWorks("#\___ read_keyword")
 
 for x in range(0, 900):  # default is 25
     if timeValueForBREAKLoopInSec < x * timeValueInLoopInSec:
@@ -352,9 +392,16 @@ for x in range(0, 900):  # default is 25
         break
     time.sleep(timeValueInLoopInSec)
 try:
+    time.sleep(0.1)  # maybe more stable
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+    time.sleep(0.1)  # maybe more stable
+    cNew = cNew.strip(' \t\n\r')
 except:
+    popupNotify_howItWorks("374: ERROR clipboard.get_clipboard")
     time.sleep(0.1)
+    quit()
+
+time.sleep(0.1)  # maybe more stable
 
 len_clipboardNew = len(str(cNew))
 
@@ -362,17 +409,36 @@ clipboardKey = clipboardKey.lstrip()
 
 if len_clipboardNew < 1 or cNew == clipboardKey:
     popupNotify_howItWorks("no new result ==> exit")
+    time.sleep(2)
     exit()  # quit()
 
-# L@SL5.de Sebastian
-
+# :Lauf
+# :test :test test :test :test :test :test :test :test :mond :test :test :test :test :test :test :test test
 if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
+    popupNotify_howItWorks("# /‾‾‾ keyboard.send_keys('<ctrl>+v')")
 
+    len_clipboardBackup = len(clipboardBackup)
+    if len_clipboardNew < 1 or len_clipboardBackup < 1:
+        popupNotify("ERROR len(...) < 1 ==> quit()")
+        quit()
+    if len_clipboardNew == len_clipboardBackup:
+        popupNotify("result NOT changed ==> probably ERROR ==> quit()")
+        quit()
+
+# https://gitter.im/autokey/autokey?at=5ced1f469404bf2aedc2ef8f
+# keyboard.send_keys("Hello world", send_mode=keyboard.SendMode.CB_SHIFT_INSERT)
+# keyboard.send_keys("<shift>+<insert>")
+
+    popupNotify_howItWorks("#/‾‾‾ clipboardBackup = " + clipboardBackup)
+    popupNotify_howItWorks("#/‾‾‾ <ctrl>+v, len_clipboardBackup,len_clipboardNew = " + str(len_clipboardBackup) + "," + str(len_clipboardNew) + "\n clipboardBackup = \n" + clipboardBackup)
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
-    time.sleep(0.2) #  200mili needed in some apps   20-08-24 17:18:48
+    popupNotify_howItWorks("# \___ keyboard.send_keys('<ctrl>+v')")
+    time.sleep(0.2)  #  200mili needed in some apps   20-08-24 17:18:48
     select_text(keyboard, len_clipboardNew)
     popupNotify_howItWorks("do replace because Prefix " + doReplaceIfPrefixIsThis + " is found.")
     # beeps(duration=.8, freq=1500, loops=2)
+
+    # time.sleep(2)
     quit()
 
 if doPopupNotify_howItWorks:
@@ -394,7 +460,9 @@ else:
     # print(" ")
 time.sleep(0.2)
 
+popupNotify_howItWorks("# /‾‾‾ 418: keyboard.send_keys('<ctrl>+v')")
 keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
+popupNotify_howItWorks("# \___ 418: keyboard.send_keys('<ctrl>+v')")
 
 time.sleep(0.1)  # <== its needet
 if do_ifNoPrefix_useFocusedWord_pasteResultNewLine:
@@ -404,13 +472,17 @@ else:
     # time.sleep(0.1)
     # keyboard.send_keys('<ctrl>+<left>')
     keyboard.send_keys('<ctrl>+<shift>+<left>')  # right
+
+popupNotify_howItWorks("#/‾‾‾ release_ <shift>")
 keyboard.release_key('<shift>')  # sometimes i got hanging shift key
+popupNotify_howItWorks("#/‾‾‾ release_ <enter>")
+keyboard.release_key('<enter>')  # sometimes i got hanging shift key
 
 # 200 line
 
 # line
 
-popupNotify_howItWorks("End of Line in Lintalist4Linux byby")
+popupNotify_howItWorks("\__ End of Line in Lintalist4Linux. by by")
 
-time.sleep(1)
+# time.sleep(1)
 

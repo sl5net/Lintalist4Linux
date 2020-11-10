@@ -15,7 +15,7 @@ if !FileExist(iniPath){
 ;# config['Settings']['QuickSearchHotkey'] = 'F11'  # create or update
 ; IniWrite, Value, Filename, Section, Key
 IniWrite, F11, % iniPath, Settings, QuickSearchHotkey
-IniWrite, 1, % iniPath, Settings, PasteMethod
+IniWrite, 2, % iniPath, Settings, PasteMethod
 IniWrite, 2, % iniPath, Settings, SearchMethod
 ; MsgBox,% iniPath
 

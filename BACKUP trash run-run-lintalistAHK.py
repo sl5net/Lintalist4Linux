@@ -30,7 +30,7 @@ do_ifNoPrefix_useFocusedWord_pasteResultNewLine = True
 
 
 if doReplaceIfPrefixIsThis:
-    # selct word and prefix e.g.  :test
+    # select word and prefix e.g.  :test
     doSelctWordAndPrefix = True
 
 cOld = ""
@@ -39,14 +39,14 @@ cOld = ""
 # now
 
 if do_ifNoPrefix_useFocusedWord_pasteResultRight:
-    # unselct maybe selected word 
+    # unselect maybe selected word
     keyboard.send_keys('<left><right>')
 
     if doSelctWordAndPrefix:
         keyboard.send_keys('<ctrl>+<left><left><shift>+<right>')
         keyboard.send_keys('<ctrl>+<shift>+<right>')
     else:
-        # selct word 
+        # select word
         keyboard.send_keys('<ctrl>+<left>')
         keyboard.send_keys('<ctrl>+<shift>+<right>')
     keyboard.send_keys('<ctrl>+c')
@@ -135,7 +135,9 @@ for i in range(0, 30):
         break
 
 timeValueInLoopInSec = 0.4
-timeValueForBREAKLoopInSec = 70  # timeOut. Prevention for endless loops
+timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
+
+# Sebas
 
 # BREAK x is '101
 # time.sleep(2) 
@@ -167,7 +169,8 @@ cNew = ""
 
 try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-    if len(str(cNew)) < 1 and cNew != cOld:
+    cNew = cNew.strip(' \t\n\r')
+if len(str(cNew)) < 1 and cNew != cOld:
         exit()  # quit()
 except:
     time.sleep(0.1)
@@ -178,7 +181,8 @@ except:
 if True:
     try:
         cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-    except:
+        cNew = cNew.strip(' \t\n\r')
+except:
         cNew = ""  # Found exeptions: no content into the clipboard 20:08:20 16:48:24
         duration = 0.1  # second
         freq = 1500  # Hz

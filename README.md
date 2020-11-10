@@ -81,18 +81,23 @@ This helps me:
 
 # installation using just one line:
 
-recommended: 
+[recommended](https://github.com/autokey/autokey/wiki/Installing): 
 
-
-
-
+1. for systems using a **Qt**-based desktop environment such as **KDE Plasma**, **Lumina**, etc.
 ```
 sudo apt -y install autokey-qt ; echo "########## \n Please Exit AutoKey (right Click Taskbar on little Icon) then the installation will continue automatically. \n#########" ; autokey-qt & sleep 3s ; killall -9 autokey-qt ; sudo apt -y install git ; mkdir ~/ahk ; mkdir ~/ahk/github; cd ~/ahk/github/ ; git clone https://github.com/lintalist/lintalist ; cd ~/Downloads/ ; git clone https://github.com/sl5net/Lintalist4Linux ; cd ~/.config/autokey/data/Sample\ Scripts/ ; cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ./ ; cp ~/Downloads/Lintalist4Linux/.run-run-lintalistAHK-all.json ./ ; cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ./ ; cp ~/Downloads/Lintalist4Linux/configParser-set-ini-defaults.ahk ./ ; cp ~/Downloads/Lintalist4Linux/configParser-set-defaults.py ./ ; sudo dpkg --add-architecture i386 ; wget -nc https://dl.winehq.org/wine-builds/winehq.key; sudo apt-key add winehq.key ; sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan main' ; sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport ; sudo apt update && sudo apt -y install --install-recommends winehq-stable ; wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe ; echo "Please Configure AutohotKey and AutoKey" ; python3 ~/.config/autokey/data/Sample\ Scripts/configParser-set-defaults.py & 
 ```
+
+hints for uninstalling autokey-gtk:<br>
+https://installlion.com/ubuntu/wily/universe/a/autokey-gtk/uninstall/index.html
+
 or (alpha stage)
 ```
 clear ; cd /tmp ; rm ./install.sh ; wget https://raw.githubusercontent.com/sl5net/Lintalist4Linux/master/install.sh ./install.sh ; sudo chmod +rwx ./install.sh ; ./install.sh ; rm ./install.sh ; cd ~
 ```
+
+.2. not yet explained here. for systems using a GTK-based desktop environment such as GNOME, MATE, Ubuntu Unity, etc.
+
 
 ## Video installation: 
 Video installation of [v0.990](https://github.com/sl5net/Lintalist4Linux/releases/tag/0.990):<br> 
@@ -111,8 +116,7 @@ Video installation of [v0.989]( https://github.com/sl5net/Lintalist4Linux/releas
 
 ## Lintalist - Settings recommended:
 - PasteMethod s recommended (you find it in the middle of the long settings list):
-    - 1=Paste snippet and keep it as the current clipboard content (so you can manually paste it again)
-    - 2=Don't paste snippet content but copy it to the clipboard so you can manually paste it.
+    - 2=Don't paste snippet content but copy it to the clipboard (phyton past it for you or you manually later).
 - BTW i like the SearchMethod 2=Fuzzy (you find it in the middle)
 
 - use part 3 sometimes: don't use part 2 use part 3 for Script and run part 3 using Shift+Enter

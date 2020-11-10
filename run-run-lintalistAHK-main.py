@@ -28,6 +28,7 @@ for x in range(0, 900):  # default is 25
     time.sleep(timeValueInLoopInSec)
 try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+    cNew = cNew.strip(' \t\n\r')
 except:
     time.sleep(0.1)
 

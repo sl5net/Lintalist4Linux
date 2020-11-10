@@ -84,7 +84,7 @@ def beeps(duration=.1, freq=2000, loops=1):
 def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResultRight,keyboard,window,clipboard):
     global doPopupNotify_howItWorks, clipboardKey, first_title, duration, freq, doReplace, x, active_title, timeValueInLoopInSec, timeValueForBREAKLoopInSec
     if doReplaceIfPrefixIsThis:
-        # selct word and prefix e.g.  :test
+        # select word and prefix e.g.  :test
         doSelctWordAndPrefix = True
     clipboardBackup = ""
 
@@ -102,7 +102,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
     clipboardKey = try_read_clipboard_without_visible_errors(clipboard)
 
 
-    keyboard.release_key('<shift>')  # sometimes i got hanging shift key
+    # keyboard.release_key('<shift>')  # sometimes i got hanging shift key
 
     first_title = window.get_active_title()
 
@@ -183,7 +183,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         if active_title != first_title:
             break
     timeValueInLoopInSec = 0.3
-    timeValueForBREAKLoopInSec = 80  # timeOut. Prevention for endless loops
+    timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
     # BREAK x is '101
     # time.sleep(2)
     # keyboard.send_keys('<ctrl>+v')

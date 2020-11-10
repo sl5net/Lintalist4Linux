@@ -27,6 +27,7 @@ except subprocess.CalledProcessError:
 time.sleep(1)  # <=== if i use a long pause i got no problem here
 try:
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+    cNew = cNew.strip(' \t\n\r')
 except:
     time.sleep(0.1)  
 # time.sleep(4) # <=== if i use a long pause i got no problem here
@@ -83,6 +84,7 @@ for x in range(0, 1000): # default is 25
     # cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
     try:
         cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+        cNew = cNew.strip(' \t\n\r')
     except:
         if x > 200:
             # happened if the window is closed in wine
