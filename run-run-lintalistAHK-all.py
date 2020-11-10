@@ -21,6 +21,7 @@ doBeepsWelcomeAtEachRun = False
 doPopupNotify_welcomeAtEachRun = False  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 doPopupNotify_howItWorks_counter = 0  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 doPopupNotify_howItWorks_firstNr = 8  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
+doPopupNotify_howItWorks_firstNr = 1  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 doPopupNotify_howItWorks_ifFirstCharsIs = "#/‾"  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 doPopupNotify_howItWorks = True  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 # doPopupNotify_howItWorks = False
@@ -29,7 +30,7 @@ if not doPopupNotify_howItWorks_ifFirstCharsIs == doPopupNotify_howItWorks_ifFir
     quit()
 #\___ doPopupNotify
 
-# :test
+# :Seba
 
 doReplaceIfPrefixIsThis = ":"
 do_ifNoPrefix_useFocusedWord_pasteResultRight = True
@@ -393,9 +394,21 @@ for x in range(0, 900):  # default is 25
     time.sleep(timeValueInLoopInSec)
 try:
     time.sleep(0.1)  # maybe more stable
+    # cNew = ""
+    # cNew = ""
+    # cNew = ""
+    # cNew = ""
+    # cNew = ""
+    # cNew = ""
+    # cNew = ""
+    # cNew = ""
+    # cNew = ""
+    # cNew = ""
+    # cNew = ""
     cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
     time.sleep(0.1)  # maybe more stable
     cNew = cNew.strip(' \t\n\r')
+    # Sebastian Sebastian Sebastian Sebastian Sebastian Lauffer
 except:
     popupNotify_howItWorks("374: ERROR clipboard.get_clipboard")
     time.sleep(0.1)
@@ -412,16 +425,18 @@ if len_clipboardNew < 1 or cNew == clipboardKey:
     time.sleep(2)
     exit()  # quit()
 
-# :Lauf
-# :test :test test :test :test :test :test :test :test :mond :test :test :test :test :test :test :test test
+# Sebastian
+# :test :moon :test :moon :test :moon :test :moon test :moon
+# :test :moon :test :moon :test :moon :test :moon :test :moon
+
 if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
     popupNotify_howItWorks("# /‾‾‾ keyboard.send_keys('<ctrl>+v')")
 
-    len_clipboardBackup = len(clipboardBackup)
-    if len_clipboardNew < 1 or len_clipboardBackup < 1:
+    len_clipboardKey = len(clipboardKey)
+    if len_clipboardNew < 1 or len_clipboardKey < 1:
         popupNotify("ERROR len(...) < 1 ==> quit()")
         quit()
-    if len_clipboardNew == len_clipboardBackup:
+    if len_clipboardNew + 1 == len_clipboardKey:
         popupNotify("result NOT changed ==> probably ERROR ==> quit()")
         quit()
 
@@ -429,8 +444,8 @@ if doReplace:  # :test  :test  :test  :test  :test 20-08-22 16:02:21
 # keyboard.send_keys("Hello world", send_mode=keyboard.SendMode.CB_SHIFT_INSERT)
 # keyboard.send_keys("<shift>+<insert>")
 
-    popupNotify_howItWorks("#/‾‾‾ clipboardBackup = " + clipboardBackup)
-    popupNotify_howItWorks("#/‾‾‾ <ctrl>+v, len_clipboardBackup,len_clipboardNew = " + str(len_clipboardBackup) + "," + str(len_clipboardNew) + "\n clipboardBackup = \n" + clipboardBackup)
+    popupNotify_howItWorks("#/‾‾‾ clipboardKey = " + clipboardKey)
+    popupNotify_howItWorks("#/‾‾‾ <ctrl>+v, len_clipboardKey,len_clipboardNew = " + str(len_clipboardKey) + "," + str(len_clipboardNew) + "\n clipboardKey = \n" + clipboardKey)
     keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")
     popupNotify_howItWorks("# \___ keyboard.send_keys('<ctrl>+v')")
     time.sleep(0.2)  #  200mili needed in some apps   20-08-24 17:18:48

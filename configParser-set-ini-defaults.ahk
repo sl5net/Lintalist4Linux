@@ -17,6 +17,10 @@ if !FileExist(iniPath){
 IniWrite, F11, % iniPath, Settings, QuickSearchHotkey
 IniWrite, 2, % iniPath, Settings, PasteMethod
 IniWrite, 2, % iniPath, Settings, SearchMethod
+IniWrite, Part1-Logical, % iniPath, Settings, ColumnSort
+IniWrite, 10, % iniPath, Settings, PasteDelay
+
+
 ; MsgBox,% iniPath
 
 

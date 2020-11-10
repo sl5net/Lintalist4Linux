@@ -85,7 +85,7 @@ This helps me:
 
 1. for systems using a **Qt**-based desktop environment such as **KDE Plasma**, **Lumina**, etc.
 ```
-sudo apt -y install autokey-qt ; echo "########## \n Please Exit AutoKey (right Click Taskbar on little Icon) then the installation will continue automatically. \n#########" ; autokey-qt & sleep 3s ; killall -9 autokey-qt ; sudo apt -y install git ; mkdir ~/ahk ; mkdir ~/ahk/github; cd ~/ahk/github/ ; git clone https://github.com/lintalist/lintalist ; cd ~/Downloads/ ; git clone https://github.com/sl5net/Lintalist4Linux ; cd ~/.config/autokey/data/Sample\ Scripts/ ; cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ./ ; cp ~/Downloads/Lintalist4Linux/.run-run-lintalistAHK-all.json ./ ; cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ./ ; cp ~/Downloads/Lintalist4Linux/configParser-set-ini-defaults.ahk ./ ; cp ~/Downloads/Lintalist4Linux/configParser-set-defaults.py ./ ; sudo dpkg --add-architecture i386 ; wget -nc https://dl.winehq.org/wine-builds/winehq.key; sudo apt-key add winehq.key ; sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan main' ; sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport ; sudo apt update && sudo apt -y install --install-recommends winehq-stable ; wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe ; echo "Please Configure AutohotKey and AutoKey" ; python3 ~/.config/autokey/data/Sample\ Scripts/configParser-set-defaults.py & 
+sudo apt -y install autokey-qt ; echo "#/‾‾‾ Please Exit AutoKey (right Click Taskbar on little Icon) then the installation will continue automatically. \n#/‾‾‾" ; autokey-qt & sleep 3s ; killall -9 autokey-qt ; sudo apt -y install git ; mkdir ~/ahk ; mkdir ~/ahk/github; cd ~/ahk/github/ ; git clone https://github.com/lintalist/lintalist ; cd ~/Downloads/ ; git clone https://github.com/sl5net/Lintalist4Linux ; cd ~/.config/autokey/data/Sample\ Scripts/ ; cp ~/Downloads/Lintalist4Linux/run-run-lintalistAHK-all.py ./ ; cp ~/Downloads/Lintalist4Linux/.run-run-lintalistAHK-all.json ./ ; cp ~/Downloads/Lintalist4Linux/run-lintalistAHK.ahk ./ ; cp ~/Downloads/Lintalist4Linux/configParser-set-ini-defaults.ahk ./ ; cp ~/Downloads/Lintalist4Linux/configParser-set-defaults.py ./ ; sudo dpkg --add-architecture i386 ; wget -nc https://dl.winehq.org/wine-builds/winehq.key; sudo apt-key add winehq.key ; sudo apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan main' ; sudo add-apt-repository -y ppa:cybermax-dexter/sdl2-backport ; sudo apt update && sudo apt -y install --install-recommends winehq-stable ; wget https://www.autohotkey.com/download/ahk-install.exe ~/Downloads/ ; wine ~/Downloads/AutoHotkey_1.1.33.02_setup.exe ; echo "Please Configure AutohotKey and AutoKey" ; python3 ~/.config/autokey/data/Sample\ Scripts/configParser-set-defaults.py & 
 ```
 
 hints for uninstalling autokey-gtk:<br>
@@ -208,8 +208,28 @@ May this helps (sometimes me): Check: `Wintrick` > `wineprefix` > `Change settin
 ## Known problems with autoKey: 
 
 recommended:
+
+- dont us the script part
+ # :now 20:11:10 11:49:25
+ 
  
 - dont use `.` into Script-Names:<br>
 not `unit-test.get_active_class` better  `unit-test-get_active_class`
 - move keyboard-shortcut: first delete, then set again   
 - set keyboard-shortcut: first enter easy later then the special key. dont record a combination (may autokey freezing)   
+
+
+# Tipps (thanks to Lintalist):
+
+Type: Text
+Default: @
+Define the character you wish to use to start the Omnisearch.
+If you your search query starts with this character it will search in all bundles
+
+**SendMethod**
+Default: 1
+If you experience any problems with the way text is sent to the various applications you use you may try various methods to see if it resolves the issues
+1=SendInput
+2=SendEvent
+3=SendPlay
+4=ControlSend
