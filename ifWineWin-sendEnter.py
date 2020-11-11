@@ -1,5 +1,6 @@
 # first_class = window.get_active_class() # first_title = window.get_active_title() 
-# autokey-run --script unit-test_ifWineWin-sendEnter
+# autokey-run --script ifWineWin-sendEnter
+#  cp ~/Downloads/Lintalist4Linux/ifWineWin-sendEnter.py ./ ; 
 import os, time, datetime, pathlib, subprocess # TODO: one day install: http://omz-software.com/pythonista/docs/ios/clipboard.html
 # from pathlib import Path
 # home = str(Path.home())
