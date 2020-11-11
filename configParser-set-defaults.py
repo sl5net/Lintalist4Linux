@@ -16,5 +16,5 @@ with open(jsonFilePath, 'w') as file:
 myCmd = 'wine ' + home + '/.wine/drive_c/Program\ Files/AutoHotkey/AutoHotkey.exe "' + home + '/.config/autokey/data/Sample Scripts/configParser-set-ini-defaults.ahk"'
 os.system(myCmd)
 
-myCmd = 'autokey-run --script ifWineWin-sendEnter'
-os.system(myCmd)
+# myCmd = 'autokey-run --script ifWineWin-sendEnter'
+# os.system(myCmd)
