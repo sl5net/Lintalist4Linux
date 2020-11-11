@@ -400,9 +400,9 @@ for x in range(0, 900):  # default is 25
         break
     time.sleep(timeValueInLoopInSec)
 
-for x in range(0, 20):
+for x in range(0, 30):
     try:
-        # time.sleep(0.1)  # maybe more stable
+        time.sleep(0.05)  # for simple string replacemants thats sometimes enough.  maybe more stable
         # cNew = ""
         # cNew = ""
         # cNew = ""
@@ -419,17 +419,17 @@ for x in range(0, 20):
         cNew = cNew.strip(' \t\n\r')  # maybe needed 20:11:11 09:56:39
         clipboardKey = clipboardKey.strip(' \t\n\r')  # needed 20:11:11 09:56:39
         if cNew != clipboardKey:
-            popupNotify_howItWorks("changed: '" + clipboardKey + "' > '" + cNew + "'")
-            # popupNotify("changed: " + clipboardBackup + " > " + cNew)
+            # popupNotify_howItWorks("changed: '" + clipboardKey + "' > '" + cNew + "'")
+            popupNotify_howItWorks(str(x) + ": clip changed: " + clipboardBackup + " > " + cNew)
             break
-        # Sebastian Sebastian Sebastian Sebastian Sebastian Lauffer
+        if clipboardKey != clipboardKey:
+            # popupNotify_howItWorks("changed: '" + clipboardKey + "' > '" + cNew + "'")
+            popupNotify_howItWorks(str(x) + ": Key changed: " + clipboardBackup + " > " + cNew)
+            break
     except:
         popupNotify_howItWorks("374: ERROR clipboard.get_clipboard")
         time.sleep(0.1)
         quit()
-    time.sleep(0.1)
-
-time.sleep(0.1)  # maybe more stable
 
 len_clipboardNew = len(str(cNew))
 
@@ -440,7 +440,6 @@ if len_clipboardNew < 1 or cNew == clipboardKey:
     time.sleep(2)
     exit()  # quit()
 
-# Sebastian
 # :test :moon :test :moon :test :moon :test :moon test :moon
 # :test :moon :test :moon :test :moon :test :moon :test :moon
 
