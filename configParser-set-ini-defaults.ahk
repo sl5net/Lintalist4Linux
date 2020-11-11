@@ -7,10 +7,18 @@ iniPath := path "Settings.ini"
 ; WinWait, Untitled - Notepad, , 3
 
 if !FileExist(iniPath){
+
+; path := pathHome yourUserName "\ahk\github\lintalist\" ; configure folder where lintalist is stored
+    run, % path "lintalist.ahk"
+    sleep,1000
+    reload
+
     MsgBox, %iniPath% file does not exist.
     exit
 }
 ; /home/m/ahk/github/lintalist/Settings.ini
+
+
 
 ;# config['Settings']['QuickSearchHotkey'] = 'F11'  # create or update
 ; IniWrite, Value, Filename, Section, Key
