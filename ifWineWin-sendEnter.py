@@ -21,7 +21,7 @@ for x in range(max):
     active_class = window.get_active_class()
     active_title= window.get_active_title()
     aWaC = active_title + "." + active_class
-    if active_class == "Installer.control.exe.Wine":  # "WINE" in active_title or "Wine" in active_title:  # Installer.control.exe.Wine
+    if "Installer.control.exe.Wine" in active_class:  # "WINE" in active_title or "Wine" in active_title:  # Installer.control.exe.Wine
         keyboard.send_keys('<enter>')
         popupNotify(str(x) + "/" + str(max) + "sec Enter in " + aWaC)
     else:
