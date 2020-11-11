@@ -13,20 +13,20 @@ def beeps(duration=.1, freq=2000, loops=1):
     for x in range(loops):
         os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (duration, freq))
 active_class = window.get_active_class()
-active_title= window.get_active_title()
+active_title = window.get_active_title()
 popupNotify("title.class = " + active_title + "." + active_class)
 
-max = 200
-for x in range(max):
+maxLoop = 200
+for x in range(maxLoop):
     active_class = window.get_active_class()
     active_title= window.get_active_title()
     aWaC = active_title + "." + active_class
     # if "Installer.control.exe.Wine" in active_class:  # "WINE" in active_title or "Wine" in active_title:  # Installer.control.exe.Wine
-    if "Wine" in active_class:  # "WINE" in active_title or "Wine" in active_title:  # Installer.control.exe.Wine
+    if "Wine" in aWaC:  # "WINE" in active_title or "Wine" in active_title:  # Installer.control.exe.Wine
         keyboard.send_keys('<enter>')
-        popupNotify(str(x) + "/" + str(max) + "sec Enter in " + aWaC)
+        popupNotify(str(x) + "/" + str(maxLoop) + "sec Enter in " + aWaC)
     else:
-        popupNotify(str(x)  + "/" + str(max) + "sec " + "(" + aWaC + ")")
+        popupNotify(str(x) + "/" + str(maxLoop) + "sec " + "(" + aWaC + ")")
     time.sleep(1)
 
 popupNotify("quit()")
