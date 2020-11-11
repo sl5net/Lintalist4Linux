@@ -16,20 +16,24 @@ active_class = window.get_active_class()
 active_title = window.get_active_title()
 popupNotify("title.class = " + active_title + "." + active_class)
 
+aWaC = active_title + "." + active_class
+aWaCOLD = aWaC
+
 maxLoop = 200
 for x in range(maxLoop):
     active_class = window.get_active_class()
     active_title= window.get_active_title()
     aWaC = active_title + "." + active_class
     # if "Installer.control.exe.Wine" in active_class:  # "WINE" in active_title or "Wine" in active_title:  # Installer.control.exe.Wine
-    if "Wine" in aWaC:  # "WINE" in active_title or "Wine" in active_title:  # Installer.control.exe.Wine
+    if "Wine" in aWaC and aWaCOLD != aWaC:  # "WINE" in active_title or "Wine" in active_title:  # Installer.control.exe.Wine
+        aWaCOLD = aWaC
         keyboard.send_keys('<enter>')
         popupNotify(str(x) + "/" + str(maxLoop) + "sec Enter in " + aWaC)
-    else:
-        popupNotify(str(x) + "/" + str(maxLoop) + "sec " + "(" + aWaC + ")")
-    time.sleep(1)
+    # else:
+    #     popupNotify(str(x) + "/" + str(maxLoop) + "sec " + "(" + aWaC + ")")
+    time.sleep(3)
 
-popupNotify("quit()")
+popupNotify("quit() ifWineWin-sendEnter")
 quit()
 
 
