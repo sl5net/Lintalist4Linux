@@ -1,0 +1,28 @@
+{
+    "type": "script",
+    "description": "ifWineWin-sendEnter",
+    "store": {},
+    "modes": [],
+    "usageCount": 14,
+    "prompt": false,
+    "omitTrigger": false,
+    "showInTrayMenu": true,
+    "abbreviation": {
+        "abbreviations": [],
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "hotkey": {
+        "modifiers": [
+            "<ctrl>"
+        ],
+        "hotKey": "-"
+    },
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}
