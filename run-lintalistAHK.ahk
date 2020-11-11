@@ -20,8 +20,10 @@ path := pathHome yourUserName "\ahk\github\lintalist\" ; lintalist.ahk configure
 ; path := pathHome yourUserName "\Documents\github\lintalist" ; configure folder where lintalist is stored
 
 ;>>>>>>>> configure
+ClipboardFirst := RTrim(LTrim(Clipboard, " `n`t`r:")," `n`t`r")
+; ClipboardFirst := RegExReplace(Clipboard,"ms)^[^\w](.*)[^\w]*$","$1")
 
-ClipboardFirst := RTrim(LTrim(Clipboard, " `n`t:"))
+;
 
 SendLevel, 99
 
@@ -73,6 +75,7 @@ if True
       ; if isLintalistWinExist == 1 may he is in the preferences or so.
       ExitApp
     }
+    Send,^f ; jump into search box. you already in, but seems maybe sometimes helpful anyway
     if( StrLen(ClipboardFirst) > 100 ){
       ClipboardFirstShort := RTrim( SubStr(ClipboardFirst, 1, 60) )
       ControlSetText, Edit1, % ClipboardFirstShort, % winTitleLintalist
@@ -80,6 +83,7 @@ if True
     } else {
       ControlSetText, Edit1, % ClipboardFirst, % winTitleLintalist
     }
+    ; Send,^{left}#{backspace}
   }
 
   Send,^a
@@ -93,7 +97,9 @@ Send,{ShiftUp} ; sometimes it was hanging 20-08-22 16:28:15
 ; Msgbox,Ok  MsgboxMsgboxMsgboxMsgbox  MsgboxMsgboxMsgboxMsgbox box  box     MsgboxMsgboxMsgboxMsgbox
 
 ; protection for empty clipboard if there is no result from lintalist
-sleep,1000
+; sleep,1000
+; sleep,100
+sleep,10
 c := Clipboard
 if(!StrLen(c)){
   Clipboard := ClipboardFirst

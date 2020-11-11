@@ -24,12 +24,16 @@ doPopupNotify_howItWorks_firstNr = 8  #  subprocess.Popen(['notify-send', "will 
 doPopupNotify_howItWorks_firstNr = 1  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 doPopupNotify_howItWorks_ifFirstCharsIs = "#/‾"  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 doPopupNotify_howItWorks = True  #  subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
-# doPopupNotify_howItWorks = False
+doPopupNotify_howItWorks = False
 # subprocess.Popen(['notify-send', "will be showed right top"])  # will be showed right top
 if not doPopupNotify_howItWorks_ifFirstCharsIs == doPopupNotify_howItWorks_ifFirstCharsIs[:len(doPopupNotify_howItWorks_ifFirstCharsIs)] and doPopupNotify_howItWorks == True:
     quit()
 #\___ doPopupNotify
 
+# Sebastian
+# Sebastian
+# 20:11:10 12:50:15
+# :Seba
 # :Seba
 
 doReplaceIfPrefixIsThis = ":"
@@ -257,6 +261,7 @@ def read_keyword(doReplaceIfPrefixIsThis,do_ifNoPrefix_useFocusedWord_pasteResul
         if active_title != first_title:
             break
     timeValueInLoopInSec = 0.3
+    timeValueInLoopInSec = 0.1  # 20:11:10 12:51:39
     timeValueForBREAKLoopInSec = 90  # timeOut. Prevention for endless loops
     # BREAK x is '101
     # time.sleep(2)
@@ -473,7 +478,7 @@ else:
     time.sleep(0.2)
     keyboard.send_keys(" ")
     # print(" ")
-time.sleep(0.2)
+time.sleep(0.1)
 
 popupNotify_howItWorks("# /‾‾‾ 418: keyboard.send_keys('<ctrl>+v')")
 keyboard.send_keys('<ctrl>+v')  # work without problem        print(" ")

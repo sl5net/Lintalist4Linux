@@ -221,6 +221,7 @@ not `unit-test.get_active_class` better  `unit-test-get_active_class`
 
 # Tipps (thanks to Lintalist):
 
+<pre>
 Type: Text
 Default: @
 Define the character you wish to use to start the Omnisearch.
@@ -233,3 +234,7 @@ If you experience any problems with the way text is sent to the various applicat
 2=SendEvent
 3=SendPlay
 4=ControlSend
+
+0=No
+1=Yes, use part 1 (or run script)
+2=Yes, use part 2 (or run script)
