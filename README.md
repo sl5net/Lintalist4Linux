@@ -124,8 +124,11 @@ Video installation of [v0.989]( https://github.com/sl5net/Lintalist4Linux/releas
 
 Or:    
 ```AutoHotKey
-FormatTime, timestampyyMMddHHmmss , %A_now%,yyMMddHHmmss
-FormatTime, timestampyyMMddHHmmssPretty, %A_now%,yy:MM:dd HH:mm:ss
+FormatTime, timestampyyMMddHHmmss , %A_now%,yyMMdd-HHmmss
+clipboard := timestampyyMMddHHmmss
+```
+```AutoHotKey
+FormatTime, timestampyyMMddHHmmssPretty, %A_now%,dd.MM.yy HH:mm:ss
 clipboard := timestampyyMMddHHmmssPretty
 ```
 

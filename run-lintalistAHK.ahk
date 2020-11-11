@@ -27,7 +27,8 @@ ClipboardFirst := RTrim(LTrim(Clipboard, " `n`t`r:")," `n`t`r")
 
 SendLevel, 99
 
-Sleep,100
+; Sleep,90
+Sleep,10
 
 SendInput,{f11}
 
@@ -59,7 +60,7 @@ if True
 
   WinActivate ; use the window found above  
   WinWaitActive, % winTitleLintalist, , 3, 
-	sleep, 40
+	sleep, 10 ; 40   20:11:11 08:59:15
 	; Send,^a^f
 	; sleep, 280
 	; Send,world
@@ -99,7 +100,7 @@ Send,{ShiftUp} ; sometimes it was hanging 20-08-22 16:28:15
 ; protection for empty clipboard if there is no result from lintalist
 ; sleep,1000
 ; sleep,100
-sleep,10
+; sleep,10
 c := Clipboard
 if(!StrLen(c)){
   Clipboard := ClipboardFirst

@@ -284,6 +284,8 @@ def try_read_clipboard_without_visible_errors(clipboard):
             break
     return clipboardKey   # test
 
+# How can I copy the output of a command directly into my clipboard? 201109-025047
+# https://stackoverflow.com/a/53973493/2891692
 
 def copy_word_2_clipboard_focusedInTheMiddle(clipboard, keyboard):
     doSelect1charBefore = True
@@ -394,30 +396,38 @@ for x in range(0, 900):  # default is 25
         popupNotify_howItWorks("BREAK at Loop %s because timeValueForBREAKLoopInSec > '%s'" % (str(x), str(timeValueForBREAKLoopInSec)))
         break
     if window.get_active_title() == first_title:
-        popupNotify("active_title == first_title ==> we are back")
+        popupNotify_howItWorks("active_title == first_title ==> we are back")
         break
     time.sleep(timeValueInLoopInSec)
-try:
-    time.sleep(0.1)  # maybe more stable
-    # cNew = ""
-    # cNew = ""
-    # cNew = ""
-    # cNew = ""
-    # cNew = ""
-    # cNew = ""
-    # cNew = ""
-    # cNew = ""
-    # cNew = ""
-    # cNew = ""
-    # cNew = ""
-    cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
-    time.sleep(0.1)  # maybe more stable
-    cNew = cNew.strip(' \t\n\r')
-    # Sebastian Sebastian Sebastian Sebastian Sebastian Lauffer
-except:
-    popupNotify_howItWorks("374: ERROR clipboard.get_clipboard")
+
+for x in range(0, 20):
+    try:
+        # time.sleep(0.1)  # maybe more stable
+        # cNew = ""
+        # cNew = ""
+        # cNew = ""
+        # cNew = ""
+        # cNew = ""
+        # cNew = ""
+        # cNew = ""
+        # cNew = ""
+        # cNew = ""
+        # cNew = ""
+        # cNew = ""
+        cNew = clipboard.get_clipboard()  # found here: https://github.com/autokey/autokey/wiki/Scripting#create-new-abbreviation
+        # if cNew != clipboardBackup:
+        cNew = cNew.strip(' \t\n\r')  # maybe needed 20:11:11 09:56:39
+        clipboardKey = clipboardKey.strip(' \t\n\r')  # needed 20:11:11 09:56:39
+        if cNew != clipboardKey:
+            popupNotify_howItWorks("changed: '" + clipboardKey + "' > '" + cNew + "'")
+            # popupNotify("changed: " + clipboardBackup + " > " + cNew)
+            break
+        # Sebastian Sebastian Sebastian Sebastian Sebastian Lauffer
+    except:
+        popupNotify_howItWorks("374: ERROR clipboard.get_clipboard")
+        time.sleep(0.1)
+        quit()
     time.sleep(0.1)
-    quit()
 
 time.sleep(0.1)  # maybe more stable
 
